@@ -4,8 +4,9 @@
 
 body{
     font-family: 'Poppins', sans-serif;
-    color: $black-2;
+    color: $black-2e;
     overflow-x: hidden;
     @import "pages/header";
     @import "pages/home";
+    @import "pages/footer";
 }

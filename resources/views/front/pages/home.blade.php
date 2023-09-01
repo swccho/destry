@@ -536,5 +536,47 @@
             </div>
         </section>
         {{--brand section end--}}
+
+        {{--blog section start--}}
+        <section class="blog">
+            <div class="container">
+                <div class="row">
+                    <div class="col-4">
+                        <div class="single-blog">
+                            <div class="img">
+                                <img src="{{asset('images/blog1.webp')}}" alt="">
+                            </div>
+                            <div class="date">By : <span>Admin</span> 14 Jul 2023 </div>
+                            <a href="" class="title">Some Winter Collections</a>
+                            <div class="desc">Lorem ipsum dolor sit amet, consectetur adipisici elit, sed do eiusmod tempo</div>
+                            <button class="btn btn-theme">read more</button>
+                        </div>
+                    </div>
+                    <div class="col-4">
+                        <div class="single-blog">
+                            <div class="img">
+                                <img src="{{asset('images/blog2.webp')}}" alt="">
+                            </div>
+                            <div class="date">By : <span>Admin</span> 14 Jul 2023 </div>
+                            <a href="" class="title">Some Winter Collections</a>
+                            <div class="desc">Lorem ipsum dolor sit amet, consectetur adipisici elit, sed do eiusmod tempo</div>
+                            <button class="btn btn-theme">read more</button>
+                        </div>
+                    </div>
+                    <div class="col-4">
+                        <div class="single-blog">
+                            <div class="img">
+                                <img src="{{asset('images/blog3.webp')}}" alt="">
+                            </div>
+                            <div class="date">By : <span>Admin</span> 14 Jul 2023 </div>
+                            <a href="" class="title">Some Winter Collections</a>
+                            <div class="desc">Lorem ipsum dolor sit amet, consectetur adipisici elit, sed do eiusmod tempo</div>
+                            <button class="btn btn-theme">read more</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        {{--blog section end--}}
     </div>
 @endsection
