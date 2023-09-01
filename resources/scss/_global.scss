@@ -1,0 +1,23 @@
+section{
+    padding: 80px 0;
+    background-color: $white;
+}
+
+
+.btn-theme{
+    background-color: $theme-1;
+    color: $white;
+    padding: 10px 25px;
+    border-radius: 4px;
+    font-weight: 600;
+    transition: all .4s;
+    text-transform: capitalize;
+    outline: none;
+    &:hover{
+        background-color: $black-2;
+        transition: all .4s;
+        color: $white;
+    }
+}
+
+

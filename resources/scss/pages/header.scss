@@ -1,0 +1,122 @@
+header{
+    .header-top{
+        background-color: $gray;
+        padding: 10px;
+        font-size: 12px;
+        .content{
+            .left{
+                li{
+                    &:first-child, &:last-child{
+                        a{
+                            padding-left: 0;
+                        }
+                    }
+                    &:last-child{
+                        a{
+                            &:before{
+                                height: 0;
+                                width: 0;
+                            }
+                        }
+                    }
+                    a{
+                        transition: all .4s;
+                        position: relative;
+                        padding: 0 20px;
+                        &:hover{
+                            transition: all .4s;
+                            color: $theme;
+                        }
+                        &:before{
+                            position: absolute;
+                            content: "";
+                            right: 0;
+                            top: 50%;
+                            transform: translateY(-50%);
+                            background: #d5d4d4;
+                            height: 10px;
+                            width: 1px;
+                        }
+                    }
+                    span{
+                        padding-left: 20px;
+                    }
+                }
+            }
+            .right{
+                a{
+                    color: $theme;
+                    display: inline-block;
+                    margin-left: 20px;
+                }
+            }
+        }
+    }
+    .header-bottom{
+        background-color: $white;
+        border-bottom: 1px solid $black-op-7;
+        padding: 30px 0;
+        .content{
+            .menu{
+                li{
+                    a{
+                        padding: 10px 20px;
+                        transition: all .4s;
+                        &:hover{
+
+                            transition: all .4s;
+                            color: $theme;
+                            &:after{
+                                transition: all .4s;
+                                width: 100%;
+                            }
+                        }
+                        &:after{
+                            transition: all .4s;
+                            content: '';
+                            width: 0;
+                            height: 2px;
+                            display: block;
+                            background-color: $theme;
+                        }
+                    }
+                }
+            }
+            .actions{
+                li{
+                    a{
+                        padding: 10px;
+                        transition: all .4s;
+                        &:hover{
+                            transition: all .4s;
+                            color: $theme;
+                        }
+                        i{
+                            font-size: 24px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .content{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        .menu, .actions, .left, .right{
+            ul{
+                list-style: none;
+                padding-left: 0;
+                margin-bottom: 0;
+                li{
+                    display: inline-block;
+                    a{
+                        text-decoration: none;
+                        color: $black-2;
+                        display: inline-block;
+                    }
+                }
+            }
+        }
+    }
+}
