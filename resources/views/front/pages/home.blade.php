@@ -2,17 +2,39 @@
 @section('content')
     <div class="page home">
         {{--hero section start--}}
-        <section class="hero" style="background-image: url('{{asset('images/slide-2.webp')}}')">
-            <div class="container">
-               <div class="content">
-                   <div class="title">
-                       Fashion New<br> Collection
-                   </div>
-                   <div class="desc">Up to 30% off selected Product</div>
-                   <button class="btn btn-theme">shop now</button>
-               </div>
+        <div class="swiper hero-slider">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                    <section class="hero" style="background-image: url('{{asset('images/slide-2.webp')}}')">
+                        <div class="container">
+                            <div class="content">
+                                <div class="title">
+                                    Fashion New<br> Collection
+                                </div>
+                                <div class="desc">Up to 30% off selected Product</div>
+                                <button class="btn btn-theme">shop now</button>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+                <div class="swiper-slide">
+                    <section class="hero" style="background-image: url('{{asset('images/slide-3.webp')}}')">
+                        <div class="container">
+                            <div class="content">
+                                <div class="title">
+                                    Trend Fashion<br> Collection
+                                </div>
+                                <div class="desc">Up to 70% off selected Product</div>
+                                <button class="btn btn-theme">shop now</button>
+                            </div>
+                        </div>
+                    </section>
+                </div>
             </div>
-        </section>
+            <!-- If we need navigation buttons -->
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-button-next"></div>
+        </div>
         {{--hero section end--}}
 
         {{--feature section start--}}
@@ -107,34 +129,36 @@
         <section class="product-tabs">
             <div class="container">
                 <div class="tab-buttons">
-                    <a href="javascript:void(0)" class="active">New Arrivals</a>
-                    <a href="javascript:void(0)">Best Sellers</a>
-                    <a href="javascript:void(0)">Sale Items</a>
+                    <a href="javascript:void(0)" class="active" data-id="new" onclick="showTabProducts(event, 'new')">New Arrivals</a>
+                    <a href="javascript:void(0)" data-id="best" onclick="showTabProducts(event, 'best')">Best Sellers</a>
+                    <a href="javascript:void(0)" data-id="sale" onclick="showTabProducts(event, 'sale')">Sale Items</a>
                 </div>
                 <div class="tab-content">
-                    <div class="new products" id="new-products">
-                        <div class="row">
-                            <div class="col-3 each">
-                                <div class="product new">
-                                    <div class="img">
-                                        <a href="" class="d-block">
-                                            <img src="{{asset('images/1.webp')}}" alt="">
-                                        </a>
-                                        <div class="actions">
-                                            <a href="" class="action">
-                                                <i class="pe-7s-like"></i>
+                    <div class="new products active">
+                        <div class="swiper product-tabs-slider">
+                            <div class="swiper-wrapper">
+                                <div class="swiper-slide">
+                                    <div class="product new">
+                                        <div class="img">
+                                            <a href="" class="d-block">
+                                                <img class="first-img" src="{{asset('images/1.webp')}}" alt="">
+                                                <img class="second-img" src="{{asset('images/product-tab-img-2.webp')}}" alt="">
                                             </a>
-                                            <a href="" class="action">
-                                                <i class="pe-7s-search"></i>
-                                            </a>
-                                            <a href="" class="action">
-                                                <i class="pe-7s-shuffle"></i>
-                                            </a>
+                                            <div class="actions">
+                                                <a href="" class="action">
+                                                    <i class="pe-7s-like"></i>
+                                                </a>
+                                                <a href="" class="action">
+                                                    <i class="pe-7s-search"></i>
+                                                </a>
+                                                <a href="" class="action">
+                                                    <i class="pe-7s-shuffle"></i>
+                                                </a>
+                                            </div>
                                         </div>
-                                    </div>
-                                    <a href="" class="category">Studio Design</a>
-                                    <a href="" class="title">Brother Hoddies in Grey</a>
-                                    <div class="rating">
+                                        <a href="" class="category">Studio Design</a>
+                                        <a href="" class="title">Brother Hoddies in Grey</a>
+                                        <div class="rating">
                                         <span>
                                             <i class="fa-solid fa-star"></i>
                                             <i class="fa-solid fa-star"></i>
@@ -142,33 +166,32 @@
                                             <i class="fa-solid fa-star"></i>
                                             <i class="fa-solid fa-star"></i>
                                         </span>
-                                        <span class="star">(4)</span>
-                                    </div>
-                                    <div class="price">$38.50 <span>$42.85</span></div>
-                                    <button class="btn cart-btn">add to cart</button>
-                                </div>
-                            </div>
-                            <div class="col-3 each">
-                                <div class="product new">
-                                    <div class="img">
-                                        <a href="" class="d-block">
-                                            <img src="{{asset('images/1.webp')}}" alt="">
-                                        </a>
-                                        <div class="actions">
-                                            <a href="" class="action">
-                                                <i class="pe-7s-like"></i>
-                                            </a>
-                                            <a href="" class="action">
-                                                <i class="pe-7s-search"></i>
-                                            </a>
-                                            <a href="" class="action">
-                                                <i class="pe-7s-shuffle"></i>
-                                            </a>
+                                            <span class="star">(4)</span>
                                         </div>
+                                        <div class="price"><span class="new">$38.50 </span><span class="old">$42.85</span></div>
+                                        <button class="btn cart-btn">add to cart</button>
                                     </div>
-                                    <a href="" class="category">Studio Design</a>
-                                    <a href="" class="title">Brother Hoddies in Grey</a>
-                                    <div class="rating">
+                                    <div class="product sold">
+                                        <div class="img">
+                                            <a href="" class="d-block">
+                                                <img class="first-img" src="{{asset('images/1.webp')}}" alt="">
+                                                <img class="second-img" src="{{asset('images/product-tab-img-2.webp')}}" alt="">
+                                            </a>
+                                            <div class="actions">
+                                                <a href="" class="action">
+                                                    <i class="pe-7s-like"></i>
+                                                </a>
+                                                <a href="" class="action">
+                                                    <i class="pe-7s-search"></i>
+                                                </a>
+                                                <a href="" class="action">
+                                                    <i class="pe-7s-shuffle"></i>
+                                                </a>
+                                            </div>
+                                        </div>
+                                        <a href="" class="category">Studio Design</a>
+                                        <a href="" class="title">Brother Hoddies in Grey</a>
+                                        <div class="rating">
                                         <span>
                                             <i class="fa-solid fa-star"></i>
                                             <i class="fa-solid fa-star"></i>
@@ -176,33 +199,34 @@
                                             <i class="fa-solid fa-star"></i>
                                             <i class="fa-solid fa-star"></i>
                                         </span>
-                                        <span class="star">(4)</span>
-                                    </div>
-                                    <div class="price">$38.50 <span>$42.85</span></div>
-                                    <button class="btn cart-btn">add to cart</button>
-                                </div>
-                            </div>
-                            <div class="col-3 each">
-                                <div class="product new">
-                                    <div class="img">
-                                        <a href="" class="d-block">
-                                            <img src="{{asset('images/1.webp')}}" alt="">
-                                        </a>
-                                        <div class="actions">
-                                            <a href="" class="action">
-                                                <i class="pe-7s-like"></i>
-                                            </a>
-                                            <a href="" class="action">
-                                                <i class="pe-7s-search"></i>
-                                            </a>
-                                            <a href="" class="action">
-                                                <i class="pe-7s-shuffle"></i>
-                                            </a>
+                                            <span class="star">(4)</span>
                                         </div>
+                                        <div class="price"><span class="new">$38.50 </span><span class="old">$42.85</span></div>
+                                        <button class="btn cart-btn">add to cart</button>
                                     </div>
-                                    <a href="" class="category">Studio Design</a>
-                                    <a href="" class="title">Brother Hoddies in Grey</a>
-                                    <div class="rating">
+                                </div>
+                                <div class="swiper-slide">
+                                    <div class="product new">
+                                        <div class="img">
+                                            <a href="" class="d-block">
+                                                <img class="first-img" src="{{asset('images/1.webp')}}" alt="">
+                                                <img class="second-img" src="{{asset('images/product-tab-img-2.webp')}}" alt="">
+                                            </a>
+                                            <div class="actions">
+                                                <a href="" class="action">
+                                                    <i class="pe-7s-like"></i>
+                                                </a>
+                                                <a href="" class="action">
+                                                    <i class="pe-7s-search"></i>
+                                                </a>
+                                                <a href="" class="action">
+                                                    <i class="pe-7s-shuffle"></i>
+                                                </a>
+                                            </div>
+                                        </div>
+                                        <a href="" class="category">Studio Design</a>
+                                        <a href="" class="title">Brother Hoddies in Grey</a>
+                                        <div class="rating">
                                         <span>
                                             <i class="fa-solid fa-star"></i>
                                             <i class="fa-solid fa-star"></i>
@@ -210,33 +234,32 @@
                                             <i class="fa-solid fa-star"></i>
                                             <i class="fa-solid fa-star"></i>
                                         </span>
-                                        <span class="star">(4)</span>
-                                    </div>
-                                    <div class="price">$38.50 <span>$42.85</span></div>
-                                    <button class="btn cart-btn">add to cart</button>
-                                </div>
-                            </div>
-                            <div class="col-3 each">
-                                <div class="product sold">
-                                    <div class="img">
-                                        <a href="" class="d-block">
-                                            <img src="{{asset('images/1.webp')}}" alt="">
-                                        </a>
-                                        <div class="actions">
-                                            <a href="" class="action">
-                                                <i class="pe-7s-like"></i>
-                                            </a>
-                                            <a href="" class="action">
-                                                <i class="pe-7s-search"></i>
-                                            </a>
-                                            <a href="" class="action">
-                                                <i class="pe-7s-shuffle"></i>
-                                            </a>
+                                            <span class="star">(4)</span>
                                         </div>
+                                        <div class="price"><span class="new">$38.50 </span><span class="old">$42.85</span></div>
+                                        <button class="btn cart-btn">add to cart</button>
                                     </div>
-                                    <a href="" class="category">Studio Design</a>
-                                    <a href="" class="title">Brother Hoddies in Grey</a>
-                                    <div class="rating">
+                                    <div class="product sold">
+                                        <div class="img">
+                                            <a href="" class="d-block">
+                                                <img class="first-img" src="{{asset('images/1.webp')}}" alt="">
+                                                <img class="second-img" src="{{asset('images/product-tab-img-2.webp')}}" alt="">
+                                            </a>
+                                            <div class="actions">
+                                                <a href="" class="action">
+                                                    <i class="pe-7s-like"></i>
+                                                </a>
+                                                <a href="" class="action">
+                                                    <i class="pe-7s-search"></i>
+                                                </a>
+                                                <a href="" class="action">
+                                                    <i class="pe-7s-shuffle"></i>
+                                                </a>
+                                            </div>
+                                        </div>
+                                        <a href="" class="category">Studio Design</a>
+                                        <a href="" class="title">Brother Hoddies in Grey</a>
+                                        <div class="rating">
                                         <span>
                                             <i class="fa-solid fa-star"></i>
                                             <i class="fa-solid fa-star"></i>
@@ -244,12 +267,1530 @@
                                             <i class="fa-solid fa-star"></i>
                                             <i class="fa-solid fa-star"></i>
                                         </span>
-                                        <span class="star">(4)</span>
+                                            <span class="star">(4)</span>
+                                        </div>
+                                        <div class="price"><span class="new">$38.50 </span><span class="old">$42.85</span></div>
+                                        <button class="btn cart-btn">add to cart</button>
                                     </div>
-                                    <div class="price">$38.50 <span>$42.85</span></div>
-                                    <button class="btn cart-btn">add to cart</button>
+                                </div>
+                                <div class="swiper-slide">
+                                    <div class="product new">
+                                        <div class="img">
+                                            <a href="" class="d-block">
+                                                <img class="first-img" src="{{asset('images/1.webp')}}" alt="">
+                                                <img class="second-img" src="{{asset('images/product-tab-img-2.webp')}}" alt="">
+                                            </a>
+                                            <div class="actions">
+                                                <a href="" class="action">
+                                                    <i class="pe-7s-like"></i>
+                                                </a>
+                                                <a href="" class="action">
+                                                    <i class="pe-7s-search"></i>
+                                                </a>
+                                                <a href="" class="action">
+                                                    <i class="pe-7s-shuffle"></i>
+                                                </a>
+                                            </div>
+                                        </div>
+                                        <a href="" class="category">Studio Design</a>
+                                        <a href="" class="title">Brother Hoddies in Grey</a>
+                                        <div class="rating">
+                                        <span>
+                                            <i class="fa-solid fa-star"></i>
+                                            <i class="fa-solid fa-star"></i>
+                                            <i class="fa-solid fa-star"></i>
+                                            <i class="fa-solid fa-star"></i>
+                                            <i class="fa-solid fa-star"></i>
+                                        </span>
+                                            <span class="star">(4)</span>
+                                        </div>
+                                        <div class="price"><span class="new">$38.50 </span><span class="old">$42.85</span></div>
+                                        <button class="btn cart-btn">add to cart</button>
+                                    </div>
+                                    <div class="product sold">
+                                        <div class="img">
+                                            <a href="" class="d-block">
+                                                <img class="first-img" src="{{asset('images/1.webp')}}" alt="">
+                                                <img class="second-img" src="{{asset('images/product-tab-img-2.webp')}}" alt="">
+                                            </a>
+                                            <div class="actions">
+                                                <a href="" class="action">
+                                                    <i class="pe-7s-like"></i>
+                                                </a>
+                                                <a href="" class="action">
+                                                    <i class="pe-7s-search"></i>
+                                                </a>
+                                                <a href="" class="action">
+                                                    <i class="pe-7s-shuffle"></i>
+                                                </a>
+                                            </div>
+                                        </div>
+                                        <a href="" class="category">Studio Design</a>
+                                        <a href="" class="title">Brother Hoddies in Grey</a>
+                                        <div class="rating">
+                                        <span>
+                                            <i class="fa-solid fa-star"></i>
+                                            <i class="fa-solid fa-star"></i>
+                                            <i class="fa-solid fa-star"></i>
+                                            <i class="fa-solid fa-star"></i>
+                                            <i class="fa-solid fa-star"></i>
+                                        </span>
+                                            <span class="star">(4)</span>
+                                        </div>
+                                        <div class="price"><span class="new">$38.50 </span><span class="old">$42.85</span></div>
+                                        <button class="btn cart-btn">add to cart</button>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide">
+                                    <div class="product new">
+                                        <div class="img">
+                                            <a href="" class="d-block">
+                                                <img class="first-img" src="{{asset('images/1.webp')}}" alt="">
+                                                <img class="second-img" src="{{asset('images/product-tab-img-2.webp')}}" alt="">
+                                            </a>
+                                            <div class="actions">
+                                                <a href="" class="action">
+                                                    <i class="pe-7s-like"></i>
+                                                </a>
+                                                <a href="" class="action">
+                                                    <i class="pe-7s-search"></i>
+                                                </a>
+                                                <a href="" class="action">
+                                                    <i class="pe-7s-shuffle"></i>
+                                                </a>
+                                            </div>
+                                        </div>
+                                        <a href="" class="category">Studio Design</a>
+                                        <a href="" class="title">Brother Hoddies in Grey</a>
+                                        <div class="rating">
+                                        <span>
+                                            <i class="fa-solid fa-star"></i>
+                                            <i class="fa-solid fa-star"></i>
+                                            <i class="fa-solid fa-star"></i>
+                                            <i class="fa-solid fa-star"></i>
+                                            <i class="fa-solid fa-star"></i>
+                                        </span>
+                                            <span class="star">(4)</span>
+                                        </div>
+                                        <div class="price"><span class="new">$38.50 </span><span class="old">$42.85</span></div>
+                                        <button class="btn cart-btn">add to cart</button>
+                                    </div>
+                                    <div class="product sold">
+                                        <div class="img">
+                                            <a href="" class="d-block">
+                                                <img class="first-img" src="{{asset('images/1.webp')}}" alt="">
+                                                <img class="second-img" src="{{asset('images/product-tab-img-2.webp')}}" alt="">
+                                            </a>
+                                            <div class="actions">
+                                                <a href="" class="action">
+                                                    <i class="pe-7s-like"></i>
+                                                </a>
+                                                <a href="" class="action">
+                                                    <i class="pe-7s-search"></i>
+                                                </a>
+                                                <a href="" class="action">
+                                                    <i class="pe-7s-shuffle"></i>
+                                                </a>
+                                            </div>
+                                        </div>
+                                        <a href="" class="category">Studio Design</a>
+                                        <a href="" class="title">Brother Hoddies in Grey</a>
+                                        <div class="rating">
+                                        <span>
+                                            <i class="fa-solid fa-star"></i>
+                                            <i class="fa-solid fa-star"></i>
+                                            <i class="fa-solid fa-star"></i>
+                                            <i class="fa-solid fa-star"></i>
+                                            <i class="fa-solid fa-star"></i>
+                                        </span>
+                                            <span class="star">(4)</span>
+                                        </div>
+                                        <div class="price"><span class="new">$38.50 </span><span class="old">$42.85</span></div>
+                                        <button class="btn cart-btn">add to cart</button>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide">
+                                    <div class="product new">
+                                        <div class="img">
+                                            <a href="" class="d-block">
+                                                <img class="first-img" src="{{asset('images/1.webp')}}" alt="">
+                                                <img class="second-img" src="{{asset('images/product-tab-img-2.webp')}}" alt="">
+                                            </a>
+                                            <div class="actions">
+                                                <a href="" class="action">
+                                                    <i class="pe-7s-like"></i>
+                                                </a>
+                                                <a href="" class="action">
+                                                    <i class="pe-7s-search"></i>
+                                                </a>
+                                                <a href="" class="action">
+                                                    <i class="pe-7s-shuffle"></i>
+                                                </a>
+                                            </div>
+                                        </div>
+                                        <a href="" class="category">Studio Design</a>
+                                        <a href="" class="title">Brother Hoddies in Grey</a>
+                                        <div class="rating">
+                                        <span>
+                                            <i class="fa-solid fa-star"></i>
+                                            <i class="fa-solid fa-star"></i>
+                                            <i class="fa-solid fa-star"></i>
+                                            <i class="fa-solid fa-star"></i>
+                                            <i class="fa-solid fa-star"></i>
+                                        </span>
+                                            <span class="star">(4)</span>
+                                        </div>
+                                        <div class="price"><span class="new">$38.50 </span><span class="old">$42.85</span></div>
+                                        <button class="btn cart-btn">add to cart</button>
+                                    </div>
+                                    <div class="product sold">
+                                        <div class="img">
+                                            <a href="" class="d-block">
+                                                <img class="first-img" src="{{asset('images/1.webp')}}" alt="">
+                                                <img class="second-img" src="{{asset('images/product-tab-img-2.webp')}}" alt="">
+                                            </a>
+                                            <div class="actions">
+                                                <a href="" class="action">
+                                                    <i class="pe-7s-like"></i>
+                                                </a>
+                                                <a href="" class="action">
+                                                    <i class="pe-7s-search"></i>
+                                                </a>
+                                                <a href="" class="action">
+                                                    <i class="pe-7s-shuffle"></i>
+                                                </a>
+                                            </div>
+                                        </div>
+                                        <a href="" class="category">Studio Design</a>
+                                        <a href="" class="title">Brother Hoddies in Grey</a>
+                                        <div class="rating">
+                                        <span>
+                                            <i class="fa-solid fa-star"></i>
+                                            <i class="fa-solid fa-star"></i>
+                                            <i class="fa-solid fa-star"></i>
+                                            <i class="fa-solid fa-star"></i>
+                                            <i class="fa-solid fa-star"></i>
+                                        </span>
+                                            <span class="star">(4)</span>
+                                        </div>
+                                        <div class="price"><span class="new">$38.50 </span><span class="old">$42.85</span></div>
+                                        <button class="btn cart-btn">add to cart</button>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide">
+                                    <div class="product new">
+                                        <div class="img">
+                                            <a href="" class="d-block">
+                                                <img class="first-img" src="{{asset('images/1.webp')}}" alt="">
+                                                <img class="second-img" src="{{asset('images/product-tab-img-2.webp')}}" alt="">
+                                            </a>
+                                            <div class="actions">
+                                                <a href="" class="action">
+                                                    <i class="pe-7s-like"></i>
+                                                </a>
+                                                <a href="" class="action">
+                                                    <i class="pe-7s-search"></i>
+                                                </a>
+                                                <a href="" class="action">
+                                                    <i class="pe-7s-shuffle"></i>
+                                                </a>
+                                            </div>
+                                        </div>
+                                        <a href="" class="category">Studio Design</a>
+                                        <a href="" class="title">Brother Hoddies in Grey</a>
+                                        <div class="rating">
+                                        <span>
+                                            <i class="fa-solid fa-star"></i>
+                                            <i class="fa-solid fa-star"></i>
+                                            <i class="fa-solid fa-star"></i>
+                                            <i class="fa-solid fa-star"></i>
+                                            <i class="fa-solid fa-star"></i>
+                                        </span>
+                                            <span class="star">(4)</span>
+                                        </div>
+                                        <div class="price"><span class="new">$38.50 </span><span class="old">$42.85</span></div>
+                                        <button class="btn cart-btn">add to cart</button>
+                                    </div>
+                                    <div class="product sold">
+                                        <div class="img">
+                                            <a href="" class="d-block">
+                                                <img class="first-img" src="{{asset('images/1.webp')}}" alt="">
+                                                <img class="second-img" src="{{asset('images/product-tab-img-2.webp')}}" alt="">
+                                            </a>
+                                            <div class="actions">
+                                                <a href="" class="action">
+                                                    <i class="pe-7s-like"></i>
+                                                </a>
+                                                <a href="" class="action">
+                                                    <i class="pe-7s-search"></i>
+                                                </a>
+                                                <a href="" class="action">
+                                                    <i class="pe-7s-shuffle"></i>
+                                                </a>
+                                            </div>
+                                        </div>
+                                        <a href="" class="category">Studio Design</a>
+                                        <a href="" class="title">Brother Hoddies in Grey</a>
+                                        <div class="rating">
+                                        <span>
+                                            <i class="fa-solid fa-star"></i>
+                                            <i class="fa-solid fa-star"></i>
+                                            <i class="fa-solid fa-star"></i>
+                                            <i class="fa-solid fa-star"></i>
+                                            <i class="fa-solid fa-star"></i>
+                                        </span>
+                                            <span class="star">(4)</span>
+                                        </div>
+                                        <div class="price"><span class="new">$38.50 </span><span class="old">$42.85</span></div>
+                                        <button class="btn cart-btn">add to cart</button>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide">
+                                    <div class="product new">
+                                        <div class="img">
+                                            <a href="" class="d-block">
+                                                <img class="first-img" src="{{asset('images/1.webp')}}" alt="">
+                                                <img class="second-img" src="{{asset('images/product-tab-img-2.webp')}}" alt="">
+                                            </a>
+                                            <div class="actions">
+                                                <a href="" class="action">
+                                                    <i class="pe-7s-like"></i>
+                                                </a>
+                                                <a href="" class="action">
+                                                    <i class="pe-7s-search"></i>
+                                                </a>
+                                                <a href="" class="action">
+                                                    <i class="pe-7s-shuffle"></i>
+                                                </a>
+                                            </div>
+                                        </div>
+                                        <a href="" class="category">Studio Design</a>
+                                        <a href="" class="title">Brother Hoddies in Grey</a>
+                                        <div class="rating">
+                                        <span>
+                                            <i class="fa-solid fa-star"></i>
+                                            <i class="fa-solid fa-star"></i>
+                                            <i class="fa-solid fa-star"></i>
+                                            <i class="fa-solid fa-star"></i>
+                                            <i class="fa-solid fa-star"></i>
+                                        </span>
+                                            <span class="star">(4)</span>
+                                        </div>
+                                        <div class="price"><span class="new">$38.50 </span><span class="old">$42.85</span></div>
+                                        <button class="btn cart-btn">add to cart</button>
+                                    </div>
+                                    <div class="product sold">
+                                        <div class="img">
+                                            <a href="" class="d-block">
+                                                <img class="first-img" src="{{asset('images/1.webp')}}" alt="">
+                                                <img class="second-img" src="{{asset('images/product-tab-img-2.webp')}}" alt="">
+                                            </a>
+                                            <div class="actions">
+                                                <a href="" class="action">
+                                                    <i class="pe-7s-like"></i>
+                                                </a>
+                                                <a href="" class="action">
+                                                    <i class="pe-7s-search"></i>
+                                                </a>
+                                                <a href="" class="action">
+                                                    <i class="pe-7s-shuffle"></i>
+                                                </a>
+                                            </div>
+                                        </div>
+                                        <a href="" class="category">Studio Design</a>
+                                        <a href="" class="title">Brother Hoddies in Grey</a>
+                                        <div class="rating">
+                                        <span>
+                                            <i class="fa-solid fa-star"></i>
+                                            <i class="fa-solid fa-star"></i>
+                                            <i class="fa-solid fa-star"></i>
+                                            <i class="fa-solid fa-star"></i>
+                                            <i class="fa-solid fa-star"></i>
+                                        </span>
+                                            <span class="star">(4)</span>
+                                        </div>
+                                        <div class="price"><span class="new">$38.50 </span><span class="old">$42.85</span></div>
+                                        <button class="btn cart-btn">add to cart</button>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide">
+                                    <div class="product new">
+                                        <div class="img">
+                                            <a href="" class="d-block">
+                                                <img class="first-img" src="{{asset('images/1.webp')}}" alt="">
+                                                <img class="second-img" src="{{asset('images/product-tab-img-2.webp')}}" alt="">
+                                            </a>
+                                            <div class="actions">
+                                                <a href="" class="action">
+                                                    <i class="pe-7s-like"></i>
+                                                </a>
+                                                <a href="" class="action">
+                                                    <i class="pe-7s-search"></i>
+                                                </a>
+                                                <a href="" class="action">
+                                                    <i class="pe-7s-shuffle"></i>
+                                                </a>
+                                            </div>
+                                        </div>
+                                        <a href="" class="category">Studio Design</a>
+                                        <a href="" class="title">Brother Hoddies in Grey</a>
+                                        <div class="rating">
+                                        <span>
+                                            <i class="fa-solid fa-star"></i>
+                                            <i class="fa-solid fa-star"></i>
+                                            <i class="fa-solid fa-star"></i>
+                                            <i class="fa-solid fa-star"></i>
+                                            <i class="fa-solid fa-star"></i>
+                                        </span>
+                                            <span class="star">(4)</span>
+                                        </div>
+                                        <div class="price"><span class="new">$38.50 </span><span class="old">$42.85</span></div>
+                                        <button class="btn cart-btn">add to cart</button>
+                                    </div>
+                                    <div class="product sold">
+                                        <div class="img">
+                                            <a href="" class="d-block">
+                                                <img class="first-img" src="{{asset('images/1.webp')}}" alt="">
+                                                <img class="second-img" src="{{asset('images/product-tab-img-2.webp')}}" alt="">
+                                            </a>
+                                            <div class="actions">
+                                                <a href="" class="action">
+                                                    <i class="pe-7s-like"></i>
+                                                </a>
+                                                <a href="" class="action">
+                                                    <i class="pe-7s-search"></i>
+                                                </a>
+                                                <a href="" class="action">
+                                                    <i class="pe-7s-shuffle"></i>
+                                                </a>
+                                            </div>
+                                        </div>
+                                        <a href="" class="category">Studio Design</a>
+                                        <a href="" class="title">Brother Hoddies in Grey</a>
+                                        <div class="rating">
+                                        <span>
+                                            <i class="fa-solid fa-star"></i>
+                                            <i class="fa-solid fa-star"></i>
+                                            <i class="fa-solid fa-star"></i>
+                                            <i class="fa-solid fa-star"></i>
+                                            <i class="fa-solid fa-star"></i>
+                                        </span>
+                                            <span class="star">(4)</span>
+                                        </div>
+                                        <div class="price"><span class="new">$38.50 </span><span class="old">$42.85</span></div>
+                                        <button class="btn cart-btn">add to cart</button>
+                                    </div>
                                 </div>
                             </div>
+                            <!-- If we need navigation buttons -->
+                            <div class="swiper-button-prev"></div>
+                            <div class="swiper-button-next"></div>
+                        </div>
+                    </div>
+                    <div class="best products">
+                        <div class="swiper product-tabs-slider">
+                            <div class="swiper-wrapper">
+                                <div class="swiper-slide">
+                                    <div class="product new">
+                                        <div class="img">
+                                            <a href="" class="d-block">
+                                                <img class="first-img" src="{{asset('images/1.webp')}}" alt="">
+                                                <img class="second-img" src="{{asset('images/product-tab-img-2.webp')}}" alt="">
+                                            </a>
+                                            <div class="actions">
+                                                <a href="" class="action">
+                                                    <i class="pe-7s-like"></i>
+                                                </a>
+                                                <a href="" class="action">
+                                                    <i class="pe-7s-search"></i>
+                                                </a>
+                                                <a href="" class="action">
+                                                    <i class="pe-7s-shuffle"></i>
+                                                </a>
+                                            </div>
+                                        </div>
+                                        <a href="" class="category">Studio Design</a>
+                                        <a href="" class="title">Brother Hoddies in Grey</a>
+                                        <div class="rating">
+                                        <span>
+                                            <i class="fa-solid fa-star"></i>
+                                            <i class="fa-solid fa-star"></i>
+                                            <i class="fa-solid fa-star"></i>
+                                            <i class="fa-solid fa-star"></i>
+                                            <i class="fa-solid fa-star"></i>
+                                        </span>
+                                            <span class="star">(4)</span>
+                                        </div>
+                                        <div class="price">$38.50 <span>$42.85</span></div>
+                                        <button class="btn cart-btn">add to cart</button>
+                                    </div>
+                                    <div class="product sold">
+                                        <div class="img">
+                                            <a href="" class="d-block">
+                                                <img class="first-img" src="{{asset('images/1.webp')}}" alt="">
+                                                <img class="second-img" src="{{asset('images/product-tab-img-2.webp')}}" alt="">
+                                            </a>
+                                            <div class="actions">
+                                                <a href="" class="action">
+                                                    <i class="pe-7s-like"></i>
+                                                </a>
+                                                <a href="" class="action">
+                                                    <i class="pe-7s-search"></i>
+                                                </a>
+                                                <a href="" class="action">
+                                                    <i class="pe-7s-shuffle"></i>
+                                                </a>
+                                            </div>
+                                        </div>
+                                        <a href="" class="category">Studio Design</a>
+                                        <a href="" class="title">Brother Hoddies in Grey</a>
+                                        <div class="rating">
+                                        <span>
+                                            <i class="fa-solid fa-star"></i>
+                                            <i class="fa-solid fa-star"></i>
+                                            <i class="fa-solid fa-star"></i>
+                                            <i class="fa-solid fa-star"></i>
+                                            <i class="fa-solid fa-star"></i>
+                                        </span>
+                                            <span class="star">(4)</span>
+                                        </div>
+                                        <div class="price">$38.50 <span>$42.85</span></div>
+                                        <button class="btn cart-btn">add to cart</button>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide">
+                                    <div class="product">
+                                        <div class="img">
+                                            <a href="" class="d-block">
+                                                <img class="first-img" src="{{asset('images/1.webp')}}" alt="">
+                                                <img class="second-img" src="{{asset('images/product-tab-img-2.webp')}}" alt="">
+                                            </a>
+                                            <div class="actions">
+                                                <a href="" class="action">
+                                                    <i class="pe-7s-like"></i>
+                                                </a>
+                                                <a href="" class="action">
+                                                    <i class="pe-7s-search"></i>
+                                                </a>
+                                                <a href="" class="action">
+                                                    <i class="pe-7s-shuffle"></i>
+                                                </a>
+                                            </div>
+                                        </div>
+                                        <a href="" class="category">Studio Design</a>
+                                        <a href="" class="title">Brother Hoddies in Grey</a>
+                                        <div class="rating">
+                                        <span>
+                                            <i class="fa-solid fa-star"></i>
+                                            <i class="fa-solid fa-star"></i>
+                                            <i class="fa-solid fa-star"></i>
+                                            <i class="fa-solid fa-star"></i>
+                                            <i class="fa-solid fa-star"></i>
+                                        </span>
+                                            <span class="star">(4)</span>
+                                        </div>
+                                        <div class="price">$38.50 <span>$42.85</span></div>
+                                        <button class="btn cart-btn">add to cart</button>
+                                    </div>
+                                    <div class="product">
+                                        <div class="img">
+                                            <a href="" class="d-block">
+                                                <img class="first-img" src="{{asset('images/1.webp')}}" alt="">
+                                                <img class="second-img" src="{{asset('images/product-tab-img-2.webp')}}" alt="">
+                                            </a>
+                                            <div class="actions">
+                                                <a href="" class="action">
+                                                    <i class="pe-7s-like"></i>
+                                                </a>
+                                                <a href="" class="action">
+                                                    <i class="pe-7s-search"></i>
+                                                </a>
+                                                <a href="" class="action">
+                                                    <i class="pe-7s-shuffle"></i>
+                                                </a>
+                                            </div>
+                                        </div>
+                                        <a href="" class="category">Studio Design</a>
+                                        <a href="" class="title">Brother Hoddies in Grey</a>
+                                        <div class="rating">
+                                        <span>
+                                            <i class="fa-solid fa-star"></i>
+                                            <i class="fa-solid fa-star"></i>
+                                            <i class="fa-solid fa-star"></i>
+                                            <i class="fa-solid fa-star"></i>
+                                            <i class="fa-solid fa-star"></i>
+                                        </span>
+                                            <span class="star">(4)</span>
+                                        </div>
+                                        <div class="price">$38.50 <span>$42.85</span></div>
+                                        <button class="btn cart-btn">add to cart</button>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide">
+                                    <div class="product new">
+                                        <div class="img">
+                                            <a href="" class="d-block">
+                                                <img class="first-img" src="{{asset('images/1.webp')}}" alt="">
+                                                <img class="second-img" src="{{asset('images/product-tab-img-2.webp')}}" alt="">
+                                            </a>
+                                            <div class="actions">
+                                                <a href="" class="action">
+                                                    <i class="pe-7s-like"></i>
+                                                </a>
+                                                <a href="" class="action">
+                                                    <i class="pe-7s-search"></i>
+                                                </a>
+                                                <a href="" class="action">
+                                                    <i class="pe-7s-shuffle"></i>
+                                                </a>
+                                            </div>
+                                        </div>
+                                        <a href="" class="category">Studio Design</a>
+                                        <a href="" class="title">Brother Hoddies in Grey</a>
+                                        <div class="rating">
+                                        <span>
+                                            <i class="fa-solid fa-star"></i>
+                                            <i class="fa-solid fa-star"></i>
+                                            <i class="fa-solid fa-star"></i>
+                                            <i class="fa-solid fa-star"></i>
+                                            <i class="fa-solid fa-star"></i>
+                                        </span>
+                                            <span class="star">(4)</span>
+                                        </div>
+                                        <div class="price">$38.50 <span>$42.85</span></div>
+                                        <button class="btn cart-btn">add to cart</button>
+                                    </div>
+                                    <div class="product sold">
+                                        <div class="img">
+                                            <a href="" class="d-block">
+                                                <img class="first-img" src="{{asset('images/1.webp')}}" alt="">
+                                                <img class="second-img" src="{{asset('images/product-tab-img-2.webp')}}" alt="">
+                                            </a>
+                                            <div class="actions">
+                                                <a href="" class="action">
+                                                    <i class="pe-7s-like"></i>
+                                                </a>
+                                                <a href="" class="action">
+                                                    <i class="pe-7s-search"></i>
+                                                </a>
+                                                <a href="" class="action">
+                                                    <i class="pe-7s-shuffle"></i>
+                                                </a>
+                                            </div>
+                                        </div>
+                                        <a href="" class="category">Studio Design</a>
+                                        <a href="" class="title">Brother Hoddies in Grey</a>
+                                        <div class="rating">
+                                        <span>
+                                            <i class="fa-solid fa-star"></i>
+                                            <i class="fa-solid fa-star"></i>
+                                            <i class="fa-solid fa-star"></i>
+                                            <i class="fa-solid fa-star"></i>
+                                            <i class="fa-solid fa-star"></i>
+                                        </span>
+                                            <span class="star">(4)</span>
+                                        </div>
+                                        <div class="price">$38.50 <span>$42.85</span></div>
+                                        <button class="btn cart-btn">add to cart</button>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide">
+                                    <div class="product">
+                                        <div class="img">
+                                            <a href="" class="d-block">
+                                                <img class="first-img" src="{{asset('images/1.webp')}}" alt="">
+                                                <img class="second-img" src="{{asset('images/product-tab-img-2.webp')}}" alt="">
+                                            </a>
+                                            <div class="actions">
+                                                <a href="" class="action">
+                                                    <i class="pe-7s-like"></i>
+                                                </a>
+                                                <a href="" class="action">
+                                                    <i class="pe-7s-search"></i>
+                                                </a>
+                                                <a href="" class="action">
+                                                    <i class="pe-7s-shuffle"></i>
+                                                </a>
+                                            </div>
+                                        </div>
+                                        <a href="" class="category">Studio Design</a>
+                                        <a href="" class="title">Brother Hoddies in Grey</a>
+                                        <div class="rating">
+                                        <span>
+                                            <i class="fa-solid fa-star"></i>
+                                            <i class="fa-solid fa-star"></i>
+                                            <i class="fa-solid fa-star"></i>
+                                            <i class="fa-solid fa-star"></i>
+                                            <i class="fa-solid fa-star"></i>
+                                        </span>
+                                            <span class="star">(4)</span>
+                                        </div>
+                                        <div class="price">$38.50 <span>$42.85</span></div>
+                                        <button class="btn cart-btn">add to cart</button>
+                                    </div>
+                                    <div class="product">
+                                        <div class="img">
+                                            <a href="" class="d-block">
+                                                <img class="first-img" src="{{asset('images/1.webp')}}" alt="">
+                                                <img class="second-img" src="{{asset('images/product-tab-img-2.webp')}}" alt="">
+                                            </a>
+                                            <div class="actions">
+                                                <a href="" class="action">
+                                                    <i class="pe-7s-like"></i>
+                                                </a>
+                                                <a href="" class="action">
+                                                    <i class="pe-7s-search"></i>
+                                                </a>
+                                                <a href="" class="action">
+                                                    <i class="pe-7s-shuffle"></i>
+                                                </a>
+                                            </div>
+                                        </div>
+                                        <a href="" class="category">Studio Design</a>
+                                        <a href="" class="title">Brother Hoddies in Grey</a>
+                                        <div class="rating">
+                                        <span>
+                                            <i class="fa-solid fa-star"></i>
+                                            <i class="fa-solid fa-star"></i>
+                                            <i class="fa-solid fa-star"></i>
+                                            <i class="fa-solid fa-star"></i>
+                                            <i class="fa-solid fa-star"></i>
+                                        </span>
+                                            <span class="star">(4)</span>
+                                        </div>
+                                        <div class="price">$38.50 <span>$42.85</span></div>
+                                        <button class="btn cart-btn">add to cart</button>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide">
+                                    <div class="product new">
+                                        <div class="img">
+                                            <a href="" class="d-block">
+                                                <img class="first-img" src="{{asset('images/1.webp')}}" alt="">
+                                                <img class="second-img" src="{{asset('images/product-tab-img-2.webp')}}" alt="">
+                                            </a>
+                                            <div class="actions">
+                                                <a href="" class="action">
+                                                    <i class="pe-7s-like"></i>
+                                                </a>
+                                                <a href="" class="action">
+                                                    <i class="pe-7s-search"></i>
+                                                </a>
+                                                <a href="" class="action">
+                                                    <i class="pe-7s-shuffle"></i>
+                                                </a>
+                                            </div>
+                                        </div>
+                                        <a href="" class="category">Studio Design</a>
+                                        <a href="" class="title">Brother Hoddies in Grey</a>
+                                        <div class="rating">
+                                        <span>
+                                            <i class="fa-solid fa-star"></i>
+                                            <i class="fa-solid fa-star"></i>
+                                            <i class="fa-solid fa-star"></i>
+                                            <i class="fa-solid fa-star"></i>
+                                            <i class="fa-solid fa-star"></i>
+                                        </span>
+                                            <span class="star">(4)</span>
+                                        </div>
+                                        <div class="price">$38.50 <span>$42.85</span></div>
+                                        <button class="btn cart-btn">add to cart</button>
+                                    </div>
+                                    <div class="product sold">
+                                        <div class="img">
+                                            <a href="" class="d-block">
+                                                <img class="first-img" src="{{asset('images/1.webp')}}" alt="">
+                                                <img class="second-img" src="{{asset('images/product-tab-img-2.webp')}}" alt="">
+                                            </a>
+                                            <div class="actions">
+                                                <a href="" class="action">
+                                                    <i class="pe-7s-like"></i>
+                                                </a>
+                                                <a href="" class="action">
+                                                    <i class="pe-7s-search"></i>
+                                                </a>
+                                                <a href="" class="action">
+                                                    <i class="pe-7s-shuffle"></i>
+                                                </a>
+                                            </div>
+                                        </div>
+                                        <a href="" class="category">Studio Design</a>
+                                        <a href="" class="title">Brother Hoddies in Grey</a>
+                                        <div class="rating">
+                                        <span>
+                                            <i class="fa-solid fa-star"></i>
+                                            <i class="fa-solid fa-star"></i>
+                                            <i class="fa-solid fa-star"></i>
+                                            <i class="fa-solid fa-star"></i>
+                                            <i class="fa-solid fa-star"></i>
+                                        </span>
+                                            <span class="star">(4)</span>
+                                        </div>
+                                        <div class="price">$38.50 <span>$42.85</span></div>
+                                        <button class="btn cart-btn">add to cart</button>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide">
+                                    <div class="product">
+                                        <div class="img">
+                                            <a href="" class="d-block">
+                                                <img class="first-img" src="{{asset('images/1.webp')}}" alt="">
+                                                <img class="second-img" src="{{asset('images/product-tab-img-2.webp')}}" alt="">
+                                            </a>
+                                            <div class="actions">
+                                                <a href="" class="action">
+                                                    <i class="pe-7s-like"></i>
+                                                </a>
+                                                <a href="" class="action">
+                                                    <i class="pe-7s-search"></i>
+                                                </a>
+                                                <a href="" class="action">
+                                                    <i class="pe-7s-shuffle"></i>
+                                                </a>
+                                            </div>
+                                        </div>
+                                        <a href="" class="category">Studio Design</a>
+                                        <a href="" class="title">Brother Hoddies in Grey</a>
+                                        <div class="rating">
+                                        <span>
+                                            <i class="fa-solid fa-star"></i>
+                                            <i class="fa-solid fa-star"></i>
+                                            <i class="fa-solid fa-star"></i>
+                                            <i class="fa-solid fa-star"></i>
+                                            <i class="fa-solid fa-star"></i>
+                                        </span>
+                                            <span class="star">(4)</span>
+                                        </div>
+                                        <div class="price">$38.50 <span>$42.85</span></div>
+                                        <button class="btn cart-btn">add to cart</button>
+                                    </div>
+                                    <div class="product">
+                                        <div class="img">
+                                            <a href="" class="d-block">
+                                                <img class="first-img" src="{{asset('images/1.webp')}}" alt="">
+                                                <img class="second-img" src="{{asset('images/product-tab-img-2.webp')}}" alt="">
+                                            </a>
+                                            <div class="actions">
+                                                <a href="" class="action">
+                                                    <i class="pe-7s-like"></i>
+                                                </a>
+                                                <a href="" class="action">
+                                                    <i class="pe-7s-search"></i>
+                                                </a>
+                                                <a href="" class="action">
+                                                    <i class="pe-7s-shuffle"></i>
+                                                </a>
+                                            </div>
+                                        </div>
+                                        <a href="" class="category">Studio Design</a>
+                                        <a href="" class="title">Brother Hoddies in Grey</a>
+                                        <div class="rating">
+                                        <span>
+                                            <i class="fa-solid fa-star"></i>
+                                            <i class="fa-solid fa-star"></i>
+                                            <i class="fa-solid fa-star"></i>
+                                            <i class="fa-solid fa-star"></i>
+                                            <i class="fa-solid fa-star"></i>
+                                        </span>
+                                            <span class="star">(4)</span>
+                                        </div>
+                                        <div class="price">$38.50 <span>$42.85</span></div>
+                                        <button class="btn cart-btn">add to cart</button>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide">
+                                    <div class="product new">
+                                        <div class="img">
+                                            <a href="" class="d-block">
+                                                <img class="first-img" src="{{asset('images/1.webp')}}" alt="">
+                                                <img class="second-img" src="{{asset('images/product-tab-img-2.webp')}}" alt="">
+                                            </a>
+                                            <div class="actions">
+                                                <a href="" class="action">
+                                                    <i class="pe-7s-like"></i>
+                                                </a>
+                                                <a href="" class="action">
+                                                    <i class="pe-7s-search"></i>
+                                                </a>
+                                                <a href="" class="action">
+                                                    <i class="pe-7s-shuffle"></i>
+                                                </a>
+                                            </div>
+                                        </div>
+                                        <a href="" class="category">Studio Design</a>
+                                        <a href="" class="title">Brother Hoddies in Grey</a>
+                                        <div class="rating">
+                                        <span>
+                                            <i class="fa-solid fa-star"></i>
+                                            <i class="fa-solid fa-star"></i>
+                                            <i class="fa-solid fa-star"></i>
+                                            <i class="fa-solid fa-star"></i>
+                                            <i class="fa-solid fa-star"></i>
+                                        </span>
+                                            <span class="star">(4)</span>
+                                        </div>
+                                        <div class="price">$38.50 <span>$42.85</span></div>
+                                        <button class="btn cart-btn">add to cart</button>
+                                    </div>
+                                    <div class="product sold">
+                                        <div class="img">
+                                            <a href="" class="d-block">
+                                                <img class="first-img" src="{{asset('images/1.webp')}}" alt="">
+                                                <img class="second-img" src="{{asset('images/product-tab-img-2.webp')}}" alt="">
+                                            </a>
+                                            <div class="actions">
+                                                <a href="" class="action">
+                                                    <i class="pe-7s-like"></i>
+                                                </a>
+                                                <a href="" class="action">
+                                                    <i class="pe-7s-search"></i>
+                                                </a>
+                                                <a href="" class="action">
+                                                    <i class="pe-7s-shuffle"></i>
+                                                </a>
+                                            </div>
+                                        </div>
+                                        <a href="" class="category">Studio Design</a>
+                                        <a href="" class="title">Brother Hoddies in Grey</a>
+                                        <div class="rating">
+                                        <span>
+                                            <i class="fa-solid fa-star"></i>
+                                            <i class="fa-solid fa-star"></i>
+                                            <i class="fa-solid fa-star"></i>
+                                            <i class="fa-solid fa-star"></i>
+                                            <i class="fa-solid fa-star"></i>
+                                        </span>
+                                            <span class="star">(4)</span>
+                                        </div>
+                                        <div class="price">$38.50 <span>$42.85</span></div>
+                                        <button class="btn cart-btn">add to cart</button>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide">
+                                    <div class="product">
+                                        <div class="img">
+                                            <a href="" class="d-block">
+                                                <img class="first-img" src="{{asset('images/1.webp')}}" alt="">
+                                                <img class="second-img" src="{{asset('images/product-tab-img-2.webp')}}" alt="">
+                                            </a>
+                                            <div class="actions">
+                                                <a href="" class="action">
+                                                    <i class="pe-7s-like"></i>
+                                                </a>
+                                                <a href="" class="action">
+                                                    <i class="pe-7s-search"></i>
+                                                </a>
+                                                <a href="" class="action">
+                                                    <i class="pe-7s-shuffle"></i>
+                                                </a>
+                                            </div>
+                                        </div>
+                                        <a href="" class="category">Studio Design</a>
+                                        <a href="" class="title">Brother Hoddies in Grey</a>
+                                        <div class="rating">
+                                        <span>
+                                            <i class="fa-solid fa-star"></i>
+                                            <i class="fa-solid fa-star"></i>
+                                            <i class="fa-solid fa-star"></i>
+                                            <i class="fa-solid fa-star"></i>
+                                            <i class="fa-solid fa-star"></i>
+                                        </span>
+                                            <span class="star">(4)</span>
+                                        </div>
+                                        <div class="price">$38.50 <span>$42.85</span></div>
+                                        <button class="btn cart-btn">add to cart</button>
+                                    </div>
+                                    <div class="product">
+                                        <div class="img">
+                                            <a href="" class="d-block">
+                                                <img class="first-img" src="{{asset('images/1.webp')}}" alt="">
+                                                <img class="second-img" src="{{asset('images/product-tab-img-2.webp')}}" alt="">
+                                            </a>
+                                            <div class="actions">
+                                                <a href="" class="action">
+                                                    <i class="pe-7s-like"></i>
+                                                </a>
+                                                <a href="" class="action">
+                                                    <i class="pe-7s-search"></i>
+                                                </a>
+                                                <a href="" class="action">
+                                                    <i class="pe-7s-shuffle"></i>
+                                                </a>
+                                            </div>
+                                        </div>
+                                        <a href="" class="category">Studio Design</a>
+                                        <a href="" class="title">Brother Hoddies in Grey</a>
+                                        <div class="rating">
+                                        <span>
+                                            <i class="fa-solid fa-star"></i>
+                                            <i class="fa-solid fa-star"></i>
+                                            <i class="fa-solid fa-star"></i>
+                                            <i class="fa-solid fa-star"></i>
+                                            <i class="fa-solid fa-star"></i>
+                                        </span>
+                                            <span class="star">(4)</span>
+                                        </div>
+                                        <div class="price">$38.50 <span>$42.85</span></div>
+                                        <button class="btn cart-btn">add to cart</button>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- If we need navigation buttons -->
+                            <div class="swiper-button-prev"></div>
+                            <div class="swiper-button-next"></div>
+                        </div>
+                    </div>
+                    <div class="sale products">
+                        <div class="swiper product-tabs-slider">
+                            <div class="swiper-wrapper">
+                                <div class="swiper-slide">
+                                    <div class="product new">
+                                        <div class="img">
+                                            <a href="" class="d-block">
+                                                <img class="first-img" src="{{asset('images/1.webp')}}" alt="">
+                                                <img class="second-img" src="{{asset('images/product-tab-img-2.webp')}}" alt="">
+                                            </a>
+                                            <div class="actions">
+                                                <a href="" class="action">
+                                                    <i class="pe-7s-like"></i>
+                                                </a>
+                                                <a href="" class="action">
+                                                    <i class="pe-7s-search"></i>
+                                                </a>
+                                                <a href="" class="action">
+                                                    <i class="pe-7s-shuffle"></i>
+                                                </a>
+                                            </div>
+                                        </div>
+                                        <a href="" class="category">Studio Design</a>
+                                        <a href="" class="title">Brother Hoddies in Grey</a>
+                                        <div class="rating">
+                                        <span>
+                                            <i class="fa-solid fa-star"></i>
+                                            <i class="fa-solid fa-star"></i>
+                                            <i class="fa-solid fa-star"></i>
+                                            <i class="fa-solid fa-star"></i>
+                                            <i class="fa-solid fa-star"></i>
+                                        </span>
+                                            <span class="star">(4)</span>
+                                        </div>
+                                        <div class="price">$38.50 <span>$42.85</span></div>
+                                        <button class="btn cart-btn">add to cart</button>
+                                    </div>
+                                    <div class="product sold">
+                                        <div class="img">
+                                            <a href="" class="d-block">
+                                                <img class="first-img" src="{{asset('images/1.webp')}}" alt="">
+                                                <img class="second-img" src="{{asset('images/product-tab-img-2.webp')}}" alt="">
+                                            </a>
+                                            <div class="actions">
+                                                <a href="" class="action">
+                                                    <i class="pe-7s-like"></i>
+                                                </a>
+                                                <a href="" class="action">
+                                                    <i class="pe-7s-search"></i>
+                                                </a>
+                                                <a href="" class="action">
+                                                    <i class="pe-7s-shuffle"></i>
+                                                </a>
+                                            </div>
+                                        </div>
+                                        <a href="" class="category">Studio Design</a>
+                                        <a href="" class="title">Brother Hoddies in Grey</a>
+                                        <div class="rating">
+                                        <span>
+                                            <i class="fa-solid fa-star"></i>
+                                            <i class="fa-solid fa-star"></i>
+                                            <i class="fa-solid fa-star"></i>
+                                            <i class="fa-solid fa-star"></i>
+                                            <i class="fa-solid fa-star"></i>
+                                        </span>
+                                            <span class="star">(4)</span>
+                                        </div>
+                                        <div class="price">$38.50 <span>$42.85</span></div>
+                                        <button class="btn cart-btn">add to cart</button>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide">
+                                    <div class="product">
+                                        <div class="img">
+                                            <a href="" class="d-block">
+                                                <img class="first-img" src="{{asset('images/1.webp')}}" alt="">
+                                                <img class="second-img" src="{{asset('images/product-tab-img-2.webp')}}" alt="">
+                                            </a>
+                                            <div class="actions">
+                                                <a href="" class="action">
+                                                    <i class="pe-7s-like"></i>
+                                                </a>
+                                                <a href="" class="action">
+                                                    <i class="pe-7s-search"></i>
+                                                </a>
+                                                <a href="" class="action">
+                                                    <i class="pe-7s-shuffle"></i>
+                                                </a>
+                                            </div>
+                                        </div>
+                                        <a href="" class="category">Studio Design</a>
+                                        <a href="" class="title">Brother Hoddies in Grey</a>
+                                        <div class="rating">
+                                        <span>
+                                            <i class="fa-solid fa-star"></i>
+                                            <i class="fa-solid fa-star"></i>
+                                            <i class="fa-solid fa-star"></i>
+                                            <i class="fa-solid fa-star"></i>
+                                            <i class="fa-solid fa-star"></i>
+                                        </span>
+                                            <span class="star">(4)</span>
+                                        </div>
+                                        <div class="price">$38.50 <span>$42.85</span></div>
+                                        <button class="btn cart-btn">add to cart</button>
+                                    </div>
+                                    <div class="product">
+                                        <div class="img">
+                                            <a href="" class="d-block">
+                                                <img class="first-img" src="{{asset('images/1.webp')}}" alt="">
+                                                <img class="second-img" src="{{asset('images/product-tab-img-2.webp')}}" alt="">
+                                            </a>
+                                            <div class="actions">
+                                                <a href="" class="action">
+                                                    <i class="pe-7s-like"></i>
+                                                </a>
+                                                <a href="" class="action">
+                                                    <i class="pe-7s-search"></i>
+                                                </a>
+                                                <a href="" class="action">
+                                                    <i class="pe-7s-shuffle"></i>
+                                                </a>
+                                            </div>
+                                        </div>
+                                        <a href="" class="category">Studio Design</a>
+                                        <a href="" class="title">Brother Hoddies in Grey</a>
+                                        <div class="rating">
+                                        <span>
+                                            <i class="fa-solid fa-star"></i>
+                                            <i class="fa-solid fa-star"></i>
+                                            <i class="fa-solid fa-star"></i>
+                                            <i class="fa-solid fa-star"></i>
+                                            <i class="fa-solid fa-star"></i>
+                                        </span>
+                                            <span class="star">(4)</span>
+                                        </div>
+                                        <div class="price">$38.50 <span>$42.85</span></div>
+                                        <button class="btn cart-btn">add to cart</button>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide">
+                                    <div class="product new">
+                                        <div class="img">
+                                            <a href="" class="d-block">
+                                                <img class="first-img" src="{{asset('images/1.webp')}}" alt="">
+                                                <img class="second-img" src="{{asset('images/product-tab-img-2.webp')}}" alt="">
+                                            </a>
+                                            <div class="actions">
+                                                <a href="" class="action">
+                                                    <i class="pe-7s-like"></i>
+                                                </a>
+                                                <a href="" class="action">
+                                                    <i class="pe-7s-search"></i>
+                                                </a>
+                                                <a href="" class="action">
+                                                    <i class="pe-7s-shuffle"></i>
+                                                </a>
+                                            </div>
+                                        </div>
+                                        <a href="" class="category">Studio Design</a>
+                                        <a href="" class="title">Brother Hoddies in Grey</a>
+                                        <div class="rating">
+                                        <span>
+                                            <i class="fa-solid fa-star"></i>
+                                            <i class="fa-solid fa-star"></i>
+                                            <i class="fa-solid fa-star"></i>
+                                            <i class="fa-solid fa-star"></i>
+                                            <i class="fa-solid fa-star"></i>
+                                        </span>
+                                            <span class="star">(4)</span>
+                                        </div>
+                                        <div class="price">$38.50 <span>$42.85</span></div>
+                                        <button class="btn cart-btn">add to cart</button>
+                                    </div>
+                                    <div class="product sold">
+                                        <div class="img">
+                                            <a href="" class="d-block">
+                                                <img class="first-img" src="{{asset('images/1.webp')}}" alt="">
+                                                <img class="second-img" src="{{asset('images/product-tab-img-2.webp')}}" alt="">
+                                            </a>
+                                            <div class="actions">
+                                                <a href="" class="action">
+                                                    <i class="pe-7s-like"></i>
+                                                </a>
+                                                <a href="" class="action">
+                                                    <i class="pe-7s-search"></i>
+                                                </a>
+                                                <a href="" class="action">
+                                                    <i class="pe-7s-shuffle"></i>
+                                                </a>
+                                            </div>
+                                        </div>
+                                        <a href="" class="category">Studio Design</a>
+                                        <a href="" class="title">Brother Hoddies in Grey</a>
+                                        <div class="rating">
+                                        <span>
+                                            <i class="fa-solid fa-star"></i>
+                                            <i class="fa-solid fa-star"></i>
+                                            <i class="fa-solid fa-star"></i>
+                                            <i class="fa-solid fa-star"></i>
+                                            <i class="fa-solid fa-star"></i>
+                                        </span>
+                                            <span class="star">(4)</span>
+                                        </div>
+                                        <div class="price">$38.50 <span>$42.85</span></div>
+                                        <button class="btn cart-btn">add to cart</button>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide">
+                                    <div class="product">
+                                        <div class="img">
+                                            <a href="" class="d-block">
+                                                <img class="first-img" src="{{asset('images/1.webp')}}" alt="">
+                                                <img class="second-img" src="{{asset('images/product-tab-img-2.webp')}}" alt="">
+                                            </a>
+                                            <div class="actions">
+                                                <a href="" class="action">
+                                                    <i class="pe-7s-like"></i>
+                                                </a>
+                                                <a href="" class="action">
+                                                    <i class="pe-7s-search"></i>
+                                                </a>
+                                                <a href="" class="action">
+                                                    <i class="pe-7s-shuffle"></i>
+                                                </a>
+                                            </div>
+                                        </div>
+                                        <a href="" class="category">Studio Design</a>
+                                        <a href="" class="title">Brother Hoddies in Grey</a>
+                                        <div class="rating">
+                                        <span>
+                                            <i class="fa-solid fa-star"></i>
+                                            <i class="fa-solid fa-star"></i>
+                                            <i class="fa-solid fa-star"></i>
+                                            <i class="fa-solid fa-star"></i>
+                                            <i class="fa-solid fa-star"></i>
+                                        </span>
+                                            <span class="star">(4)</span>
+                                        </div>
+                                        <div class="price">$38.50 <span>$42.85</span></div>
+                                        <button class="btn cart-btn">add to cart</button>
+                                    </div>
+                                    <div class="product">
+                                        <div class="img">
+                                            <a href="" class="d-block">
+                                                <img class="first-img" src="{{asset('images/1.webp')}}" alt="">
+                                                <img class="second-img" src="{{asset('images/product-tab-img-2.webp')}}" alt="">
+                                            </a>
+                                            <div class="actions">
+                                                <a href="" class="action">
+                                                    <i class="pe-7s-like"></i>
+                                                </a>
+                                                <a href="" class="action">
+                                                    <i class="pe-7s-search"></i>
+                                                </a>
+                                                <a href="" class="action">
+                                                    <i class="pe-7s-shuffle"></i>
+                                                </a>
+                                            </div>
+                                        </div>
+                                        <a href="" class="category">Studio Design</a>
+                                        <a href="" class="title">Brother Hoddies in Grey</a>
+                                        <div class="rating">
+                                        <span>
+                                            <i class="fa-solid fa-star"></i>
+                                            <i class="fa-solid fa-star"></i>
+                                            <i class="fa-solid fa-star"></i>
+                                            <i class="fa-solid fa-star"></i>
+                                            <i class="fa-solid fa-star"></i>
+                                        </span>
+                                            <span class="star">(4)</span>
+                                        </div>
+                                        <div class="price">$38.50 <span>$42.85</span></div>
+                                        <button class="btn cart-btn">add to cart</button>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide">
+                                    <div class="product new">
+                                        <div class="img">
+                                            <a href="" class="d-block">
+                                                <img class="first-img" src="{{asset('images/1.webp')}}" alt="">
+                                                <img class="second-img" src="{{asset('images/product-tab-img-2.webp')}}" alt="">
+                                            </a>
+                                            <div class="actions">
+                                                <a href="" class="action">
+                                                    <i class="pe-7s-like"></i>
+                                                </a>
+                                                <a href="" class="action">
+                                                    <i class="pe-7s-search"></i>
+                                                </a>
+                                                <a href="" class="action">
+                                                    <i class="pe-7s-shuffle"></i>
+                                                </a>
+                                            </div>
+                                        </div>
+                                        <a href="" class="category">Studio Design</a>
+                                        <a href="" class="title">Brother Hoddies in Grey</a>
+                                        <div class="rating">
+                                        <span>
+                                            <i class="fa-solid fa-star"></i>
+                                            <i class="fa-solid fa-star"></i>
+                                            <i class="fa-solid fa-star"></i>
+                                            <i class="fa-solid fa-star"></i>
+                                            <i class="fa-solid fa-star"></i>
+                                        </span>
+                                            <span class="star">(4)</span>
+                                        </div>
+                                        <div class="price">$38.50 <span>$42.85</span></div>
+                                        <button class="btn cart-btn">add to cart</button>
+                                    </div>
+                                    <div class="product sold">
+                                        <div class="img">
+                                            <a href="" class="d-block">
+                                                <img class="first-img" src="{{asset('images/1.webp')}}" alt="">
+                                                <img class="second-img" src="{{asset('images/product-tab-img-2.webp')}}" alt="">
+                                            </a>
+                                            <div class="actions">
+                                                <a href="" class="action">
+                                                    <i class="pe-7s-like"></i>
+                                                </a>
+                                                <a href="" class="action">
+                                                    <i class="pe-7s-search"></i>
+                                                </a>
+                                                <a href="" class="action">
+                                                    <i class="pe-7s-shuffle"></i>
+                                                </a>
+                                            </div>
+                                        </div>
+                                        <a href="" class="category">Studio Design</a>
+                                        <a href="" class="title">Brother Hoddies in Grey</a>
+                                        <div class="rating">
+                                        <span>
+                                            <i class="fa-solid fa-star"></i>
+                                            <i class="fa-solid fa-star"></i>
+                                            <i class="fa-solid fa-star"></i>
+                                            <i class="fa-solid fa-star"></i>
+                                            <i class="fa-solid fa-star"></i>
+                                        </span>
+                                            <span class="star">(4)</span>
+                                        </div>
+                                        <div class="price">$38.50 <span>$42.85</span></div>
+                                        <button class="btn cart-btn">add to cart</button>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide">
+                                    <div class="product">
+                                        <div class="img">
+                                            <a href="" class="d-block">
+                                                <img class="first-img" src="{{asset('images/1.webp')}}" alt="">
+                                                <img class="second-img" src="{{asset('images/product-tab-img-2.webp')}}" alt="">
+                                            </a>
+                                            <div class="actions">
+                                                <a href="" class="action">
+                                                    <i class="pe-7s-like"></i>
+                                                </a>
+                                                <a href="" class="action">
+                                                    <i class="pe-7s-search"></i>
+                                                </a>
+                                                <a href="" class="action">
+                                                    <i class="pe-7s-shuffle"></i>
+                                                </a>
+                                            </div>
+                                        </div>
+                                        <a href="" class="category">Studio Design</a>
+                                        <a href="" class="title">Brother Hoddies in Grey</a>
+                                        <div class="rating">
+                                        <span>
+                                            <i class="fa-solid fa-star"></i>
+                                            <i class="fa-solid fa-star"></i>
+                                            <i class="fa-solid fa-star"></i>
+                                            <i class="fa-solid fa-star"></i>
+                                            <i class="fa-solid fa-star"></i>
+                                        </span>
+                                            <span class="star">(4)</span>
+                                        </div>
+                                        <div class="price">$38.50 <span>$42.85</span></div>
+                                        <button class="btn cart-btn">add to cart</button>
+                                    </div>
+                                    <div class="product">
+                                        <div class="img">
+                                            <a href="" class="d-block">
+                                                <img class="first-img" src="{{asset('images/1.webp')}}" alt="">
+                                                <img class="second-img" src="{{asset('images/product-tab-img-2.webp')}}" alt="">
+                                            </a>
+                                            <div class="actions">
+                                                <a href="" class="action">
+                                                    <i class="pe-7s-like"></i>
+                                                </a>
+                                                <a href="" class="action">
+                                                    <i class="pe-7s-search"></i>
+                                                </a>
+                                                <a href="" class="action">
+                                                    <i class="pe-7s-shuffle"></i>
+                                                </a>
+                                            </div>
+                                        </div>
+                                        <a href="" class="category">Studio Design</a>
+                                        <a href="" class="title">Brother Hoddies in Grey</a>
+                                        <div class="rating">
+                                        <span>
+                                            <i class="fa-solid fa-star"></i>
+                                            <i class="fa-solid fa-star"></i>
+                                            <i class="fa-solid fa-star"></i>
+                                            <i class="fa-solid fa-star"></i>
+                                            <i class="fa-solid fa-star"></i>
+                                        </span>
+                                            <span class="star">(4)</span>
+                                        </div>
+                                        <div class="price">$38.50 <span>$42.85</span></div>
+                                        <button class="btn cart-btn">add to cart</button>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide">
+                                    <div class="product new">
+                                        <div class="img">
+                                            <a href="" class="d-block">
+                                                <img class="first-img" src="{{asset('images/1.webp')}}" alt="">
+                                                <img class="second-img" src="{{asset('images/product-tab-img-2.webp')}}" alt="">
+                                            </a>
+                                            <div class="actions">
+                                                <a href="" class="action">
+                                                    <i class="pe-7s-like"></i>
+                                                </a>
+                                                <a href="" class="action">
+                                                    <i class="pe-7s-search"></i>
+                                                </a>
+                                                <a href="" class="action">
+                                                    <i class="pe-7s-shuffle"></i>
+                                                </a>
+                                            </div>
+                                        </div>
+                                        <a href="" class="category">Studio Design</a>
+                                        <a href="" class="title">Brother Hoddies in Grey</a>
+                                        <div class="rating">
+                                        <span>
+                                            <i class="fa-solid fa-star"></i>
+                                            <i class="fa-solid fa-star"></i>
+                                            <i class="fa-solid fa-star"></i>
+                                            <i class="fa-solid fa-star"></i>
+                                            <i class="fa-solid fa-star"></i>
+                                        </span>
+                                            <span class="star">(4)</span>
+                                        </div>
+                                        <div class="price">$38.50 <span>$42.85</span></div>
+                                        <button class="btn cart-btn">add to cart</button>
+                                    </div>
+                                    <div class="product sold">
+                                        <div class="img">
+                                            <a href="" class="d-block">
+                                                <img class="first-img" src="{{asset('images/1.webp')}}" alt="">
+                                                <img class="second-img" src="{{asset('images/product-tab-img-2.webp')}}" alt="">
+                                            </a>
+                                            <div class="actions">
+                                                <a href="" class="action">
+                                                    <i class="pe-7s-like"></i>
+                                                </a>
+                                                <a href="" class="action">
+                                                    <i class="pe-7s-search"></i>
+                                                </a>
+                                                <a href="" class="action">
+                                                    <i class="pe-7s-shuffle"></i>
+                                                </a>
+                                            </div>
+                                        </div>
+                                        <a href="" class="category">Studio Design</a>
+                                        <a href="" class="title">Brother Hoddies in Grey</a>
+                                        <div class="rating">
+                                        <span>
+                                            <i class="fa-solid fa-star"></i>
+                                            <i class="fa-solid fa-star"></i>
+                                            <i class="fa-solid fa-star"></i>
+                                            <i class="fa-solid fa-star"></i>
+                                            <i class="fa-solid fa-star"></i>
+                                        </span>
+                                            <span class="star">(4)</span>
+                                        </div>
+                                        <div class="price">$38.50 <span>$42.85</span></div>
+                                        <button class="btn cart-btn">add to cart</button>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide">
+                                    <div class="product">
+                                        <div class="img">
+                                            <a href="" class="d-block">
+                                                <img class="first-img" src="{{asset('images/1.webp')}}" alt="">
+                                                <img class="second-img" src="{{asset('images/product-tab-img-2.webp')}}" alt="">
+                                            </a>
+                                            <div class="actions">
+                                                <a href="" class="action">
+                                                    <i class="pe-7s-like"></i>
+                                                </a>
+                                                <a href="" class="action">
+                                                    <i class="pe-7s-search"></i>
+                                                </a>
+                                                <a href="" class="action">
+                                                    <i class="pe-7s-shuffle"></i>
+                                                </a>
+                                            </div>
+                                        </div>
+                                        <a href="" class="category">Studio Design</a>
+                                        <a href="" class="title">Brother Hoddies in Grey</a>
+                                        <div class="rating">
+                                        <span>
+                                            <i class="fa-solid fa-star"></i>
+                                            <i class="fa-solid fa-star"></i>
+                                            <i class="fa-solid fa-star"></i>
+                                            <i class="fa-solid fa-star"></i>
+                                            <i class="fa-solid fa-star"></i>
+                                        </span>
+                                            <span class="star">(4)</span>
+                                        </div>
+                                        <div class="price">$38.50 <span>$42.85</span></div>
+                                        <button class="btn cart-btn">add to cart</button>
+                                    </div>
+                                    <div class="product">
+                                        <div class="img">
+                                            <a href="" class="d-block">
+                                                <img class="first-img" src="{{asset('images/1.webp')}}" alt="">
+                                                <img class="second-img" src="{{asset('images/product-tab-img-2.webp')}}" alt="">
+                                            </a>
+                                            <div class="actions">
+                                                <a href="" class="action">
+                                                    <i class="pe-7s-like"></i>
+                                                </a>
+                                                <a href="" class="action">
+                                                    <i class="pe-7s-search"></i>
+                                                </a>
+                                                <a href="" class="action">
+                                                    <i class="pe-7s-shuffle"></i>
+                                                </a>
+                                            </div>
+                                        </div>
+                                        <a href="" class="category">Studio Design</a>
+                                        <a href="" class="title">Brother Hoddies in Grey</a>
+                                        <div class="rating">
+                                        <span>
+                                            <i class="fa-solid fa-star"></i>
+                                            <i class="fa-solid fa-star"></i>
+                                            <i class="fa-solid fa-star"></i>
+                                            <i class="fa-solid fa-star"></i>
+                                            <i class="fa-solid fa-star"></i>
+                                        </span>
+                                            <span class="star">(4)</span>
+                                        </div>
+                                        <div class="price">$38.50 <span>$42.85</span></div>
+                                        <button class="btn cart-btn">add to cart</button>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- If we need navigation buttons -->
+                            <div class="swiper-button-prev"></div>
+                            <div class="swiper-button-next"></div>
                         </div>
                     </div>
                 </div>
@@ -276,15 +1817,19 @@
                             <div class="header">
                                 <div class="title">best offer</div>
                             </div>
-                            <div class="products">
-                                <div class="each">
-                                    <div class="img">
-                                        <img src="{{asset('images/5.webp')}}" alt="">
-                                    </div>
-                                    <div class="info">
-                                        <a href="" class="title">Make Thing Happen T-Shirt</a>
-                                        <div class="price">$66.50 <span>$70.55</span></div>
-                                        <div class="rating">
+                            <div class="swiper best-offer-slider">
+                                <div class="swiper-wrapper">
+                                    <div class="swiper-slide">
+                                        <div class="products">
+                                            <div class="each">
+                                                <div class="img">
+                                                    <img class="first-img" src="{{asset('images/5.webp')}}" alt="">
+                                                    <img class="second-img" src="{{asset('images/6.webp')}}" alt="">
+                                                </div>
+                                                <div class="info">
+                                                    <a href="" class="title">Make Thing Happen T-Shirt</a>
+                                                    <div class="price">$66.50 <span>$70.55</span></div>
+                                                    <div class="rating">
                                         <span>
                                             <i class="fa-solid fa-star"></i>
                                             <i class="fa-solid fa-star"></i>
@@ -292,18 +1837,19 @@
                                             <i class="fa-solid fa-star"></i>
                                             <i class="fa-solid fa-star"></i>
                                         </span>
-                                            <span class="star">(4)</span>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="each">
-                                    <div class="img">
-                                        <img src="{{asset('images/5.webp')}}" alt="">
-                                    </div>
-                                    <div class="info">
-                                        <a href="" class="title">Make Thing Happen T-Shirt</a>
-                                        <div class="price">$66.50 <span>$70.55</span></div>
-                                        <div class="rating">
+                                                        <span class="star">(4)</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="each">
+                                                <div class="img">
+                                                    <img class="first-img" src="{{asset('images/5.webp')}}" alt="">
+                                                    <img class="second-img" src="{{asset('images/6.webp')}}" alt="">
+                                                </div>
+                                                <div class="info">
+                                                    <a href="" class="title">Make Thing Happen T-Shirt</a>
+                                                    <div class="price">$66.50 <span>$70.55</span></div>
+                                                    <div class="rating">
                                         <span>
                                             <i class="fa-solid fa-star"></i>
                                             <i class="fa-solid fa-star"></i>
@@ -311,18 +1857,19 @@
                                             <i class="fa-solid fa-star"></i>
                                             <i class="fa-solid fa-star"></i>
                                         </span>
-                                            <span class="star">(4)</span>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="each">
-                                    <div class="img">
-                                        <img src="{{asset('images/5.webp')}}" alt="">
-                                    </div>
-                                    <div class="info">
-                                        <a href="" class="title">Make Thing Happen T-Shirt</a>
-                                        <div class="price">$66.50 <span>$70.55</span></div>
-                                        <div class="rating">
+                                                        <span class="star">(4)</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="each">
+                                                <div class="img">
+                                                    <img class="first-img" src="{{asset('images/5.webp')}}" alt="">
+                                                    <img class="second-img" src="{{asset('images/6.webp')}}" alt="">
+                                                </div>
+                                                <div class="info">
+                                                    <a href="" class="title">Make Thing Happen T-Shirt</a>
+                                                    <div class="price">$66.50 <span>$70.55</span></div>
+                                                    <div class="rating">
                                         <span>
                                             <i class="fa-solid fa-star"></i>
                                             <i class="fa-solid fa-star"></i>
@@ -330,10 +1877,144 @@
                                             <i class="fa-solid fa-star"></i>
                                             <i class="fa-solid fa-star"></i>
                                         </span>
-                                            <span class="star">(4)</span>
+                                                        <span class="star">(4)</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <div class="products">
+                                            <div class="each">
+                                                <div class="img">
+                                                    <img class="first-img" src="{{asset('images/5.webp')}}" alt="">
+                                                    <img class="second-img" src="{{asset('images/6.webp')}}" alt="">
+                                                </div>
+                                                <div class="info">
+                                                    <a href="" class="title">Make Thing Happen T-Shirt</a>
+                                                    <div class="price">$66.50 <span>$70.55</span></div>
+                                                    <div class="rating">
+                                        <span>
+                                            <i class="fa-solid fa-star"></i>
+                                            <i class="fa-solid fa-star"></i>
+                                            <i class="fa-solid fa-star"></i>
+                                            <i class="fa-solid fa-star"></i>
+                                            <i class="fa-solid fa-star"></i>
+                                        </span>
+                                                        <span class="star">(4)</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="each">
+                                                <div class="img">
+                                                    <img class="first-img" src="{{asset('images/5.webp')}}" alt="">
+                                                    <img class="second-img" src="{{asset('images/6.webp')}}" alt="">
+                                                </div>
+                                                <div class="info">
+                                                    <a href="" class="title">Make Thing Happen T-Shirt</a>
+                                                    <div class="price">$66.50 <span>$70.55</span></div>
+                                                    <div class="rating">
+                                        <span>
+                                            <i class="fa-solid fa-star"></i>
+                                            <i class="fa-solid fa-star"></i>
+                                            <i class="fa-solid fa-star"></i>
+                                            <i class="fa-solid fa-star"></i>
+                                            <i class="fa-solid fa-star"></i>
+                                        </span>
+                                                        <span class="star">(4)</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="each">
+                                                <div class="img">
+                                                    <img class="first-img" src="{{asset('images/5.webp')}}" alt="">
+                                                    <img class="second-img" src="{{asset('images/6.webp')}}" alt="">
+                                                </div>
+                                                <div class="info">
+                                                    <a href="" class="title">Make Thing Happen T-Shirt</a>
+                                                    <div class="price">$66.50 <span>$70.55</span></div>
+                                                    <div class="rating">
+                                        <span>
+                                            <i class="fa-solid fa-star"></i>
+                                            <i class="fa-solid fa-star"></i>
+                                            <i class="fa-solid fa-star"></i>
+                                            <i class="fa-solid fa-star"></i>
+                                            <i class="fa-solid fa-star"></i>
+                                        </span>
+                                                        <span class="star">(4)</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <div class="products">
+                                            <div class="each">
+                                                <div class="img">
+                                                    <img class="first-img" src="{{asset('images/5.webp')}}" alt="">
+                                                    <img class="second-img" src="{{asset('images/6.webp')}}" alt="">
+                                                </div>
+                                                <div class="info">
+                                                    <a href="" class="title">Make Thing Happen T-Shirt</a>
+                                                    <div class="price">$66.50 <span>$70.55</span></div>
+                                                    <div class="rating">
+                                        <span>
+                                            <i class="fa-solid fa-star"></i>
+                                            <i class="fa-solid fa-star"></i>
+                                            <i class="fa-solid fa-star"></i>
+                                            <i class="fa-solid fa-star"></i>
+                                            <i class="fa-solid fa-star"></i>
+                                        </span>
+                                                        <span class="star">(4)</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="each">
+                                                <div class="img">
+                                                    <img class="first-img" src="{{asset('images/5.webp')}}" alt="">
+                                                    <img class="second-img" src="{{asset('images/6.webp')}}" alt="">
+                                                </div>
+                                                <div class="info">
+                                                    <a href="" class="title">Make Thing Happen T-Shirt</a>
+                                                    <div class="price">$66.50 <span>$70.55</span></div>
+                                                    <div class="rating">
+                                        <span>
+                                            <i class="fa-solid fa-star"></i>
+                                            <i class="fa-solid fa-star"></i>
+                                            <i class="fa-solid fa-star"></i>
+                                            <i class="fa-solid fa-star"></i>
+                                            <i class="fa-solid fa-star"></i>
+                                        </span>
+                                                        <span class="star">(4)</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="each">
+                                                <div class="img">
+                                                    <img class="first-img" src="{{asset('images/5.webp')}}" alt="">
+                                                    <img class="second-img" src="{{asset('images/6.webp')}}" alt="">
+                                                </div>
+                                                <div class="info">
+                                                    <a href="" class="title">Make Thing Happen T-Shirt</a>
+                                                    <div class="price">$66.50 <span>$70.55</span></div>
+                                                    <div class="rating">
+                                        <span>
+                                            <i class="fa-solid fa-star"></i>
+                                            <i class="fa-solid fa-star"></i>
+                                            <i class="fa-solid fa-star"></i>
+                                            <i class="fa-solid fa-star"></i>
+                                            <i class="fa-solid fa-star"></i>
+                                        </span>
+                                                        <span class="star">(4)</span>
+                                                    </div>
+                                                </div>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
+                                <!-- If we need navigation buttons -->
+                                <div class="swiper-button-prev"></div>
+                                <div class="swiper-button-next"></div>
                             </div>
                         </div>
                     </div>
@@ -342,15 +2023,19 @@
                             <div class="header">
                                 <div class="title">new products</div>
                             </div>
-                            <div class="products">
-                                <div class="each">
-                                    <div class="img">
-                                        <img src="{{asset('images/5.webp')}}" alt="">
-                                    </div>
-                                    <div class="info">
-                                        <a href="" class="title">Make Thing Happen T-Shirt</a>
-                                        <div class="price">$66.50 <span>$70.55</span></div>
-                                        <div class="rating">
+                            <div class="swiper new-product-slider">
+                                <div class="swiper-wrapper">
+                                    <div class="swiper-slide">
+                                        <div class="products">
+                                            <div class="each">
+                                                <div class="img">
+                                                    <img class="first-img" src="{{asset('images/5.webp')}}" alt="">
+                                                    <img class="second-img" src="{{asset('images/6.webp')}}" alt="">
+                                                </div>
+                                                <div class="info">
+                                                    <a href="" class="title">Make Thing Happen T-Shirt</a>
+                                                    <div class="price">$66.50 <span>$70.55</span></div>
+                                                    <div class="rating">
                                         <span>
                                             <i class="fa-solid fa-star"></i>
                                             <i class="fa-solid fa-star"></i>
@@ -358,18 +2043,19 @@
                                             <i class="fa-solid fa-star"></i>
                                             <i class="fa-solid fa-star"></i>
                                         </span>
-                                            <span class="star">(4)</span>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="each">
-                                    <div class="img">
-                                        <img src="{{asset('images/5.webp')}}" alt="">
-                                    </div>
-                                    <div class="info">
-                                        <a href="" class="title">Make Thing Happen T-Shirt</a>
-                                        <div class="price">$66.50 <span>$70.55</span></div>
-                                        <div class="rating">
+                                                        <span class="star">(4)</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="each">
+                                                <div class="img">
+                                                    <img class="first-img" src="{{asset('images/5.webp')}}" alt="">
+                                                    <img class="second-img" src="{{asset('images/6.webp')}}" alt="">
+                                                </div>
+                                                <div class="info">
+                                                    <a href="" class="title">Make Thing Happen T-Shirt</a>
+                                                    <div class="price">$66.50 <span>$70.55</span></div>
+                                                    <div class="rating">
                                         <span>
                                             <i class="fa-solid fa-star"></i>
                                             <i class="fa-solid fa-star"></i>
@@ -377,18 +2063,19 @@
                                             <i class="fa-solid fa-star"></i>
                                             <i class="fa-solid fa-star"></i>
                                         </span>
-                                            <span class="star">(4)</span>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="each">
-                                    <div class="img">
-                                        <img src="{{asset('images/5.webp')}}" alt="">
-                                    </div>
-                                    <div class="info">
-                                        <a href="" class="title">Make Thing Happen T-Shirt</a>
-                                        <div class="price">$66.50 <span>$70.55</span></div>
-                                        <div class="rating">
+                                                        <span class="star">(4)</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="each">
+                                                <div class="img">
+                                                    <img class="first-img" src="{{asset('images/5.webp')}}" alt="">
+                                                    <img class="second-img" src="{{asset('images/6.webp')}}" alt="">
+                                                </div>
+                                                <div class="info">
+                                                    <a href="" class="title">Make Thing Happen T-Shirt</a>
+                                                    <div class="price">$66.50 <span>$70.55</span></div>
+                                                    <div class="rating">
                                         <span>
                                             <i class="fa-solid fa-star"></i>
                                             <i class="fa-solid fa-star"></i>
@@ -396,10 +2083,144 @@
                                             <i class="fa-solid fa-star"></i>
                                             <i class="fa-solid fa-star"></i>
                                         </span>
-                                            <span class="star">(4)</span>
+                                                        <span class="star">(4)</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <div class="products">
+                                            <div class="each">
+                                                <div class="img">
+                                                    <img class="first-img" src="{{asset('images/5.webp')}}" alt="">
+                                                    <img class="second-img" src="{{asset('images/6.webp')}}" alt="">
+                                                </div>
+                                                <div class="info">
+                                                    <a href="" class="title">Make Thing Happen T-Shirt</a>
+                                                    <div class="price">$66.50 <span>$70.55</span></div>
+                                                    <div class="rating">
+                                        <span>
+                                            <i class="fa-solid fa-star"></i>
+                                            <i class="fa-solid fa-star"></i>
+                                            <i class="fa-solid fa-star"></i>
+                                            <i class="fa-solid fa-star"></i>
+                                            <i class="fa-solid fa-star"></i>
+                                        </span>
+                                                        <span class="star">(4)</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="each">
+                                                <div class="img">
+                                                    <img class="first-img" src="{{asset('images/5.webp')}}" alt="">
+                                                    <img class="second-img" src="{{asset('images/6.webp')}}" alt="">
+                                                </div>
+                                                <div class="info">
+                                                    <a href="" class="title">Make Thing Happen T-Shirt</a>
+                                                    <div class="price">$66.50 <span>$70.55</span></div>
+                                                    <div class="rating">
+                                        <span>
+                                            <i class="fa-solid fa-star"></i>
+                                            <i class="fa-solid fa-star"></i>
+                                            <i class="fa-solid fa-star"></i>
+                                            <i class="fa-solid fa-star"></i>
+                                            <i class="fa-solid fa-star"></i>
+                                        </span>
+                                                        <span class="star">(4)</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="each">
+                                                <div class="img">
+                                                    <img class="first-img" src="{{asset('images/5.webp')}}" alt="">
+                                                    <img class="second-img" src="{{asset('images/6.webp')}}" alt="">
+                                                </div>
+                                                <div class="info">
+                                                    <a href="" class="title">Make Thing Happen T-Shirt</a>
+                                                    <div class="price">$66.50 <span>$70.55</span></div>
+                                                    <div class="rating">
+                                        <span>
+                                            <i class="fa-solid fa-star"></i>
+                                            <i class="fa-solid fa-star"></i>
+                                            <i class="fa-solid fa-star"></i>
+                                            <i class="fa-solid fa-star"></i>
+                                            <i class="fa-solid fa-star"></i>
+                                        </span>
+                                                        <span class="star">(4)</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <div class="products">
+                                            <div class="each">
+                                                <div class="img">
+                                                    <img class="first-img" src="{{asset('images/5.webp')}}" alt="">
+                                                    <img class="second-img" src="{{asset('images/6.webp')}}" alt="">
+                                                </div>
+                                                <div class="info">
+                                                    <a href="" class="title">Make Thing Happen T-Shirt</a>
+                                                    <div class="price">$66.50 <span>$70.55</span></div>
+                                                    <div class="rating">
+                                        <span>
+                                            <i class="fa-solid fa-star"></i>
+                                            <i class="fa-solid fa-star"></i>
+                                            <i class="fa-solid fa-star"></i>
+                                            <i class="fa-solid fa-star"></i>
+                                            <i class="fa-solid fa-star"></i>
+                                        </span>
+                                                        <span class="star">(4)</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="each">
+                                                <div class="img">
+                                                    <img class="first-img" src="{{asset('images/5.webp')}}" alt="">
+                                                    <img class="second-img" src="{{asset('images/6.webp')}}" alt="">
+                                                </div>
+                                                <div class="info">
+                                                    <a href="" class="title">Make Thing Happen T-Shirt</a>
+                                                    <div class="price">$66.50 <span>$70.55</span></div>
+                                                    <div class="rating">
+                                        <span>
+                                            <i class="fa-solid fa-star"></i>
+                                            <i class="fa-solid fa-star"></i>
+                                            <i class="fa-solid fa-star"></i>
+                                            <i class="fa-solid fa-star"></i>
+                                            <i class="fa-solid fa-star"></i>
+                                        </span>
+                                                        <span class="star">(4)</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="each">
+                                                <div class="img">
+                                                    <img class="first-img" src="{{asset('images/5.webp')}}" alt="">
+                                                    <img class="second-img" src="{{asset('images/6.webp')}}" alt="">
+                                                </div>
+                                                <div class="info">
+                                                    <a href="" class="title">Make Thing Happen T-Shirt</a>
+                                                    <div class="price">$66.50 <span>$70.55</span></div>
+                                                    <div class="rating">
+                                        <span>
+                                            <i class="fa-solid fa-star"></i>
+                                            <i class="fa-solid fa-star"></i>
+                                            <i class="fa-solid fa-star"></i>
+                                            <i class="fa-solid fa-star"></i>
+                                            <i class="fa-solid fa-star"></i>
+                                        </span>
+                                                        <span class="star">(4)</span>
+                                                    </div>
+                                                </div>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
+                                <!-- If we need navigation buttons -->
+                                <div class="swiper-button-prev"></div>
+                                <div class="swiper-button-next"></div>
                             </div>
                         </div>
                     </div>
@@ -408,15 +2229,19 @@
                             <div class="header">
                                 <div class="title">best seller</div>
                             </div>
-                            <div class="products">
-                                <div class="each">
-                                    <div class="img">
-                                        <img src="{{asset('images/5.webp')}}" alt="">
-                                    </div>
-                                    <div class="info">
-                                        <a href="" class="title">Make Thing Happen T-Shirt</a>
-                                        <div class="price">$66.50 <span>$70.55</span></div>
-                                        <div class="rating">
+                            <div class="swiper best-seller-slider">
+                                <div class="swiper-wrapper">
+                                    <div class="swiper-slide">
+                                        <div class="products">
+                                            <div class="each">
+                                                <div class="img">
+                                                    <img class="first-img" src="{{asset('images/5.webp')}}" alt="">
+                                                    <img class="second-img" src="{{asset('images/6.webp')}}" alt="">
+                                                </div>
+                                                <div class="info">
+                                                    <a href="" class="title">Make Thing Happen T-Shirt</a>
+                                                    <div class="price">$66.50 <span>$70.55</span></div>
+                                                    <div class="rating">
                                         <span>
                                             <i class="fa-solid fa-star"></i>
                                             <i class="fa-solid fa-star"></i>
@@ -424,18 +2249,19 @@
                                             <i class="fa-solid fa-star"></i>
                                             <i class="fa-solid fa-star"></i>
                                         </span>
-                                            <span class="star">(4)</span>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="each">
-                                    <div class="img">
-                                        <img src="{{asset('images/5.webp')}}" alt="">
-                                    </div>
-                                    <div class="info">
-                                        <a href="" class="title">Make Thing Happen T-Shirt</a>
-                                        <div class="price">$66.50 <span>$70.55</span></div>
-                                        <div class="rating">
+                                                        <span class="star">(4)</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="each">
+                                                <div class="img">
+                                                    <img class="first-img" src="{{asset('images/5.webp')}}" alt="">
+                                                    <img class="second-img" src="{{asset('images/6.webp')}}" alt="">
+                                                </div>
+                                                <div class="info">
+                                                    <a href="" class="title">Make Thing Happen T-Shirt</a>
+                                                    <div class="price">$66.50 <span>$70.55</span></div>
+                                                    <div class="rating">
                                         <span>
                                             <i class="fa-solid fa-star"></i>
                                             <i class="fa-solid fa-star"></i>
@@ -443,18 +2269,19 @@
                                             <i class="fa-solid fa-star"></i>
                                             <i class="fa-solid fa-star"></i>
                                         </span>
-                                            <span class="star">(4)</span>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="each">
-                                    <div class="img">
-                                        <img src="{{asset('images/5.webp')}}" alt="">
-                                    </div>
-                                    <div class="info">
-                                        <a href="" class="title">Make Thing Happen T-Shirt</a>
-                                        <div class="price">$66.50 <span>$70.55</span></div>
-                                        <div class="rating">
+                                                        <span class="star">(4)</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="each">
+                                                <div class="img">
+                                                    <img class="first-img" src="{{asset('images/5.webp')}}" alt="">
+                                                    <img class="second-img" src="{{asset('images/6.webp')}}" alt="">
+                                                </div>
+                                                <div class="info">
+                                                    <a href="" class="title">Make Thing Happen T-Shirt</a>
+                                                    <div class="price">$66.50 <span>$70.55</span></div>
+                                                    <div class="rating">
                                         <span>
                                             <i class="fa-solid fa-star"></i>
                                             <i class="fa-solid fa-star"></i>
@@ -462,10 +2289,144 @@
                                             <i class="fa-solid fa-star"></i>
                                             <i class="fa-solid fa-star"></i>
                                         </span>
-                                            <span class="star">(4)</span>
+                                                        <span class="star">(4)</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <div class="products">
+                                            <div class="each">
+                                                <div class="img">
+                                                    <img class="first-img" src="{{asset('images/5.webp')}}" alt="">
+                                                    <img class="second-img" src="{{asset('images/6.webp')}}" alt="">
+                                                </div>
+                                                <div class="info">
+                                                    <a href="" class="title">Make Thing Happen T-Shirt</a>
+                                                    <div class="price">$66.50 <span>$70.55</span></div>
+                                                    <div class="rating">
+                                        <span>
+                                            <i class="fa-solid fa-star"></i>
+                                            <i class="fa-solid fa-star"></i>
+                                            <i class="fa-solid fa-star"></i>
+                                            <i class="fa-solid fa-star"></i>
+                                            <i class="fa-solid fa-star"></i>
+                                        </span>
+                                                        <span class="star">(4)</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="each">
+                                                <div class="img">
+                                                    <img class="first-img" src="{{asset('images/5.webp')}}" alt="">
+                                                    <img class="second-img" src="{{asset('images/6.webp')}}" alt="">
+                                                </div>
+                                                <div class="info">
+                                                    <a href="" class="title">Make Thing Happen T-Shirt</a>
+                                                    <div class="price">$66.50 <span>$70.55</span></div>
+                                                    <div class="rating">
+                                        <span>
+                                            <i class="fa-solid fa-star"></i>
+                                            <i class="fa-solid fa-star"></i>
+                                            <i class="fa-solid fa-star"></i>
+                                            <i class="fa-solid fa-star"></i>
+                                            <i class="fa-solid fa-star"></i>
+                                        </span>
+                                                        <span class="star">(4)</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="each">
+                                                <div class="img">
+                                                    <img class="first-img" src="{{asset('images/5.webp')}}" alt="">
+                                                    <img class="second-img" src="{{asset('images/6.webp')}}" alt="">
+                                                </div>
+                                                <div class="info">
+                                                    <a href="" class="title">Make Thing Happen T-Shirt</a>
+                                                    <div class="price">$66.50 <span>$70.55</span></div>
+                                                    <div class="rating">
+                                        <span>
+                                            <i class="fa-solid fa-star"></i>
+                                            <i class="fa-solid fa-star"></i>
+                                            <i class="fa-solid fa-star"></i>
+                                            <i class="fa-solid fa-star"></i>
+                                            <i class="fa-solid fa-star"></i>
+                                        </span>
+                                                        <span class="star">(4)</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <div class="products">
+                                            <div class="each">
+                                                <div class="img">
+                                                    <img class="first-img" src="{{asset('images/5.webp')}}" alt="">
+                                                    <img class="second-img" src="{{asset('images/6.webp')}}" alt="">
+                                                </div>
+                                                <div class="info">
+                                                    <a href="" class="title">Make Thing Happen T-Shirt</a>
+                                                    <div class="price">$66.50 <span>$70.55</span></div>
+                                                    <div class="rating">
+                                        <span>
+                                            <i class="fa-solid fa-star"></i>
+                                            <i class="fa-solid fa-star"></i>
+                                            <i class="fa-solid fa-star"></i>
+                                            <i class="fa-solid fa-star"></i>
+                                            <i class="fa-solid fa-star"></i>
+                                        </span>
+                                                        <span class="star">(4)</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="each">
+                                                <div class="img">
+                                                    <img class="first-img" src="{{asset('images/5.webp')}}" alt="">
+                                                    <img class="second-img" src="{{asset('images/6.webp')}}" alt="">
+                                                </div>
+                                                <div class="info">
+                                                    <a href="" class="title">Make Thing Happen T-Shirt</a>
+                                                    <div class="price">$66.50 <span>$70.55</span></div>
+                                                    <div class="rating">
+                                        <span>
+                                            <i class="fa-solid fa-star"></i>
+                                            <i class="fa-solid fa-star"></i>
+                                            <i class="fa-solid fa-star"></i>
+                                            <i class="fa-solid fa-star"></i>
+                                            <i class="fa-solid fa-star"></i>
+                                        </span>
+                                                        <span class="star">(4)</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="each">
+                                                <div class="img">
+                                                    <img class="first-img" src="{{asset('images/5.webp')}}" alt="">
+                                                    <img class="second-img" src="{{asset('images/6.webp')}}" alt="">
+                                                </div>
+                                                <div class="info">
+                                                    <a href="" class="title">Make Thing Happen T-Shirt</a>
+                                                    <div class="price">$66.50 <span>$70.55</span></div>
+                                                    <div class="rating">
+                                        <span>
+                                            <i class="fa-solid fa-star"></i>
+                                            <i class="fa-solid fa-star"></i>
+                                            <i class="fa-solid fa-star"></i>
+                                            <i class="fa-solid fa-star"></i>
+                                            <i class="fa-solid fa-star"></i>
+                                        </span>
+                                                        <span class="star">(4)</span>
+                                                    </div>
+                                                </div>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
+                                <!-- If we need navigation buttons -->
+                                <div class="swiper-button-prev"></div>
+                                <div class="swiper-button-next"></div>
                             </div>
                         </div>
                     </div>
@@ -525,12 +2486,638 @@
         </section>
         {{--feature product section end--}}
 
+        {{--daily deals section start--}}
+        <section class="daily-deals">
+            <div class="container">
+                <div class="header">
+                    <div class="header-title">Daily Deals</div>
+                    <div class="tab-buttons">
+                        <a href="javascript:void(0)" class="active" onclick="showTabProducts(event, 'new')">New Arrivals</a>
+                        <a href="javascript:void(0)" onclick="showTabProducts(event, 'best')">Best Sellers</a>
+                        <a href="javascript:void(0)" onclick="showTabProducts(event, 'sale')">Sale Items</a>
+                    </div>
+                </div>
+                <div class="tab-content">
+                    <div class="products new active">
+                        <div class="row">
+                            <div class="swiper daily-product-slider">
+                                <div class="swiper-wrapper">
+                                    <div class="swiper-slide">
+                                        <div class="product">
+                                            <div class="thumbnail">
+                                                <a href="">
+                                                    <img src="{{asset('images/1.webp')}}" alt="">
+                                                </a>
+                                            </div>
+                                            <div class="content">
+                                                <div class="alert-title">Hurry up! offer ends in:</div>
+                                                <div class="clock">
+                                                    <div class="day">
+                                                        <div class="number">108</div>
+                                                        <div class="text">Days</div>
+                                                    </div>
+                                                    <div class="hour">
+                                                        <div class="number">05</div>
+                                                        <div class="text">Hours</div>
+                                                    </div>
+                                                    <div class="min">
+                                                        <div class="number">34</div>
+                                                        <div class="text">Min</div>
+                                                    </div>
+                                                    <div class="sec">
+                                                        <div class="number">04</div>
+                                                        <div class="text">Sec</div>
+                                                    </div>
+                                                </div>
+                                                <a href="" class="category">Studio Design</a>
+                                                <a href="" class="title">Brother Hoddies in Grey</a>
+                                                <div class="rating">
+                                        <span>
+                                            <i class="fa-solid fa-star"></i>
+                                            <i class="fa-solid fa-star"></i>
+                                            <i class="fa-solid fa-star"></i>
+                                            <i class="fa-solid fa-star"></i>
+                                            <i class="fa-solid fa-star"></i>
+                                        </span>
+                                                    <span class="star">(4)</span>
+                                                </div>
+                                                <div class="price">$38.50 <span>$42.85</span></div>
+                                                <button class="btn cart-btn">add to cart</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <div class="product">
+                                            <div class="thumbnail">
+                                                <a href="">
+                                                    <img src="{{asset('images/1.webp')}}" alt="">
+                                                </a>
+                                            </div>
+                                            <div class="content">
+                                                <div class="alert-title">Hurry up! offer ends in:</div>
+                                                <div class="clock">
+                                                    <div class="day">
+                                                        <div class="number">108</div>
+                                                        <div class="text">Days</div>
+                                                    </div>
+                                                    <div class="hour">
+                                                        <div class="number">05</div>
+                                                        <div class="text">Hours</div>
+                                                    </div>
+                                                    <div class="min">
+                                                        <div class="number">34</div>
+                                                        <div class="text">Min</div>
+                                                    </div>
+                                                    <div class="sec">
+                                                        <div class="number">04</div>
+                                                        <div class="text">Sec</div>
+                                                    </div>
+                                                </div>
+                                                <a href="" class="category">Studio Design</a>
+                                                <a href="" class="title">Brother Hoddies in Grey</a>
+                                                <div class="rating">
+                                        <span>
+                                            <i class="fa-solid fa-star"></i>
+                                            <i class="fa-solid fa-star"></i>
+                                            <i class="fa-solid fa-star"></i>
+                                            <i class="fa-solid fa-star"></i>
+                                            <i class="fa-solid fa-star"></i>
+                                        </span>
+                                                    <span class="star">(4)</span>
+                                                </div>
+                                                <div class="price">$38.50 <span>$42.85</span></div>
+                                                <button class="btn cart-btn">add to cart</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <div class="product">
+                                            <div class="thumbnail">
+                                                <a href="">
+                                                    <img src="{{asset('images/1.webp')}}" alt="">
+                                                </a>
+                                            </div>
+                                            <div class="content">
+                                                <div class="alert-title">Hurry up! offer ends in:</div>
+                                                <div class="clock">
+                                                    <div class="day">
+                                                        <div class="number">108</div>
+                                                        <div class="text">Days</div>
+                                                    </div>
+                                                    <div class="hour">
+                                                        <div class="number">05</div>
+                                                        <div class="text">Hours</div>
+                                                    </div>
+                                                    <div class="min">
+                                                        <div class="number">34</div>
+                                                        <div class="text">Min</div>
+                                                    </div>
+                                                    <div class="sec">
+                                                        <div class="number">04</div>
+                                                        <div class="text">Sec</div>
+                                                    </div>
+                                                </div>
+                                                <a href="" class="category">Studio Design</a>
+                                                <a href="" class="title">Brother Hoddies in Grey</a>
+                                                <div class="rating">
+                                        <span>
+                                            <i class="fa-solid fa-star"></i>
+                                            <i class="fa-solid fa-star"></i>
+                                            <i class="fa-solid fa-star"></i>
+                                            <i class="fa-solid fa-star"></i>
+                                            <i class="fa-solid fa-star"></i>
+                                        </span>
+                                                    <span class="star">(4)</span>
+                                                </div>
+                                                <div class="price">$38.50 <span>$42.85</span></div>
+                                                <button class="btn cart-btn">add to cart</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <div class="product">
+                                            <div class="thumbnail">
+                                                <a href="">
+                                                    <img src="{{asset('images/1.webp')}}" alt="">
+                                                </a>
+                                            </div>
+                                            <div class="content">
+                                                <div class="alert-title">Hurry up! offer ends in:</div>
+                                                <div class="clock">
+                                                    <div class="day">
+                                                        <div class="number">108</div>
+                                                        <div class="text">Days</div>
+                                                    </div>
+                                                    <div class="hour">
+                                                        <div class="number">05</div>
+                                                        <div class="text">Hours</div>
+                                                    </div>
+                                                    <div class="min">
+                                                        <div class="number">34</div>
+                                                        <div class="text">Min</div>
+                                                    </div>
+                                                    <div class="sec">
+                                                        <div class="number">04</div>
+                                                        <div class="text">Sec</div>
+                                                    </div>
+                                                </div>
+                                                <a href="" class="category">Studio Design</a>
+                                                <a href="" class="title">Brother Hoddies in Grey</a>
+                                                <div class="rating">
+                                        <span>
+                                            <i class="fa-solid fa-star"></i>
+                                            <i class="fa-solid fa-star"></i>
+                                            <i class="fa-solid fa-star"></i>
+                                            <i class="fa-solid fa-star"></i>
+                                            <i class="fa-solid fa-star"></i>
+                                        </span>
+                                                    <span class="star">(4)</span>
+                                                </div>
+                                                <div class="price">$38.50 <span>$42.85</span></div>
+                                                <button class="btn cart-btn">add to cart</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- If we need navigation buttons -->
+                                <div class="swiper-button-prev"></div>
+                                <div class="swiper-button-next"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="products best">
+                        <div class="row">
+                            <div class="swiper daily-product-slider">
+                                <div class="swiper-wrapper">
+                                    <div class="swiper-slide">
+                                        <div class="product">
+                                            <div class="thumbnail">
+                                                <a href="">
+                                                    <img src="{{asset('images/1.webp')}}" alt="">
+                                                </a>
+                                            </div>
+                                            <div class="content">
+                                                <div class="alert-title">Hurry up! offer ends in:</div>
+                                                <div class="clock">
+                                                    <div class="day">
+                                                        <div class="number">108</div>
+                                                        <div class="text">Days</div>
+                                                    </div>
+                                                    <div class="hour">
+                                                        <div class="number">05</div>
+                                                        <div class="text">Hours</div>
+                                                    </div>
+                                                    <div class="min">
+                                                        <div class="number">34</div>
+                                                        <div class="text">Min</div>
+                                                    </div>
+                                                    <div class="sec">
+                                                        <div class="number">04</div>
+                                                        <div class="text">Sec</div>
+                                                    </div>
+                                                </div>
+                                                <a href="" class="category">Studio Design</a>
+                                                <a href="" class="title">Brother Hoddies in Grey</a>
+                                                <div class="rating">
+                                        <span>
+                                            <i class="fa-solid fa-star"></i>
+                                            <i class="fa-solid fa-star"></i>
+                                            <i class="fa-solid fa-star"></i>
+                                            <i class="fa-solid fa-star"></i>
+                                            <i class="fa-solid fa-star"></i>
+                                        </span>
+                                                    <span class="star">(4)</span>
+                                                </div>
+                                                <div class="price">$38.50 <span>$42.85</span></div>
+                                                <button class="btn cart-btn">add to cart</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <div class="product">
+                                            <div class="thumbnail">
+                                                <a href="">
+                                                    <img src="{{asset('images/1.webp')}}" alt="">
+                                                </a>
+                                            </div>
+                                            <div class="content">
+                                                <div class="alert-title">Hurry up! offer ends in:</div>
+                                                <div class="clock">
+                                                    <div class="day">
+                                                        <div class="number">108</div>
+                                                        <div class="text">Days</div>
+                                                    </div>
+                                                    <div class="hour">
+                                                        <div class="number">05</div>
+                                                        <div class="text">Hours</div>
+                                                    </div>
+                                                    <div class="min">
+                                                        <div class="number">34</div>
+                                                        <div class="text">Min</div>
+                                                    </div>
+                                                    <div class="sec">
+                                                        <div class="number">04</div>
+                                                        <div class="text">Sec</div>
+                                                    </div>
+                                                </div>
+                                                <a href="" class="category">Studio Design</a>
+                                                <a href="" class="title">Brother Hoddies in Grey</a>
+                                                <div class="rating">
+                                        <span>
+                                            <i class="fa-solid fa-star"></i>
+                                            <i class="fa-solid fa-star"></i>
+                                            <i class="fa-solid fa-star"></i>
+                                            <i class="fa-solid fa-star"></i>
+                                            <i class="fa-solid fa-star"></i>
+                                        </span>
+                                                    <span class="star">(4)</span>
+                                                </div>
+                                                <div class="price">$38.50 <span>$42.85</span></div>
+                                                <button class="btn cart-btn">add to cart</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <div class="product">
+                                            <div class="thumbnail">
+                                                <a href="">
+                                                    <img src="{{asset('images/1.webp')}}" alt="">
+                                                </a>
+                                            </div>
+                                            <div class="content">
+                                                <div class="alert-title">Hurry up! offer ends in:</div>
+                                                <div class="clock">
+                                                    <div class="day">
+                                                        <div class="number">108</div>
+                                                        <div class="text">Days</div>
+                                                    </div>
+                                                    <div class="hour">
+                                                        <div class="number">05</div>
+                                                        <div class="text">Hours</div>
+                                                    </div>
+                                                    <div class="min">
+                                                        <div class="number">34</div>
+                                                        <div class="text">Min</div>
+                                                    </div>
+                                                    <div class="sec">
+                                                        <div class="number">04</div>
+                                                        <div class="text">Sec</div>
+                                                    </div>
+                                                </div>
+                                                <a href="" class="category">Studio Design</a>
+                                                <a href="" class="title">Brother Hoddies in Grey</a>
+                                                <div class="rating">
+                                        <span>
+                                            <i class="fa-solid fa-star"></i>
+                                            <i class="fa-solid fa-star"></i>
+                                            <i class="fa-solid fa-star"></i>
+                                            <i class="fa-solid fa-star"></i>
+                                            <i class="fa-solid fa-star"></i>
+                                        </span>
+                                                    <span class="star">(4)</span>
+                                                </div>
+                                                <div class="price">$38.50 <span>$42.85</span></div>
+                                                <button class="btn cart-btn">add to cart</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <div class="product">
+                                            <div class="thumbnail">
+                                                <a href="">
+                                                    <img src="{{asset('images/1.webp')}}" alt="">
+                                                </a>
+                                            </div>
+                                            <div class="content">
+                                                <div class="alert-title">Hurry up! offer ends in:</div>
+                                                <div class="clock">
+                                                    <div class="day">
+                                                        <div class="number">108</div>
+                                                        <div class="text">Days</div>
+                                                    </div>
+                                                    <div class="hour">
+                                                        <div class="number">05</div>
+                                                        <div class="text">Hours</div>
+                                                    </div>
+                                                    <div class="min">
+                                                        <div class="number">34</div>
+                                                        <div class="text">Min</div>
+                                                    </div>
+                                                    <div class="sec">
+                                                        <div class="number">04</div>
+                                                        <div class="text">Sec</div>
+                                                    </div>
+                                                </div>
+                                                <a href="" class="category">Studio Design</a>
+                                                <a href="" class="title">Brother Hoddies in Grey</a>
+                                                <div class="rating">
+                                        <span>
+                                            <i class="fa-solid fa-star"></i>
+                                            <i class="fa-solid fa-star"></i>
+                                            <i class="fa-solid fa-star"></i>
+                                            <i class="fa-solid fa-star"></i>
+                                            <i class="fa-solid fa-star"></i>
+                                        </span>
+                                                    <span class="star">(4)</span>
+                                                </div>
+                                                <div class="price">$38.50 <span>$42.85</span></div>
+                                                <button class="btn cart-btn">add to cart</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- If we need navigation buttons -->
+                                <div class="swiper-button-prev"></div>
+                                <div class="swiper-button-next"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="products sale">
+                        <div class="row">
+                            <div class="swiper daily-product-slider">
+                                <div class="swiper-wrapper">
+                                    <div class="swiper-slide">
+                                        <div class="product">
+                                            <div class="thumbnail">
+                                                <a href="">
+                                                    <img src="{{asset('images/1.webp')}}" alt="">
+                                                </a>
+                                            </div>
+                                            <div class="content">
+                                                <div class="alert-title">Hurry up! offer ends in:</div>
+                                                <div class="clock">
+                                                    <div class="day">
+                                                        <div class="number">108</div>
+                                                        <div class="text">Days</div>
+                                                    </div>
+                                                    <div class="hour">
+                                                        <div class="number">05</div>
+                                                        <div class="text">Hours</div>
+                                                    </div>
+                                                    <div class="min">
+                                                        <div class="number">34</div>
+                                                        <div class="text">Min</div>
+                                                    </div>
+                                                    <div class="sec">
+                                                        <div class="number">04</div>
+                                                        <div class="text">Sec</div>
+                                                    </div>
+                                                </div>
+                                                <a href="" class="category">Studio Design</a>
+                                                <a href="" class="title">Brother Hoddies in Grey</a>
+                                                <div class="rating">
+                                        <span>
+                                            <i class="fa-solid fa-star"></i>
+                                            <i class="fa-solid fa-star"></i>
+                                            <i class="fa-solid fa-star"></i>
+                                            <i class="fa-solid fa-star"></i>
+                                            <i class="fa-solid fa-star"></i>
+                                        </span>
+                                                    <span class="star">(4)</span>
+                                                </div>
+                                                <div class="price">$38.50 <span>$42.85</span></div>
+                                                <button class="btn cart-btn">add to cart</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <div class="product">
+                                            <div class="thumbnail">
+                                                <a href="">
+                                                    <img src="{{asset('images/1.webp')}}" alt="">
+                                                </a>
+                                            </div>
+                                            <div class="content">
+                                                <div class="alert-title">Hurry up! offer ends in:</div>
+                                                <div class="clock">
+                                                    <div class="day">
+                                                        <div class="number">108</div>
+                                                        <div class="text">Days</div>
+                                                    </div>
+                                                    <div class="hour">
+                                                        <div class="number">05</div>
+                                                        <div class="text">Hours</div>
+                                                    </div>
+                                                    <div class="min">
+                                                        <div class="number">34</div>
+                                                        <div class="text">Min</div>
+                                                    </div>
+                                                    <div class="sec">
+                                                        <div class="number">04</div>
+                                                        <div class="text">Sec</div>
+                                                    </div>
+                                                </div>
+                                                <a href="" class="category">Studio Design</a>
+                                                <a href="" class="title">Brother Hoddies in Grey</a>
+                                                <div class="rating">
+                                        <span>
+                                            <i class="fa-solid fa-star"></i>
+                                            <i class="fa-solid fa-star"></i>
+                                            <i class="fa-solid fa-star"></i>
+                                            <i class="fa-solid fa-star"></i>
+                                            <i class="fa-solid fa-star"></i>
+                                        </span>
+                                                    <span class="star">(4)</span>
+                                                </div>
+                                                <div class="price">$38.50 <span>$42.85</span></div>
+                                                <button class="btn cart-btn">add to cart</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <div class="product">
+                                            <div class="thumbnail">
+                                                <a href="">
+                                                    <img src="{{asset('images/1.webp')}}" alt="">
+                                                </a>
+                                            </div>
+                                            <div class="content">
+                                                <div class="alert-title">Hurry up! offer ends in:</div>
+                                                <div class="clock">
+                                                    <div class="day">
+                                                        <div class="number">108</div>
+                                                        <div class="text">Days</div>
+                                                    </div>
+                                                    <div class="hour">
+                                                        <div class="number">05</div>
+                                                        <div class="text">Hours</div>
+                                                    </div>
+                                                    <div class="min">
+                                                        <div class="number">34</div>
+                                                        <div class="text">Min</div>
+                                                    </div>
+                                                    <div class="sec">
+                                                        <div class="number">04</div>
+                                                        <div class="text">Sec</div>
+                                                    </div>
+                                                </div>
+                                                <a href="" class="category">Studio Design</a>
+                                                <a href="" class="title">Brother Hoddies in Grey</a>
+                                                <div class="rating">
+                                        <span>
+                                            <i class="fa-solid fa-star"></i>
+                                            <i class="fa-solid fa-star"></i>
+                                            <i class="fa-solid fa-star"></i>
+                                            <i class="fa-solid fa-star"></i>
+                                            <i class="fa-solid fa-star"></i>
+                                        </span>
+                                                    <span class="star">(4)</span>
+                                                </div>
+                                                <div class="price">$38.50 <span>$42.85</span></div>
+                                                <button class="btn cart-btn">add to cart</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <div class="product">
+                                            <div class="thumbnail">
+                                                <a href="">
+                                                    <img src="{{asset('images/1.webp')}}" alt="">
+                                                </a>
+                                            </div>
+                                            <div class="content">
+                                                <div class="alert-title">Hurry up! offer ends in:</div>
+                                                <div class="clock">
+                                                    <div class="day">
+                                                        <div class="number">108</div>
+                                                        <div class="text">Days</div>
+                                                    </div>
+                                                    <div class="hour">
+                                                        <div class="number">05</div>
+                                                        <div class="text">Hours</div>
+                                                    </div>
+                                                    <div class="min">
+                                                        <div class="number">34</div>
+                                                        <div class="text">Min</div>
+                                                    </div>
+                                                    <div class="sec">
+                                                        <div class="number">04</div>
+                                                        <div class="text">Sec</div>
+                                                    </div>
+                                                </div>
+                                                <a href="" class="category">Studio Design</a>
+                                                <a href="" class="title">Brother Hoddies in Grey</a>
+                                                <div class="rating">
+                                        <span>
+                                            <i class="fa-solid fa-star"></i>
+                                            <i class="fa-solid fa-star"></i>
+                                            <i class="fa-solid fa-star"></i>
+                                            <i class="fa-solid fa-star"></i>
+                                            <i class="fa-solid fa-star"></i>
+                                        </span>
+                                                    <span class="star">(4)</span>
+                                                </div>
+                                                <div class="price">$38.50 <span>$42.85</span></div>
+                                                <button class="btn cart-btn">add to cart</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- If we need navigation buttons -->
+                                <div class="swiper-button-prev"></div>
+                                <div class="swiper-button-next"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        {{--daily deals section end--}}
         {{--brand section start--}}
         <section class="brand">
             <div class="container">
-                <div class="logos">
-                    <div class="img">
-                        <img src="{{asset('images/2.webp')}}" alt="">
+                <div class="swiper brand-slider">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide">
+                            <div class="img">
+                                <img src="{{asset('images/brand-1.webp')}}" alt="">
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="img">
+                                <img src="{{asset('images/brand-2.webp')}}" alt="">
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="img">
+                                <img src="{{asset('images/brand-3.webp')}}" alt="">
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="img">
+                                <img src="{{asset('images/brand-4.webp')}}" alt="">
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="img">
+                                <img src="{{asset('images/brand-5.webp')}}" alt="">
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="img">
+                                <img src="{{asset('images/brand-1.webp')}}" alt="">
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="img">
+                                <img src="{{asset('images/brand-2.webp')}}" alt="">
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="img">
+                                <img src="{{asset('images/brand-3.webp')}}" alt="">
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="img">
+                                <img src="{{asset('images/brand-4.webp')}}" alt="">
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="img">
+                                <img src="{{asset('images/brand-5.webp')}}" alt="">
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -540,15 +3127,18 @@
         {{--blog section start--}}
         <section class="blog">
             <div class="container">
+                <div class="heading-title">Latest Blog</div>
                 <div class="row">
                     <div class="col-4">
                         <div class="single-blog">
                             <div class="img">
                                 <img src="{{asset('images/blog1.webp')}}" alt="">
                             </div>
-                            <div class="date">By : <span>Admin</span> 14 Jul 2023 </div>
+                            <div class="date">By : <span>Admin</span> 14 Jul 2023</div>
                             <a href="" class="title">Some Winter Collections</a>
-                            <div class="desc">Lorem ipsum dolor sit amet, consectetur adipisici elit, sed do eiusmod tempo</div>
+                            <div class="desc">Lorem ipsum dolor sit amet, consectetur adipisici elit, sed do eiusmod
+                                tempo
+                            </div>
                             <button class="btn btn-theme">read more</button>
                         </div>
                     </div>
@@ -557,9 +3147,11 @@
                             <div class="img">
                                 <img src="{{asset('images/blog2.webp')}}" alt="">
                             </div>
-                            <div class="date">By : <span>Admin</span> 14 Jul 2023 </div>
+                            <div class="date">By : <span>Admin</span> 14 Jul 2023</div>
                             <a href="" class="title">Some Winter Collections</a>
-                            <div class="desc">Lorem ipsum dolor sit amet, consectetur adipisici elit, sed do eiusmod tempo</div>
+                            <div class="desc">Lorem ipsum dolor sit amet, consectetur adipisici elit, sed do eiusmod
+                                tempo
+                            </div>
                             <button class="btn btn-theme">read more</button>
                         </div>
                     </div>
@@ -568,9 +3160,11 @@
                             <div class="img">
                                 <img src="{{asset('images/blog3.webp')}}" alt="">
                             </div>
-                            <div class="date">By : <span>Admin</span> 14 Jul 2023 </div>
+                            <div class="date">By : <span>Admin</span> 14 Jul 2023</div>
                             <a href="" class="title">Some Winter Collections</a>
-                            <div class="desc">Lorem ipsum dolor sit amet, consectetur adipisici elit, sed do eiusmod tempo</div>
+                            <div class="desc">Lorem ipsum dolor sit amet, consectetur adipisici elit, sed do eiusmod
+                                tempo
+                            </div>
                             <button class="btn btn-theme">read more</button>
                         </div>
                     </div>
@@ -579,4 +3173,40 @@
         </section>
         {{--blog section end--}}
     </div>
+    <script>
+        const showTabProducts = (e, type) =>{
+            const tabButtons = document.querySelectorAll('.tab-buttons a');
+            tabButtons.forEach((elem) =>{
+                if(elem.classList.contains('active')){
+                    elem.classList.remove('active');
+                }
+            })
+            e.target.classList.add('active');
+
+            const products = document.querySelectorAll('.tab-content .products');
+            products.forEach((elem) => {
+                if(elem.classList.contains('active') && !elem.classList.contains(type)){
+                    elem.classList.remove('active');
+                }else if(!elem.classList.contains('active') && elem.classList.contains(type)){
+                    setTimeout(()=>{
+                        elem.classList.add('active')
+                    }, 200)
+                }
+            })
+        }
+        const slides = document.querySelectorAll('.daily-deals .swiper-slide');
+        setInterval(()=>{
+            let date = new Date("2023-12-31 23:59:59").getTime() - new Date().getTime()
+            const days = date / (24*60*60*1000)
+            const hours = (date % (24*60*60*1000)) / (60*60*1000)
+            const minutes = ((date % (24*60*60*1000)) % (60*60*1000)) / (60*1000)
+            const second = (((date % (24*60*60*1000)) % (60*60*1000)) % (60*1000)) / 1000
+            slides.forEach((elem) => {
+                elem.querySelector('.day .number').innerText = Math.floor(days);
+                elem.querySelector('.hour .number').innerText = Math.floor(hours);
+                elem.querySelector('.min .number').innerText = Math.floor(minutes);
+                elem.querySelector('.sec .number').innerText = Math.floor(second);
+            })
+        }, 1000)
+    </script>
 @endsection

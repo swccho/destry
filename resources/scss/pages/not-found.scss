@@ -1,0 +1,50 @@
+.page{
+    &.not-found{
+        background-color: red;
+        text-align: center;
+      .error-content{
+          .title{
+              text-align: center;
+              font-size: 200px;
+              color: $theme;
+              font-weight: 700;
+              line-height: 1;
+          }
+          .sub-title{
+              font-size: 24px;
+              margin: 20px 0;
+          }
+          .desc{
+              color: $gray-5;
+              margin-bottom: 20px;
+          }
+          .form-group{
+              position: relative;
+              width: 400px;
+              margin: 30px auto 10px;
+              .form-control{
+                  width: 100%;
+                  padding: 0 45px 0 10px;
+                  background: #f8f8f8;
+                  border: 1px solid #ddd;
+                  color: #212121;
+                  height: 40px;
+                  border-radius: 3px;
+                  box-shadow: none;
+              }
+              .search-icon{
+                  position: absolute;
+                  right: 20px;
+                  top: 9px;
+                  i{
+                      font-size: 20px;
+                      font-weight: 700;
+                  }
+              }
+          }
+          .btn-theme{
+              margin-top: 30px;
+          }
+      }
+    }
+}

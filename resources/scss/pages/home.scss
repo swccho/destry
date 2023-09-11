@@ -1,20 +1,52 @@
 .page{
     &.home{
-        .hero{
-            padding: 150px 0;
-            .content{
-                width: 45%;
-                text-align: center;
-                .title{
-                    font-size: 70px;
-                    color: $black-2e;
-                    font-weight: 700;
-                    line-height: 1.3;
+        .hero-slider{
+            .hero{
+                padding: 150px 0;
+                .content{
+                    width: 45%;
+                    text-align: center;
+                    .title{
+                        font-size: 70px;
+                        color: $black-2e;
+                        font-weight: 700;
+                        line-height: 1.3;
+                    }
+                    .desc{
+                        margin: 10px 0 40px;
+                        font-size: 20px;
+                    }
                 }
-                .desc{
-                    margin: 10px 0 40px;
+            }
+            &:hover{
+                .swiper-button-prev, .swiper-button-next{
+                    transition: all .4s ease;
+                    opacity: 1;
+                    visibility: visible;
+                    pointer-events: initial;
+                }
+            }
+            .swiper-button-prev, .swiper-button-next{
+                color: $black-2;
+                background-color: $white-2;
+                width: 44px;
+                opacity: 0;
+                visibility: hidden;
+                pointer-events: none;
+                transition: all .4s ease;
+                &:hover{
+                    transition: all .4s ease;
+                    color: $theme;
+                }
+                &:after{
                     font-size: 20px;
                 }
+            }
+            .swiper-button-prev,{
+                left: 30px;
+            }
+            .swiper-button-prev,{
+                right: 30px;
             }
         }
         .feature{
@@ -124,17 +156,67 @@
                 }
             }
             .tab-content{
+                margin-top: 30px;
+                min-height: 1030px;
                 .products{
-                    .each{
-                        &:nth-child(4n+0){
+                    &.new, &.best, &.sale{
+                        display: none;
+                        transition: all .4s ease;
+                        &.active{
+                            transition: all .4s ease;
+                            display: block;
+                        }
+                    }
+                    .swiper{
+                        &:hover{
+                            .swiper-button-prev, .swiper-button-next{
+                                transition: all .4s ease;
+                                opacity: 1;
+                                visibility: visible;
+                                pointer-events: initial;
+                            }
+                        }
+                        .swiper-button-prev, .swiper-button-next{
+                            color: $black-2;
+                            background-color: $white-2;
+                            width: 30px;
+                            height: 30px;
+                            opacity: 0;
+                            visibility: hidden;
+                            pointer-events: none;
+                            transition: all .4s ease;
+                            border-radius: 50%;
+                            &:hover{
+                                transition: all .4s ease;
+                                color: $theme;
+                                background-color: $theme;
+                                &:after{
+                                    color: $white;
+                                }
+                            }
+                            &:after{
+                                font-size: 14px;
+                                font-weight: 600;
+                                color: $gray-4;
+                            }
+                        }
+                        .swiper-button-prev{
+                            left: 30px;
+                            top: 48%;
+                        }
+                        .swiper-button-next{
+                            right: 30px;
+                            top: 48%;
+                        }
+                        .swiper-slide-active{
                             .product{
-                                border-right: none;
+                                border-left: none;
                             }
                         }
                         .product{
                             text-align: center;
-                            border-right: 1px solid $gray2;
-                            margin: 20px 0;
+                            border-left: 1px solid $gray2;
+                            margin-bottom: 50px;
                             position: relative;
                             &:before{
                                 display: block;
@@ -143,7 +225,7 @@
                                 font-weight: 600;
                                 padding: 0px 8px;
                                 position: absolute;
-                                left: 10px;
+                                left: 30px;
                                 top: 0;
                                 z-index: 1;
                             }
@@ -157,10 +239,17 @@
                                     content: 'sold';
                                 }
                             }
-                            .img{
-                                display: block;
-                                position: relative;
-                                &:hover{
+                            &:hover{
+                                .img{
+                                    .first-img{
+                                        transition: all .4s ease;
+                                        opacity: 0;
+                                    }
+                                    .second-img{
+                                        transition: all .4s ease;
+                                        opacity: 1;
+                                        transform: scale(1.1);
+                                    }
                                     .actions{
                                         transition: all .4s;
                                         visibility: visible;
@@ -168,6 +257,20 @@
                                         pointer-events: initial;
                                         top: 0;
                                     }
+                                }
+                            }
+                            .img{
+                                display: block;
+                                position: relative;
+                                overflow: hidden;
+                                .second-img{
+                                    position: absolute;
+                                    top: 0;
+                                    left: 0;
+                                    opacity: 0;
+                                }
+                                img{
+                                    transition: all .4s ease;
                                 }
                                 .actions{
                                     position: absolute;
@@ -232,11 +335,17 @@
                                 }
                             }
                             .price{
-                                color: $theme;
-                                font-weight: 600;
                                 margin-bottom: 15px;
-                                span{
+                                .new{
+                                    color: $theme;
+                                    font-size: 15px;
+                                    font-weight: 600;
+                                    margin-right: 10px;
+                                }
+                                .old{
+                                    font-size: 14px;
                                     color: $black-9;
+                                    text-decoration: line-through;
                                 }
                             }
                             .cart-btn{
@@ -249,9 +358,9 @@
                                 transition: all .4s;
                                 &:hover{
                                     transition: all .4s;
-                                    background-color: $theme;
+                                    background-color: $theme-1;
                                     color: $white;
-                                    border: 1px solid $white;
+                                    border: 1px solid $theme-1;
                                 }
                             }
                         }
@@ -274,6 +383,7 @@
         }
         .product-list{
             .item{
+                position: relative;
                 .header{
                     .title{
                         font-size: 24px;
@@ -294,37 +404,100 @@
                         }
                     }
                 }
-                .products{
-                    padding-top: 10px;
-                    .each{
-                        display: flex;
-                        align-items: center;
-                        margin: 40px 0;
-                        .info{
-                            margin-left: 20px;
-                            .title{
-                                color: $black-2;
-                                transition: all .4s;
-                                text-decoration: none;
+                .swiper{
+                    position: static;
+                    .swiper-button-prev, .swiper-button-next{
+                        color: $black-2;
+                        background-color: $gray;
+                        width: 28px;
+                        height: 28px;
+                        opacity: 1;
+                        visibility: visible;
+                        transition: all .4s ease;
+                        border-radius: 50%;
+                        &:hover{
+                            transition: all .4s ease;
+                            color: $theme;
+                            background-color: $theme;
+                            &:after{
+                                color: $white;
+                            }
+                        }
+                        &:after{
+                            font-size: 13px;
+                            font-weight: 500;
+                            color: $gray-4;
+                        }
+                    }
+                    .swiper-button-prev{
+                        left: 351px;
+                        top: 20px;
+                    }
+                    .swiper-button-next{
+                        right: 0;
+                        top: 20px;
+                    }
+                    .swiper-slide-active{
+                        .product{
+                            border-right: 1px solid $gray2;
+                        }
+                    }
+                    .products{
+                        padding-top: 10px;
+                        .each{
+                            display: flex;
+                            align-items: center;
+                            margin: 40px 0;
+                            .img{
+                                position: relative;
+                                overflow: hidden;
                                 &:hover{
+                                    .first-img{
+                                    transition: all .4s ease;
+                                        opacity: 0;
+                                    }
+                                    .second-img{
+                                    transition: all .4s ease;
+                                        opacity: 1;
+                                        transform: scale(1.1);
+                                    }
+                                }
+                                .second-img{
+                                    position: absolute;
+                                    top: 0;
+                                    left: 0;
+                                    opacity: 0;
+                                }
+                                img{
+                                    transition: all .4s ease;
+                                }
+                            }
+                            .info{
+                                margin-left: 20px;
+                                .title{
+                                    color: $black-2;
                                     transition: all .4s;
+                                    text-decoration: none;
+                                    &:hover{
+                                        transition: all .4s;
+                                        color: $theme;
+                                    }
+                                }
+                                .price{
                                     color: $theme;
+                                    margin: 10px 0;
+                                    span{
+                                        color: $black-9;
+                                        text-decoration: line-through;
+                                    }
                                 }
-                            }
-                            .price{
-                                color: $theme;
-                                margin: 10px 0;
-                                span{
-                                    color: $black-9;
-                                    text-decoration: line-through;
-                                }
-                            }
-                            .rating{
-                                span{
-                                    font-size: 14px;
-                                }
-                                .star{
-                                    color: $black-9;
+                                .rating{
+                                    span{
+                                        font-size: 14px;
+                                    }
+                                    .star{
+                                        color: $black-9;
+                                    }
                                 }
                             }
                         }
@@ -383,70 +556,242 @@
                 }
             }
         }
+        .daily-deals{
+            .header{
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                padding-bottom: 8px;
+                border-bottom: 2px solid $gray2;
+                .header-title{
+                    font-size: 30px;
+                    font-weight: 500;
+                }
+                .tab-buttons{
+                    a{
+                        display: inline-block;
+                        color: $black-2e;
+                        font-size: 18px;
+                        text-decoration: none;
+                        margin-right: 15px;
+                        padding-bottom: 8px;
+                        position: relative;
+                        transition: all .4s ease;
+                        &:last-child{
+                            margin-right: 0;
+                        }
+                        &:before{
+                            content: '';
+                            width: 0;
+                            height: 2px;
+                            background-color: $theme;
+                            position: absolute;
+                            left: 0;
+                            bottom: -15px;
+                            display: block;
+                            transition: all .4s ease;
+                        }
+                        &:hover, &.active{
+                            transition: all .4s ease;
+                            color: $theme;
+                            &:before{
+                                transition: all .4s ease;
+                                width: 100%;
+                            }
+                        }
+                    }
+                }
+            }
+
+            .tab-content{
+                min-height: 326px;
+                .products{
+                    margin-top: 40px;
+                    &.new, &.best, &.sale{
+                        display: none;
+                        transition: all .4s ease;
+                        &.active{
+                            transition: all .4s ease;
+                            display: block;
+                        }
+                    }
+                    .swiper{
+                        &:hover{
+                            .swiper-button-prev, .swiper-button-next{
+                                transition: all .4s ease;
+                                opacity: 1;
+                                visibility: visible;
+                                pointer-events: initial;
+                            }
+                        }
+                        .swiper-button-prev, .swiper-button-next{
+                            color: $black-2;
+                            background-color: $white-2;
+                            width: 30px;
+                            height: 30px;
+                            opacity: 0;
+                            visibility: hidden;
+                            pointer-events: none;
+                            transition: all .4s ease;
+                            border-radius: 50%;
+                            &:hover{
+                                transition: all .4s ease;
+                                color: $theme;
+                                background-color: $theme;
+                                &:after{
+                                    color: $white;
+                                }
+                            }
+                            &:after{
+                                font-size: 14px;
+                                font-weight: 600;
+                                color: $gray-4;
+                            }
+                        }
+                        .swiper-button-prev,{
+                            left: 30px;
+                        }
+                        .swiper-button-prev,{
+                            right: 30px;
+                        }
+                        .swiper-slide{
+                            &:first-child{
+                            }
+                        }
+                        .swiper-slide-active{
+                            .product{
+                                border-right: 1px solid $gray2;
+                                .thumbnail{
+                                    position: relative;
+                                    &:before{
+                                        content: "-30%";
+                                        display: block;
+                                        background-color: #FF2F2F;
+                                        color: #ffffff;
+                                        font-weight: 600;
+                                        padding: 0px 8px;
+                                        position: absolute;
+                                        left: 16px;
+                                        top: 20px;
+                                        z-index: 1;
+                                        font-size: 14px;
+                                    }
+                                }
+                            }
+                        }
+                        .product{
+                            display: flex;
+                            .content{
+                                .alert-title{
+                                    color: $blue;
+                                    text-transform: uppercase;
+                                    margin-bottom: 20px;
+                                }
+                                .clock{
+                                    display: flex;
+                                    .day, .hour, .min, .sec{
+                                        background-color: $white-3;
+                                        padding: 12px 20px;
+                                        border-radius: 12px;
+                                        border: 1px solid $gray2;
+                                        margin-right: 10px;
+                                        text-align: center;
+                                        .number{
+                                            font-size: 20px;
+                                            margin-bottom: 5px;
+                                        }
+                                        .text{
+                                            font-size: 14px;
+                                            color: $black-9;
+                                        }
+                                    }
+                                }
+                                .category{
+                                    font-size: 14px;
+                                    color: $black-2;
+                                    margin-top: 15px;
+                                    display: block;
+                                    text-decoration: none;
+                                    text-transform: uppercase;
+                                }
+                                .title{
+                                    color: $black-2e;
+                                    font-weight: 600;
+                                    transition: all .4s;
+                                    margin-top: 10px;
+                                    display: block;
+                                    text-decoration: none;
+                                    &:hover{
+                                        transition: all .4s;
+                                        color: $theme;
+                                    }
+                                }
+                                .rating{
+                                    margin: 15px 0;
+                                    i{
+                                        font-size: 14px;
+                                        color: $black-2;
+                                    }
+                                    .star{
+                                        color: $black-9;
+                                    }
+                                }
+                                .price{
+                                    color: $theme;
+                                    font-weight: 600;
+                                    margin-bottom: 15px;
+                                    span{
+                                        color: $black-9;
+                                    }
+                                }
+                                .cart-btn{
+                                    border: 1px solid $black-2e;
+                                    background-color: transparent;
+                                    text-transform: uppercase;
+                                    border-radius: 8px;
+                                    padding: 7px 10px;
+                                    font-size: 14px;
+                                    transition: all .4s;
+                                    &:hover{
+                                        transition: all .4s;
+                                        background-color: $theme;
+                                        color: $white;
+                                        border: 1px solid $white;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
         .brand{
-            .logos{
+            .brand-slider{
                 .img{
                     display: inline-block;
                     &:hover{
                         img{
                             transition: all .4s;
-                            transform: scale(1.1);
+                            transform: scale(1);
                         }
                     }
                     img{
                         transition: all .4s;
-                        transform: scale(1);
+                        transform: scale(.8);
+                        cursor: pointer;
                     }
                 }
             }
         }
         .blog{
+            .heading-title{
+                font-size: 30px;
+                font-weight: 500;
+                padding-bottom: 10px;
+                border-bottom: 1px solid $gray2;
+                margin-bottom: 40px;
+            }
             .single-blog{
-                overflow: hidden;
-                &:hover{
-                    .img{
-                        img{
-                            transition: all .4s;
-                            transform: scale(1.1);
-                        }
-                    }
-                }
-                .img{
-                    img{
-                        transition: all .4s;
-                        transform: scale(1);
-                    }
-                }
-                .date{
-                    color: $gray-4;
-                    margin: 30px 0 20px;
-                    line-height: 1;
-                    span{
-                        transition: all .4s;
-                        cursor: pointer;
-                        &:hover{
-                            transition: all .4s;
-                            color: $theme;
-                        }
-                    }
-                }
-                .title{
-                    line-height: 1;
-                    font-size: 24px;
-                    font-weight: 500;
-                    color: $black-2e;
-                    display: inline-block;
-                    text-decoration: none;
-                    transition: all .4s;
-                    &:hover{
-                        transition: all .4s;
-                        color: $theme;
-                    }
-                }
-                .desc{
-                    color: $gray-5;
-                    margin: 10px 0 20px;
-                }
                 .btn-theme{
                     background-color: $black-2e;
                     &:hover{

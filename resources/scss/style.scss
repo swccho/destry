@@ -8,5 +8,11 @@ body{
     overflow-x: hidden;
     @import "pages/header";
     @import "pages/home";
+    @import "pages/about";
+    @import "pages/contact";
+    @import "pages/faq";
+    @import "pages/blog";
+    @import "pages/product";
+    @import "pages/not-found";
     @import "pages/footer";
 }

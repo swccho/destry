@@ -20,6 +20,33 @@
                                 <span>Mail to:: </span><a href="">yourmail@example.com</a>
                             </li>
                         </ul>
+                        <ul class="social-links">
+                            <li>
+                                <a href="">
+                                    <i class="fa-brands fa-facebook-f"></i>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="">
+                                    <i class="fa-brands fa-twitter"></i>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="">
+                                    <i class="fa-brands fa-linkedin-in"></i>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="">
+                                    <i class="fa-brands fa-youtube"></i>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="">
+                                    <i class="fa-brands fa-vimeo"></i>
+                                </a>
+                            </li>
+                        </ul>
                     </div>
                 </div>
                 <div class="col-2">
@@ -92,6 +119,8 @@
         </div>
     </div>
     <div class="footer-bottom">
-        <div class="container"></div>
+        <div class="content">
+            &copy; 2023 <span>Destry</span> Made width <i class="fa fa-heart text-danger"></i> by <a href="">HasThemes</a>.
+        </div>
     </div>
 </footer>

@@ -1,0 +1,70 @@
+.page{
+    &.faq{
+        .faq-section{
+            .title{
+                font-size: 24px;
+                font-weight: 500;
+                margin-bottom: 20px;
+            }
+            .desc{
+                font-size: 14px;
+                color: $gray-5;
+                line-height: 1.7;
+            }
+            .content{
+                margin-top: 50px;
+                .accordion-item{
+                    margin-bottom: 20px;
+                    border-radius: 5px;
+                    border: none;
+                    .accordion-button{
+                        background-color: $theme;
+                        color: $white;
+                        font-size: 14px;
+                        border-radius: 5px;
+                        position: relative;
+                        &:focus{
+                            border-color: $theme;
+                            box-shadow: none;
+                        }
+                        &:after{
+                            content: '';
+                            background-image: url("");
+                        }
+                        &.collapsed{
+                            background-color: $gray2;
+                            color: $black-2e;
+                            border-bottom: 1px dotted $theme;
+                            .minus{
+                                display: none;
+                            }
+                            .plus{
+                                display: block;
+                            }
+                        }
+                        .minus{
+                            display: block;
+                        }
+                        .plus{
+                            display: none;
+                        }
+                        .minus, .plus{
+                            position: absolute;
+                            top: 50%;
+                            transform: translatey(-50%);
+                            right: 20px;
+                        }
+                    }
+                    .accordion-collapse{
+                        .accordion-body{
+                            padding: 0;
+                            color: $gray-5;
+                            font-size: 14px;
+                            padding-top: 5px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

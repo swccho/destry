@@ -1,0 +1,86 @@
+.page{
+    &.about{
+        .about-us{
+            .left{
+                .title{
+                    font-size: 35px;
+                    font-weight: 600;
+                    margin-bottom: 20px;
+                }
+                .text-1{
+                    font-size: 18px;
+                    font-weight: 500;
+                    margin-bottom: 18px;
+                }
+                .text-2{
+                    font-size: 14px;
+                    line-height: 1.7;
+                }
+            }
+        }
+        .feature{
+            position: relative;
+            z-index: 1;
+            &:before{
+                content: '';
+                height: 100%;
+                width: 100%;
+                background-color: $white-op-9;
+                top: 0;
+                left: 0;
+                position: absolute;
+                z-index: -1;
+            }
+            .item{
+                text-align: center;
+                .text{
+                    margin-left: 25px;
+                    .title{
+                        font-size: 20px;
+                        margin: 20px;
+                    }
+                    .desc{
+                        content: $black-2e;
+                        font-size: 14px;
+                        margin-top: 5px;
+                    }
+                }
+            }
+        }
+        .service{
+            .item{
+                text-align: center;
+                .title{
+                    font-size: 30px;
+                    font-weight: 600;
+                    margin-bottom: 30px;
+                }
+                .desc{
+                    color: $gray-5;
+                    line-height: 1.8;
+                    font-size: 14px;
+                }
+            }
+        }
+        .brand{
+            .content{
+                padding-top: 100px;
+                border-top: 1px solid $gray;
+
+                .img{
+                    display: inline-block;
+                    &:hover{
+                        img{
+                            transition: all .4s;
+                            transform: scale(1.1);
+                        }
+                    }
+                    img{
+                        transition: all .4s;
+                        transform: scale(1);
+                    }
+                }
+            }
+        }
+    }
+}
