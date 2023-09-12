@@ -1,0 +1,142 @@
+.page{
+    &.profile{
+        .profile-content{
+            color: $black-2;
+            .sidenav{
+                .nav{
+                    flex-direction: column;
+                    border: 1px solid $gray2;
+                    .nav-item{
+                        display: block;
+                        &:last-child{
+                            .nav-link{
+                                border-bottom: none;
+                            }
+                        }
+                        .nav-link{
+                            display: block;
+                            width: 100%;
+                            text-align: left;
+                            border-radius: 0;
+                            padding: 12px 20px;
+                            border-bottom: 1px solid $gray2;
+                            transition: all .4s ease;
+                            color: $black-2;
+                            text-transform: uppercase;
+                            font-weight: 500;
+                            font-size: 15px;
+                            &.active{
+                                background-color: $theme-1;
+                                border-bottom: 1px solid $theme-1;
+                                color: $white;
+                            }
+                            &:hover{
+                                transition: all .4s ease;
+                                background-color: $theme-1;
+                                border-bottom: 1px solid $theme-1;
+                                color: $white;
+                            }
+                            i{
+                                margin-right: 7px;
+                            }
+                        }
+                    }
+                }
+            }
+            .nav-content{
+                margin-left: 20px;
+                border: 1px solid $gray2;
+                padding: 30px;
+                .title{
+                    font-size: 24px;
+                    padding-bottom: 7px;
+                    border-bottom: 1px solid $gray2;
+                    margin-bottom: 20px;
+                }
+                #pills-dashboard{
+                    .content{
+                        color: $gray-5;
+                        line-height: 1.8;
+                        span{
+                            color: $theme-1;
+                            font-weight: 600;
+                        }
+                        a{
+                            text-decoration: none;
+                            color: $gray-5;
+                            transition: all .4s ease;
+                            &:hover{
+                                transition: all .4s ease;
+                                color: $theme-1;
+                            }
+                        }
+                    }
+                }
+                #pills-orders, #pills-download{
+                    .content{
+                        th, td{
+                            text-align: center;
+                            vertical-align: middle;
+                            font-size: 14px;
+                        }
+                        th{
+                            background-color: $white-2;
+                            font-weight: 500;
+                        }
+                        td{
+                            color: $gray-5;
+                            .btn-theme{
+                                background-color: $black-2;
+                                padding: 5px 12px;
+                                border-radius: 0;
+                                font-size: 14px;
+                                &:hover{
+                                    background-color: $theme-1;
+                                }
+                            }
+                        }
+                    }
+                }
+                #pills-payment{
+                    .content{
+                        background-color: $gray;
+                        color: $gray-5;
+                        font-weight: 500;
+                        padding: 20px;
+                        border-top: 3px solid $theme;
+                        border-radius: 6px 6px 0 0;
+                    }
+                }
+                #pills-address{
+                    .content{
+                        color: $gray-5;
+                        .name{
+                            font-weight: 600;
+                        }
+                        .btn-theme{
+                            margin-top: 20px;
+                            background-color: $black-2;
+                            &:hover{
+                                background-color: $theme-1;
+                            }
+                        }
+                    }
+                }
+                #pills-account{
+                    .password-title{
+                        font-size: 18px;
+                        font-weight: 500;
+                    }
+                    .btn-theme{
+                        background-color: $black-2;
+                        padding: 10px 30px;
+                        border-radius: 0;
+                        &:hover{
+                            background-color: $theme-1;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

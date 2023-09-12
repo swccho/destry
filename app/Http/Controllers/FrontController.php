@@ -23,6 +23,10 @@ class FrontController extends BaseController
     {
         return view('front.pages.faq');
     }
+    public function profile(Request $request)
+    {
+        return view('front.pages.profile');
+    }
     public function product(Request $request)
     {
         return view('front.pages.product');
@@ -50,6 +54,26 @@ class FrontController extends BaseController
     public function blogRight(Request $request)
     {
         return view('front.pages.blog-right');
+    }
+    public function auth(Request $request)
+    {
+        return view('front.pages.auth');
+    }
+    public function wishlist(Request $request)
+    {
+        return view('front.pages.wishlist');
+    }
+    public function compare(Request $request)
+    {
+        return view('front.pages.compare');
+    }
+    public function cart(Request $request)
+    {
+        return view('front.pages.cart');
+    }
+    public function checkout(Request $request)
+    {
+        return view('front.pages.checkout');
     }
     public function notFound(Request $request)
     {

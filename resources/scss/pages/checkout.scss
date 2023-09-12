@@ -1,0 +1,387 @@
+.page{
+    &.checkout{
+        .checkout-content{
+            .header-faq{
+                margin-bottom: 30px;
+                .accordion-item{
+                    border: none;
+                    margin-bottom: 20px;
+                    &.return-customer{
+                        .accordion-header{
+                            span{
+                                width: 200px;
+                            }
+                        }
+                    }
+                    &.coupon-code{
+                        .accordion-header{
+                            span{
+                                width: 150px;
+                            }
+                        }
+                    }
+                    .accordion-header{
+                        background-color: $gray2;
+                        color: $black-2e;
+                        font-size: 16px;
+                        position: relative;
+                        padding: 15px 20px;
+                        border-radius: 0;
+                        display: flex;
+                        align-items: center;
+                        font-weight: 400;
+                        .accordion-button{
+                            background-color: $gray2;
+                            color: $black-2e;
+                            font-size: 16px;
+                            position: relative;
+                            padding: 0;
+                            border-radius: 0;
+                            border: none;
+                            box-shadow: none;
+                            &:after{
+                                content: '';
+                                background-image: url("");
+                            }
+                            &:hover{
+                                color: $theme;
+                            }
+                        }
+                    }
+                    #collapseReturnCustomer{
+                        .accordion-body{
+                            margin-top: 20px;
+                            padding: 20px;
+                            border: 1px solid $gray2;
+                            .desc{
+                                font-size: 15px;
+                                color: $gray-5;
+                                margin-bottom: 20px;
+                            }
+                            .from-group{
+                                .form-control{
+                                    width: 400px;
+                                }
+                            }
+                            .remember-me{
+                                input{
+                                    &:checked + label{
+                                        &:before{
+                                            border: 1px solid $theme;
+                                        }
+                                        &:after{
+                                            opacity: 1;
+                                        }
+                                    }
+                                }
+                                label{
+                                    position: relative;
+                                    padding-left: 30px;
+                                    line-height: 15px;
+                                    font-weight: 600;
+                                    font-size: 14px;
+                                    &:before{
+                                        position: absolute;
+                                        left: 0;
+                                        top: 0;
+                                        width: 15px;
+                                        height: 15px;
+                                        display: block;
+                                        border: 1px solid $gray2;
+                                        content: "";
+                                        transition: 0.3s;
+                                    }
+                                    &:after{
+                                        position: absolute;
+                                        left: 0;
+                                        top: 0;
+                                        display: block;
+                                        content: "\f00c";
+                                        font-family: "FontAwesome";
+                                        font-weight: 900;
+                                        font-size: 12px;
+                                        line-height: 15px;
+                                        opacity: 0;
+                                        width: 15px;
+                                        text-align: center;
+                                        transition: 0.3s;
+                                        color: #ff4545;
+                                    }
+                                    &:hover{
+                                        transition: all .4s ease;
+                                        color: $theme;
+                                    }
+                                }
+                            }
+                            .forget{
+                                text-decoration: none;
+                                color: $black-2;
+                                transition: all .4s ease;
+                                display: inline-block;
+                                font-size: 14px;
+                                margin-top: 20px;
+                                &:hover{
+                                    transition: all .4s ease;
+                                    color: $theme;
+                                }
+                            }
+                        }
+                    }
+                    #collapseCouponCode{
+                        .accordion-body{
+                            padding: 0;
+                            margin-top: 20px;
+                            .form-group{
+                                display: flex;
+                                .form-control{
+                                    width: 200px;
+                                    height: 46px;
+                                }
+                                .btn-theme2{
+                                    margin-left: 10px;
+                                    height: 46px;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            .billing-form, .billing-details{
+                .title{
+                    font-size: 28px;
+                    font-weight: 500;
+                    padding-bottom: 10px;
+                    border-bottom: 1px solid $gray2;
+                    margin-bottom: 30px;
+                    position: relative;
+                    &:after{
+                        content: "";
+                        background-color: #ff4545;
+                        height: 2px;
+                        width: 100px;
+                        display: block;
+                        position: absolute;
+                        top: 52px;
+                    }
+                }
+            }
+            .billing-form{
+                font-size: 15px;
+                .form-group{
+                    .accordion-button{
+                        transition: all .4s ease;
+                        &:hover{
+                            transition: all .4s ease;
+                            color: $theme;
+                        }
+                    }
+                    #collapseCreateAccount{
+                        .desc{
+                            font-size: 14px;
+                            color: $gray-5;
+                            margin-bottom: 20px;
+                            line-height: 1.8;
+                        }
+
+                    }
+                    .country-filter{
+                        padding: 7px 30px 7px 20px;
+                        border: 1px solid $gray2;
+                        cursor: pointer;
+                        position: relative;
+                        transition: all .4s ease;
+                        margin-bottom: 20px;
+                        &.active{
+                            transition: all .4s ease;
+                            border: 1px solid $black-9;
+                        }
+                        &:after{
+                            border-bottom: 2px solid #999;
+                            border-right: 2px solid #999;
+                            content: '';
+                            display: block;
+                            height: 5px;
+                            margin-top: -4px;
+                            pointer-events: none;
+                            position: absolute;
+                            right: 12px;
+                            top: 50%;
+                            transform-origin: 66% 66%;
+                            transform: rotate(45deg);
+                            transition: all 0.15s ease-in-out;
+                            width: 5px;
+                        }
+                        .dropdown{
+                            position: absolute;
+                            top: 110%;
+                            left: 0;
+                            width: 100%;
+                            list-style: none;
+                            padding-left: 0;
+                            margin-bottom: 0;
+                            visibility: hidden;
+                            opacity: 0;
+                            transform: translateY(10px);
+                            box-shadow: 0 0 0 1px rgba(68, 68, 68, 0.11);
+                            background-color: $white;
+                            z-index: 999;
+                            transition: all .4s ease;
+                            &.active{
+                                transition: all .4s ease;
+                                visibility: visible;
+                                opacity: 1;
+                                transform: translateY(0);
+                            }
+                            li{
+                                display: block;
+                                a{
+                                    display: inline-block;
+                                    text-decoration: none;
+                                    color: $gray-5;
+                                    padding: 12px 15px;
+                                    display: block;
+                                    transition: all .4s ease;
+                                    &:hover{
+                                        transition: all .4s ease;
+                                        background-color: #f6f6f6;
+                                    }
+                                    &.active{
+                                        font-weight: 600;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                    label{
+                        margin-bottom: 5px;
+                    }
+                    .form-control{
+                        margin-bottom: 30px;
+                    }
+                    input{
+                        &:checked + .bold-text{
+                            &:before{
+                                border: 1px solid $theme;
+                            }
+                            &:after{
+                                opacity: 1;
+                            }
+                        }
+                    }
+                    textarea{
+                        &.form-control{
+                            height: 90px;
+                        }
+                    }
+                    .bold-text{
+                        position: relative;
+                        padding-left: 30px;
+                        line-height: 15px;
+                        font-weight: 600;
+                        margin-bottom: 30px;
+                        cursor: pointer;
+                        &:before{
+                            position: absolute;
+                            left: 0;
+                            top: 0;
+                            width: 15px;
+                            height: 15px;
+                            display: block;
+                            border: 1px solid $gray2;
+                            content: "";
+                            transition: 0.3s;
+                        }
+                        &:after{
+                            position: absolute;
+                            left: 0;
+                            top: 0;
+                            display: block;
+                            content: "\f00c";
+                            font-family: "FontAwesome";
+                            font-weight: 900;
+                            font-size: 12px;
+                            line-height: 15px;
+                            opacity: 0;
+                            width: 15px;
+                            text-align: center;
+                            transition: 0.3s;
+                            color: #ff4545;
+                        }
+                    }
+                }
+            }
+            .billing-details{
+                padding: 30px;
+                border: 1px solid $gray2;
+                .history{
+                    font-size: 16px;
+                    ul{
+                        padding-left: 0;
+                        margin-bottom: 0;
+                        li{
+                            display: flex;
+                            align-items: center;
+                            justify-content: space-between;
+                            padding: 20px 0;
+                            border-bottom: 1px solid $gray;
+                            &:first-child{
+                                .text, .amount{
+                                    font-weight: 600;
+                                    text-transform: uppercase;
+                                }
+                            }
+                            &:last-child{
+                                border-bottom: none;
+                            }
+                            .text{
+                                span{
+                                    font-weight: 600;
+                                }
+                            }
+                            .bold-text{
+                                font-weight: 700;
+                            }
+                        }
+                    }
+                }
+                .faq-content{
+                     margin-top: 30px;
+                     .accordion-item{
+                         margin-bottom: 20px;
+                         border-radius: 5px;
+                         border: none;
+                         .accordion-button{
+                             background-color: $gray2;
+                             color: $black-2;
+                             font-size: 16px;
+                             position: relative;
+                             padding: 10px;
+                             border-radius: 0;
+                             &:focus{
+                                 border-color: $theme;
+                                 box-shadow: none;
+                             }
+                             &:after{
+                                 content: '';
+                                 background-image: url("");
+                             }
+                             &:hover{
+                                 background-color: $theme;
+                                 color: $white;
+                             }
+                         }
+                         .accordion-collapse{
+                             .accordion-body{
+                                 margin-top: 10px;
+                                 padding: 15px;
+                                 color: $gray-5;
+                                 font-size: 14px;
+                                 border: 1px solid $gray2;
+                             }
+                         }
+                     }
+                 }
+            }
+        }
+    }
+}

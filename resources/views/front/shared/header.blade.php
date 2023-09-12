@@ -47,26 +47,33 @@
                             </ul>
                         </li>
                         <li class="has-dropdown">
-                            <a href="javascript:void(0)">Blog <i class="fa fa-angle-down"></i></a>
-                            <ul>
-                                <li>
-                                    <a href="{{route('front.blog')}}">Blog</a>
-                                </li>
-                                <li>
-                                    <a href="{{route('front.blog-left')}}">Blog Left Sidebar</a>
-                                </li>
-                                <li>
-                                    <a href="{{route('front.blog-right')}}">Blog Right Sidebar</a>
-                                </li>
-                                <li>
-                                    <a href="{{route('front.blog-details')}}">Blog Details</a>
-                                </li>
-                                <li>
-                                    <a href="{{route('front.blog-details-sidebar')}}">Blog Details Sidebar</a>
-                            </ul>
+                            <a href="{{route('front.blog')}}">Blog</a>
                         </li>
                         <li>
                             <a href="{{route('front.contact')}}">Contact</a>
+                        </li>
+                        <li class="has-dropdown">
+                            <a href="javascript:void(0)">Profile <i class="fa fa-angle-down"></i></a>
+                            <ul>
+                                <li>
+                                    <a href="{{route('front.profile')}}">My Account</a>
+                                </li>
+                                <li>
+                                    <a href="{{route('front.auth')}}">Login | Register</a>
+                                </li>
+                                <li>
+                                    <a href="{{route('front.wishlist')}}">Wishlist</a>
+                                </li>
+                                <li>
+                                    <a href="{{route('front.cart')}}">Cart</a>
+                                </li>
+                                <li>
+                                    <a href="{{route('front.checkout')}}">Checkout</a>
+                                </li>
+                                <li>
+                                    <a href="{{route('front.blog')}}">Compare</a>
+                                </li>
+                            </ul>
                         </li>
                     </ul>
                 </div>

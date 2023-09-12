@@ -19,6 +19,22 @@ section{
         color: $white;
     }
 }
+.btn-theme2{
+    background-color: $black-2;
+    color: $white;
+    padding: 10px 25px;
+    border-radius: 4px;
+    font-weight: 600;
+    transition: all .4s;
+    text-transform: capitalize;
+    outline: none;
+    border-radius: 0;
+    &:hover{
+        background-color: $theme;
+        transition: all .4s;
+        color: $white;
+    }
+}
 
 
 .bread-crumb{
@@ -109,29 +125,42 @@ section{
 }
 
 /*contact form*/
-.contact-form{
-    .form-group{
-        .form-control{
-            background: #fff;
-            border: 1px solid #E8E8E8;
-            border-radius: 0;
-            width: 100%;
-            padding: 10px;
-            font-size: 14px;
-            margin-bottom: 20px;
+.form-group{
+    .form-control{
+        background: #fff;
+        border: 1px solid #E8E8E8;
+        border-radius: 0;
+        width: 100%;
+        padding: 10px;
+        font-size: 14px;
+        margin-bottom: 20px;
+        transition: all .4s ease;
+        box-shadow: none;
+        &:focus{
             transition: all .4s ease;
-            box-shadow: none;
-            &:focus{
-                transition: all .4s ease;
-                border-color: $theme!important;
-            }
-        }
-        textarea{
-            &.form-control{
-                height: 200px;
-            }
+            border-color: $theme!important;
         }
     }
+    textarea{
+        &.form-control{
+            height: 200px;
+        }
+    }
+}
+#pills-account{
+    .form-group{
+        label{
+            color: $gray-5;
+        }
+        .form-control{
+            color: $gray-5;
+            height: 56px;
+            font-size: 16px;
+        }
+    }
+}
+.contact-form{
+    font-size: 14px;
     .btn-theme{
         margin-top: 20px;
         background-color: $black-2;

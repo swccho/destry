@@ -87,7 +87,7 @@
                                 <a href="javacript:void(0)">Lather</a>
                                 <a href="javacript:void(0)">Polymer</a>
                             </div>
-                            <div class="count">
+                            <div class="quantity">
                                 <a href="javascript:void(0)" class="dec">
                                     <i class="fa fa-minus"></i>
                                 </a>

@@ -156,11 +156,61 @@
         {{--service section end--}}
 
         {{--brand section start--}}
+
         <section class="brand">
             <div class="container">
-                <div class="content">
-                    <div class="img">
-                        <img src="{{asset('images/brand-1.webp')}}" alt="">
+                <div class="swiper brand-slider">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide">
+                            <div class="img">
+                                <img src="{{asset('images/brand-1.webp')}}" alt="">
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="img">
+                                <img src="{{asset('images/brand-2.webp')}}" alt="">
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="img">
+                                <img src="{{asset('images/brand-3.webp')}}" alt="">
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="img">
+                                <img src="{{asset('images/brand-4.webp')}}" alt="">
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="img">
+                                <img src="{{asset('images/brand-5.webp')}}" alt="">
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="img">
+                                <img src="{{asset('images/brand-1.webp')}}" alt="">
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="img">
+                                <img src="{{asset('images/brand-2.webp')}}" alt="">
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="img">
+                                <img src="{{asset('images/brand-3.webp')}}" alt="">
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="img">
+                                <img src="{{asset('images/brand-4.webp')}}" alt="">
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="img">
+                                <img src="{{asset('images/brand-5.webp')}}" alt="">
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>

@@ -1,0 +1,102 @@
+.page{
+    &.auth{
+        .login, .register{
+            padding: 40px;
+            background-color: $gray;
+            color: $gray-5;
+            font-size: 14px;
+            .title{
+                font-size: 35px;
+                font-weight: 600;
+                margin-bottom: 8px;
+                color: $black-2e;
+                text-align: center;
+            }
+            .desc{
+                margin-bottom: 30px;
+                text-align: center;
+            }
+            .form-group{
+                .form-control{
+                    margin-bottom: 30px;
+                }
+            }
+            .remember-forget, .newsletter{
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                input{
+                    &:checked + label{
+                        &:after{
+                            opacity: 1;
+                        }
+                    }
+                }
+                label{
+                    position: relative;
+                    padding-left: 30px;
+                    line-height: 15px;
+                    &:before{
+                        position: absolute;
+                        left: 0;
+                        top: 0;
+                        width: 15px;
+                        height: 15px;
+                        display: block;
+                        border: 1px solid $theme;
+                        content: "";
+                        transition: 0.3s;
+                    }
+                    &:after{
+                        position: absolute;
+                        left: 0;
+                        top: 0;
+                        display: block;
+                        content: "\f00c";
+                        font-family: "FontAwesome";
+                        font-weight: 900;
+                        font-size: 12px;
+                        line-height: 15px;
+                        opacity: 0;
+                        width: 15px;
+                        text-align: center;
+                        transition: 0.3s;
+                        color: #ff4545;
+                    }
+                }
+                .forget{
+                    text-decoration: none;
+                    color: $black-2;
+                    transition: all .4s ease;
+                    display: inline-block;
+                    &:hover{
+                        transition: all .4s ease;
+                        color: $theme;
+                    }
+                }
+            }
+            .btn-theme{
+                margin: 30px 0 20px;
+                border-radius: 0;
+                background-color: $black-2;
+                padding: 10px 30px;
+                &:hover{
+                    background-color: $theme-1;
+                }
+            }
+            .create{
+                text-decoration: none;
+                color: $gray-5;
+                transition: all .4s ease;
+                display: inline-block;
+                transform: translateX(0);
+                &:hover{
+                    transition: all .4s ease;
+                    color: $theme;
+                    transform: translateX(5px);
+                    text-decoration: underline;
+                }
+            }
+        }
+    }
+}
