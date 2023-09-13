@@ -21,7 +21,7 @@
             <div class="row">
                 <div class="col-4">
                     <section class="sidebar">
-                        <div class="item search">
+                        <div class="item search" data-aos="fade-up">
                             <div class="title">Search</div>
                             <div class="search-form">
                                 <form>
@@ -34,7 +34,7 @@
                                 </form>
                             </div>
                         </div>
-                        <div class="item menu-categories">
+                        <div class="item menu-categories" data-aos="fade-up">
                             <div class="title">Menu Categories</div>
                             <div class="menu">
                                 <div class="accordion" id="accordionExample">
@@ -164,7 +164,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="item menu">
+                        <div class="item menu" data-aos="fade-up">
                             <div class="title">Categories</div>
                             <div class="menu-item">
                                 <ul>
@@ -175,7 +175,7 @@
                                 </ul>
                             </div>
                         </div>
-                        <div class="item color">
+                        <div class="item color" data-aos="fade-up">
                             <div class="title">Color</div>
                             <div class="content">
                                 <div class="color-item">
@@ -200,7 +200,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="item tags">
+                        <div class="item tags" data-aos="fade-up">
                             <div class="title">Tags</div>
                             <div class="content">
                                 <ul>
@@ -214,7 +214,7 @@
                                 </ul>
                             </div>
                         </div>
-                        <div class="item products">
+                        <div class="item products" data-aos="fade-up">
                             <div class="title">Recent Products</div>
                             <div class="product-items">
                                 <div class="each">
@@ -280,7 +280,7 @@
                 </div>
                 <div class="col-8">
                     <section class="blog-content">
-                        <div class="thumbnail">
+                        <div class="thumbnail" data-aos="fade-up">
                             <img src="{{asset('images/blog-thumbnail.webp')}}" alt="">
                         </div>
                         <div class="blog-title">Fashion for the Clueless</div>
@@ -312,10 +312,10 @@
                         </div>
                         <div class="images">
                             <div class="row">
-                                <div class="col-6">
+                                <div class="col-6" data-aos="fade-right">
                                     <img src="{{asset('images/blog-img-1.webp')}}" alt="">
                                 </div>
-                                <div class="col-6">
+                                <div class="col-6" data-aos="fade-left">
                                     <img src="{{asset('images/blog-img-1.webp')}}" alt="">
                                 </div>
                             </div>
@@ -325,7 +325,7 @@
                             this the first true generator on the Internet. It uses a dictionary o first true generator on the
                             Internet. It uses a dictionary of over 200 Latin words, combined with a handful of model
                         </div>
-                        <div class="share-post">
+                        <div class="share-post"  data-aos="fade-up">
                             <div class="header">
                                 <div>
                                     <a href="javascript:void(0)">
@@ -353,7 +353,7 @@
                                 </ul>
                             </div>
                         </div>
-                        <div class="comments">
+                        <div class="comments" data-aos="fade-up">
                             <div class="title">5 Comments</div>
                             <div class="comment">
                                 <div class="img">
@@ -396,7 +396,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="contact">
+                        <div class="contact" data-aos="fade-up">
                             <div class="title">Leave a comment</div>
                             <div class="contact-form">
                                 <form>

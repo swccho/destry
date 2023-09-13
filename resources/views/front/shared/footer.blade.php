@@ -1,5 +1,5 @@
 <footer>
-    <div class="footer-top">
+    <div class="footer-top" data-aos="fade-up">
         <div class="container">
             <div class="row">
                 <div class="col-4">

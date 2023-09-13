@@ -77,7 +77,7 @@
                         <div class="nav-content">
                             <div class="tab-content" id="pills-tabContent">
                                 <div class="tab-pane fade show active" id="pills-dashboard" role="tabpanel"
-                                     aria-labelledby="pills-home-tab" tabindex="0">
+                                     aria-labelledby="pills-dashboard-tab" tabindex="0">
                                     <div class="title">Dashboard</div>
                                     <div class="content">
                                         Hello, <span>Alex Aya</span> (If Not <span>Aya !</span> <a href="{{'front.home'}}">Logout</a>)

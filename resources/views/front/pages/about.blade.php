@@ -23,7 +23,7 @@
             <div class="container">
                 <div class="row">
                     <div class="col-6">
-                        <div class="left h-100 d-flex align-items-center">
+                        <div class="left h-100 d-flex align-items-center" data-aos="fade-right">
                             <div>
                                 <div class="title">About Our Destry Store</div>
                                 <div class="text-1">We believe that every project existing in digital world is a result
@@ -46,7 +46,7 @@
                         </div>
                     </div>
                     <div class="col-6">
-                        <div class="img">
+                        <div class="img" data-aos="fade-left">
                             <img src="{{asset('images/about-banner.webp')}}" alt="">
                         </div>
                     </div>
@@ -56,7 +56,7 @@
         {{--about us section end--}}
 
         {{--feature section start--}}
-        <section class="feature" style="background-image: url('{{asset('images/about_feature_bg.webp')}}')">
+        <section class="feature" data-aos="fade-up" style="background-image: url('{{asset('images/about_feature_bg.webp')}}')">
             <div class="container">
                 <div class="row">
                     <div class="col-3">
@@ -117,7 +117,7 @@
         {{--feature section end--}}
 
         {{--service section start--}}
-        <section class="service">
+        <section class="service" data-aos="fade-up">
             <div class="container">
                 <div class="row">
                     <div class="col-4">
@@ -156,8 +156,7 @@
         {{--service section end--}}
 
         {{--brand section start--}}
-
-        <section class="brand">
+        <section class="brand" data-aos="fade-up">
             <div class="container">
                 <div class="swiper brand-slider">
                     <div class="swiper-wrapper">
@@ -215,5 +214,6 @@
                 </div>
             </div>
         </section>
+        {{--brand section end--}}
     </div>
 @endsection

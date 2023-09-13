@@ -119,54 +119,51 @@
                 text-align: center;
                 border-bottom: 2px solid $gray2;
                 padding-bottom: 10px;
-                a{
-                    display: inline-block;
-                    text-decoration: none;
-                    color: $black-2e;
-                    font-size: 18px;
-                    margin: 0 20px;
-                    transition: all .4s;
-                    position: relative;
-                    &.active{
+                .nav-pills{
+                    justify-content: center;
+                    padding-left: 0;
+                    .nav-link{
+                        display: inline-block;
+                        text-decoration: none;
+                        color: $black-2e;
+                        font-size: 18px;
+                        margin: 0 20px;
                         transition: all .4s;
-                        color: $theme;
+                        position: relative;
+                        padding: 0;
+                        &.active{
+                            transition: all .4s;
+                            color: $theme;
+                            background-color: $white;
+                            &:after{
+                                transition: all .4s;
+                                width: 100%;
+                            }
+                        }
+                        &:hover{
+                            transition: all .4s;
+                            color: $theme;
+                            &:after{
+                                transition: all .4s;
+                                width: 100%;
+                            }
+                        }
                         &:after{
                             transition: all .4s;
-                            width: 100%;
+                            content: '';
+                            width: 0;
+                            height: 2px;
+                            display: block;
+                            background-color: $theme;
+                            position: absolute;
+                            top: 37px;
                         }
-                    }
-                    &:hover{
-                        transition: all .4s;
-                        color: $theme;
-                        &:after{
-                            transition: all .4s;
-                            width: 100%;
-                        }
-                    }
-                    &:after{
-                        transition: all .4s;
-                        content: '';
-                        width: 0;
-                        height: 2px;
-                        display: block;
-                        background-color: $theme;
-                        position: absolute;
-                        top: 37px;
                     }
                 }
             }
             .tab-content{
                 margin-top: 30px;
-                min-height: 1030px;
                 .products{
-                    &.new, &.best, &.sale{
-                        display: none;
-                        transition: all .4s ease;
-                        &.active{
-                            transition: all .4s ease;
-                            display: block;
-                        }
-                    }
                     .swiper{
                         &:hover{
                             .swiper-button-prev, .swiper-button-next{
@@ -327,10 +324,11 @@
                             .rating{
                                 margin: 15px 0;
                                 i{
-                                    font-size: 14px;
+                                    font-size: 12px;
                                     color: $black-2;
                                 }
                                 .star{
+                                    font-size: 12px;
                                     color: $black-9;
                                 }
                             }
@@ -493,9 +491,10 @@
                                 }
                                 .rating{
                                     span{
-                                        font-size: 14px;
+                                        font-size: 12px;
                                     }
                                     .star{
+                                        font-size: 12px;
                                         color: $black-9;
                                     }
                                 }
@@ -568,18 +567,22 @@
                     font-weight: 500;
                 }
                 .tab-buttons{
-                    a{
+                    .nav-item{
+                        &:last-child{
+                            .nav-link{
+                                margin-right: 0;
+                            }
+                        }
+                    }
+                    .nav-link{
                         display: inline-block;
                         color: $black-2e;
                         font-size: 18px;
                         text-decoration: none;
                         margin-right: 15px;
-                        padding-bottom: 8px;
                         position: relative;
                         transition: all .4s ease;
-                        &:last-child{
-                            margin-right: 0;
-                        }
+                        padding: 0;
                         &:before{
                             content: '';
                             width: 0;
@@ -587,13 +590,14 @@
                             background-color: $theme;
                             position: absolute;
                             left: 0;
-                            bottom: -15px;
+                            bottom: -19px;
                             display: block;
                             transition: all .4s ease;
                         }
                         &:hover, &.active{
                             transition: all .4s ease;
                             color: $theme;
+                            background-color: $white;
                             &:before{
                                 transition: all .4s ease;
                                 width: 100%;
@@ -604,17 +608,8 @@
             }
 
             .tab-content{
-                min-height: 326px;
                 .products{
                     margin-top: 40px;
-                    &.new, &.best, &.sale{
-                        display: none;
-                        transition: all .4s ease;
-                        &.active{
-                            transition: all .4s ease;
-                            display: block;
-                        }
-                    }
                     .swiper{
                         &:hover{
                             .swiper-button-prev, .swiper-button-next{
@@ -729,19 +724,26 @@
                                 .rating{
                                     margin: 15px 0;
                                     i{
-                                        font-size: 14px;
+                                        font-size: 12px;
                                         color: $black-2;
                                     }
                                     .star{
+                                        font-size: 12px;
                                         color: $black-9;
                                     }
                                 }
                                 .price{
-                                    color: $theme;
-                                    font-weight: 600;
                                     margin-bottom: 15px;
-                                    span{
+                                    .new{
+                                        color: $theme;
+                                        font-size: 15px;
+                                        font-weight: 600;
+                                        margin-right: 10px;
+                                    }
+                                    .old{
+                                        font-size: 14px;
                                         color: $black-9;
+                                        text-decoration: line-through;
                                     }
                                 }
                                 .cart-btn{

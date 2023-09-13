@@ -74,20 +74,20 @@
                     <div class="product-row active">
                         <div class="row">
                             <div class="col-3 each">
-                                <div class="product">
+                                <div class="product" data-aos="fade-up">
                                     <div class="img">
                                         <a href="{{route('front.product-single', ['id' => 1])}}" class="d-block">
                                             <img class="first-img" src="{{asset('images/1.webp')}}" alt="">
                                             <img class="second-img" src="{{asset('images/product-tab-img-2.webp')}}" alt="">
                                         </a>
                                         <div class="actions">
-                                            <a href="" class="action">
+                                            <a href="{{route('front.wishlist')}}" class="action">
                                                 <i class="pe-7s-like"></i>
                                             </a>
-                                            <a href="" class="action">
+                                            <a href="javascript:void(0)" class="action" onclick="openModal()">
                                                 <i class="pe-7s-search"></i>
                                             </a>
-                                            <a href="" class="action">
+                                            <a href="{{route('front.compare')}}" class="action">
                                                 <i class="pe-7s-shuffle"></i>
                                             </a>
                                         </div>
@@ -111,20 +111,20 @@
                                 </div>
                             </div>
                             <div class="col-3 each">
-                                <div class="product">
+                                <div class="product" data-aos="fade-up">
                                     <div class="img">
                                         <a href="{{route('front.product-single', ['id' => 1])}}" class="d-block">
                                             <img class="first-img" src="{{asset('images/1.webp')}}" alt="">
                                             <img class="second-img" src="{{asset('images/product-tab-img-2.webp')}}" alt="">
                                         </a>
                                         <div class="actions">
-                                            <a href="" class="action">
+                                            <a href="{{route('front.wishlist')}}" class="action">
                                                 <i class="pe-7s-like"></i>
                                             </a>
-                                            <a href="" class="action">
+                                            <a href="javascript:void(0)" class="action" onclick="openModal()">
                                                 <i class="pe-7s-search"></i>
                                             </a>
-                                            <a href="" class="action">
+                                            <a href="{{route('front.compare')}}" class="action">
                                                 <i class="pe-7s-shuffle"></i>
                                             </a>
                                         </div>
@@ -148,20 +148,20 @@
                                 </div>
                             </div>
                             <div class="col-3 each">
-                                <div class="product">
+                                <div class="product" data-aos="fade-up">
                                     <div class="img">
                                         <a href="{{route('front.product-single', ['id' => 1])}}" class="d-block">
                                             <img class="first-img" src="{{asset('images/1.webp')}}" alt="">
                                             <img class="second-img" src="{{asset('images/product-tab-img-2.webp')}}" alt="">
                                         </a>
                                         <div class="actions">
-                                            <a href="" class="action">
+                                            <a href="{{route('front.wishlist')}}" class="action">
                                                 <i class="pe-7s-like"></i>
                                             </a>
-                                            <a href="" class="action">
+                                            <a href="javascript:void(0)" class="action" onclick="openModal()">
                                                 <i class="pe-7s-search"></i>
                                             </a>
-                                            <a href="" class="action">
+                                            <a href="{{route('front.compare')}}" class="action">
                                                 <i class="pe-7s-shuffle"></i>
                                             </a>
                                         </div>
@@ -185,20 +185,20 @@
                                 </div>
                             </div>
                             <div class="col-3 each">
-                                <div class="product">
+                                <div class="product" data-aos="fade-up">
                                     <div class="img">
                                         <a href="{{route('front.product-single', ['id' => 1])}}" class="d-block">
                                             <img class="first-img" src="{{asset('images/1.webp')}}" alt="">
                                             <img class="second-img" src="{{asset('images/product-tab-img-2.webp')}}" alt="">
                                         </a>
                                         <div class="actions">
-                                            <a href="" class="action">
+                                            <a href="{{route('front.wishlist')}}" class="action">
                                                 <i class="pe-7s-like"></i>
                                             </a>
-                                            <a href="" class="action">
+                                            <a href="javascript:void(0)" class="action" onclick="openModal()">
                                                 <i class="pe-7s-search"></i>
                                             </a>
-                                            <a href="" class="action">
+                                            <a href="{{route('front.compare')}}" class="action">
                                                 <i class="pe-7s-shuffle"></i>
                                             </a>
                                         </div>
@@ -222,20 +222,20 @@
                                 </div>
                             </div>
                             <div class="col-3 each">
-                                <div class="product">
+                                <div class="product" data-aos="fade-up">
                                     <div class="img">
                                         <a href="{{route('front.product-single', ['id' => 1])}}" class="d-block">
                                             <img class="first-img" src="{{asset('images/1.webp')}}" alt="">
                                             <img class="second-img" src="{{asset('images/product-tab-img-2.webp')}}" alt="">
                                         </a>
                                         <div class="actions">
-                                            <a href="" class="action">
+                                            <a href="{{route('front.wishlist')}}" class="action">
                                                 <i class="pe-7s-like"></i>
                                             </a>
-                                            <a href="" class="action">
+                                            <a href="javascript:void(0)" class="action" onclick="openModal()">
                                                 <i class="pe-7s-search"></i>
                                             </a>
-                                            <a href="" class="action">
+                                            <a href="{{route('front.compare')}}" class="action">
                                                 <i class="pe-7s-shuffle"></i>
                                             </a>
                                         </div>
@@ -259,20 +259,20 @@
                                 </div>
                             </div>
                             <div class="col-3 each">
-                                <div class="product">
+                                <div class="product" data-aos="fade-up">
                                     <div class="img">
                                         <a href="{{route('front.product-single', ['id' => 1])}}" class="d-block">
                                             <img class="first-img" src="{{asset('images/1.webp')}}" alt="">
                                             <img class="second-img" src="{{asset('images/product-tab-img-2.webp')}}" alt="">
                                         </a>
                                         <div class="actions">
-                                            <a href="" class="action">
+                                            <a href="{{route('front.wishlist')}}" class="action">
                                                 <i class="pe-7s-like"></i>
                                             </a>
-                                            <a href="" class="action">
+                                            <a href="javascript:void(0)" class="action" onclick="openModal()">
                                                 <i class="pe-7s-search"></i>
                                             </a>
-                                            <a href="" class="action">
+                                            <a href="{{route('front.compare')}}" class="action">
                                                 <i class="pe-7s-shuffle"></i>
                                             </a>
                                         </div>
@@ -296,20 +296,20 @@
                                 </div>
                             </div>
                             <div class="col-3 each">
-                                <div class="product">
+                                <div class="product" data-aos="fade-up">
                                     <div class="img">
                                         <a href="{{route('front.product-single', ['id' => 1])}}" class="d-block">
                                             <img class="first-img" src="{{asset('images/1.webp')}}" alt="">
                                             <img class="second-img" src="{{asset('images/product-tab-img-2.webp')}}" alt="">
                                         </a>
                                         <div class="actions">
-                                            <a href="" class="action">
+                                            <a href="{{route('front.wishlist')}}" class="action">
                                                 <i class="pe-7s-like"></i>
                                             </a>
-                                            <a href="" class="action">
+                                            <a href="javascript:void(0)" class="action" onclick="openModal()">
                                                 <i class="pe-7s-search"></i>
                                             </a>
-                                            <a href="" class="action">
+                                            <a href="{{route('front.compare')}}" class="action">
                                                 <i class="pe-7s-shuffle"></i>
                                             </a>
                                         </div>
@@ -333,20 +333,20 @@
                                 </div>
                             </div>
                             <div class="col-3 each">
-                                <div class="product">
+                                <div class="product" data-aos="fade-up">
                                     <div class="img">
                                         <a href="{{route('front.product-single', ['id' => 1])}}" class="d-block">
                                             <img class="first-img" src="{{asset('images/1.webp')}}" alt="">
                                             <img class="second-img" src="{{asset('images/product-tab-img-2.webp')}}" alt="">
                                         </a>
                                         <div class="actions">
-                                            <a href="" class="action">
+                                            <a href="{{route('front.wishlist')}}" class="action">
                                                 <i class="pe-7s-like"></i>
                                             </a>
-                                            <a href="" class="action">
+                                            <a href="javascript:void(0)" class="action" onclick="openModal()">
                                                 <i class="pe-7s-search"></i>
                                             </a>
-                                            <a href="" class="action">
+                                            <a href="{{route('front.compare')}}" class="action">
                                                 <i class="pe-7s-shuffle"></i>
                                             </a>
                                         </div>
@@ -372,7 +372,7 @@
                         </div>
                     </div>
                     <div class="product-col">
-                        <div class="product">
+                        <div class="product" data-aos="fade-up">
                             <div class="row">
                                 <div class="col-3">
                                     <div class="img">
@@ -419,7 +419,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="product">
+                        <div class="product" data-aos="fade-up">
                             <div class="row">
                                 <div class="col-3">
                                     <div class="img">
@@ -466,7 +466,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="product">
+                        <div class="product" data-aos="fade-up">
                             <div class="row">
                                 <div class="col-3">
                                     <div class="img">
@@ -513,7 +513,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="product">
+                        <div class="product" data-aos="fade-up">
                             <div class="row">
                                 <div class="col-3">
                                     <div class="img">
@@ -560,7 +560,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="product">
+                        <div class="product" data-aos="fade-up">
                             <div class="row">
                                 <div class="col-3">
                                     <div class="img">
@@ -654,6 +654,110 @@
                 </div>
             </div>
         </section>
+
+        {{--product modal--}}
+        <div class="modal fade" tabindex="-1" id="ProductModal">
+            <div class="modal-dialog modal-xl modal-dialog-centered">
+                <div class="modal-content">
+                    <div class="modal-body">
+                        <div class="text-end">
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="content">
+                            <div class="row">
+                                <div class="col-6">
+                                    <div class="left">
+                                        <div class="swiper product-img-slider">
+                                            <div class="swiper-wrapper">
+                                                <div class="swiper-slide">
+                                                    <div class="img">
+                                                        <img src="{{asset('images/1 (1).webp')}}" alt="">
+                                                    </div>
+                                                </div>
+                                                <div class="swiper-slide">
+                                                    <div class="img">
+                                                        <img src="{{asset('images/5 (1).webp')}}" alt="">
+                                                    </div>
+                                                </div>
+                                                <div class="swiper-slide">
+                                                    <div class="img">
+                                                        <img src="{{asset('images/1 (1).webp')}}" alt="">
+                                                    </div>
+                                                </div>
+                                                <div class="swiper-slide">
+                                                    <div class="img">
+                                                        <img src="{{asset('images/5 (1).webp')}}" alt="">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <!-- If we need navigation buttons -->
+                                            <div class="swiper-button-prev"></div>
+                                            <div class="swiper-button-next"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-6">
+                                    <div class="right">
+                                        <div class="title">Sample product</div>
+                                        <div class="price"><span class="new">$38.50 </span><span class="old">$42.85</span></div>
+                                        <div class="rating">
+                                        <span>
+                                            <i class="fa-solid fa-star"></i>
+                                            <i class="fa-solid fa-star"></i>
+                                            <i class="fa-solid fa-star"></i>
+                                            <i class="fa-solid fa-star"></i>
+                                            <i class="fa-solid fa-star"></i>
+                                        </span>
+                                            <span class="star">(4)</span>
+                                        </div>
+                                        <div class="model">SKU: 12345</div>
+                                        <div class="desc">
+                                            I must explain to you how all this mistaken idea of denouncing pleasure and praising
+                                            pain was born and I will give you a complete account of the system, and expound the
+                                            actual teachings of the great explorer of the truth, the master-builder of human
+                                            happiness.
+                                        </div>
+                                        <div class="size">
+                                            Size:
+                                            <a href="javacript:void(0)">S</a>
+                                            <a href="javacript:void(0)">M</a>
+                                            <a href="javacript:void(0)">L</a>
+                                            <a href="javacript:void(0)">X</a>
+                                        </div>
+                                        <div class="colors">
+                                            <span class="bg-danger color"></span>
+                                            <span class="bg-dark color"></span>
+                                            <span class="bg-primary color"></span>
+                                            <span class="bg-warning color"></span>
+                                        </div>
+                                        <div class="type">
+                                            Material:
+                                            <a href="javacript:void(0)">Metal</a>
+                                            <a href="javacript:void(0)">Resin</a>
+                                            <a href="javacript:void(0)">Lather</a>
+                                            <a href="javacript:void(0)">Polymer</a>
+                                        </div>
+                                        <div class="quantity">
+                                            <a href="javascript:void(0)" class="dec">
+                                                <i class="fa fa-minus"></i>
+                                            </a>
+                                            <input type="text" class="form-control" value="0">
+                                            <a href="javascript:void(0)" class="inc">
+                                                <i class="fa fa-plus"></i>
+                                            </a>
+                                        </div>
+                                        <div class="btn-group">
+                                            <button class="btn cart-btn me-3">Add to cart</button>
+                                            <button class="btn cart-btn">Add to wishlist</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
     <script>
         const openDropdown = (e) => {
@@ -696,6 +800,13 @@
                     productRow.classList.add('active')
                 }, 300)
             }
+        }
+
+        const openModal = ()=>{
+            const modal = new bootstrap.Modal('#ProductModal', {
+                keyboard: false
+            })
+            modal.show()
         }
 
         window.addEventListener('click', (e) => {

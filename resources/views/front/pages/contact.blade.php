@@ -19,7 +19,7 @@
         {{-- breadcrumb section end--}}
 
         {{--contact form section start--}}
-        <section class="contact-us">
+        <section class="contact-us" data-aos="fade-up">
             <div class="container">
                 <div class="row">
                     <div class="col-6">

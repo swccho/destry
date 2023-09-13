@@ -12,6 +12,8 @@
     <link rel="stylesheet" href="/Icon-font-7-stroke-PIXEDEN-v-1.2.0/pe-icon-7-stroke/css/pe-icon-7-stroke.css">
     <link rel="stylesheet" href="https://maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.3.0/css/line-awesome.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css">
+
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"></script>
     <link
         rel="stylesheet"
@@ -26,103 +28,123 @@
 @yield('content')
 @include('front.shared.footer')
 
+<script src="https://unpkg.com/aos@next/dist/aos.js"></script>
 <script>
-    const swiper1= new Swiper('.hero-slider', {
-        loop: true,
-        slidesPerView: 1,
-        // autoplay: {
-        //     delay: 2000,
-        // },
-        navigation: {
-            nextEl: '.swiper-button-next',
-            prevEl: '.swiper-button-prev',
-        },
-    });
-    const swiper2 = new Swiper('.brand-slider', {
-        loop: true,
-        slidesPerView: 5,
-        // autoplay: {
-        //     delay: 2000,
-        // },
-    });
-    const swiper3 = new Swiper('.daily-product-slider', {
-        loop: true,
-        slidesPerView: 2,
-        // autoplay: {
-        //     delay: 2000,
-        // },
-        navigation: {
-            nextEl: '.swiper-button-next',
-            prevEl: '.swiper-button-prev',
-        },
-    });
-    const swiper4 = new Swiper('.best-product-slider', {
-        loop: true,
-        slidesPerView: 1,
-        // autoplay: {
-        //     delay: 2000,
-        // },
-        navigation: {
-            nextEl: '.swiper-button-next',
-            prevEl: '.swiper-button-prev',
-        },
-    });
-    const swiper5 = new Swiper('.best-offer-slider', {
-        loop: true,
-        slidesPerView: 1,
-        // autoplay: {
-        //     delay: 2000,
-        // },
-        navigation: {
-            nextEl: '.swiper-button-next',
-            prevEl: '.swiper-button-prev',
-        },
-    });
-    const swiper6 = new Swiper('.new-product-slider', {
-        loop: true,
-        slidesPerView: 1,
-        // autoplay: {
-        //     delay: 2000,
-        // },
-        navigation: {
-            nextEl: '.swiper-button-next',
-            prevEl: '.swiper-button-prev',
-        },
-    });
-    const swiper7 = new Swiper('.best-seller-slider', {
-        loop: true,
-        slidesPerView: 1,
-        // autoplay: {
-        //     delay: 2000,
-        // },
-        navigation: {
-            nextEl: '.swiper-button-next',
-            prevEl: '.swiper-button-prev',
-        },
-    });
-    const swiper8 = new Swiper('.product-tabs-slider', {
-        loop: true,
-        slidesPerView: 4,
-        // autoplay: {
-        //     delay: 2000,
-        // },
-        navigation: {
-            nextEl: '.swiper-button-next',
-            prevEl: '.swiper-button-prev',
-        },
-    });
-    const swiper9 = new Swiper('.single-product-slider', {
-        loop: true,
-        slidesPerView: 4,
-        // autoplay: {
-        //     delay: 2000,
-        // },
-        navigation: {
-            nextEl: '.swiper-button-next',
-            prevEl: '.swiper-button-prev',
-        },
-    });
     window.onload = () => {
+        const swiper1= new Swiper('.hero-slider', {
+            loop: true,
+            slidesPerView: 1,
+             effect: "fade",
+            // autoplay: {
+            //     delay: 2000,
+            // },
+            navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+            },
+        });
+        const swiper2 = new Swiper('.brand-slider', {
+            loop: true,
+            slidesPerView: 5,
+            // autoplay: {
+            //     delay: 2000,
+            // },
+        });
+        const swiper3 = new Swiper('.daily-product-slider', {
+            loop: true,
+            slidesPerView: 2,
+            // autoplay: {
+            //     delay: 2000,
+            // },
+            navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+            },
+        });
+        const swiper4 = new Swiper('.best-product-slider', {
+            loop: true,
+            slidesPerView: 1,
+            // autoplay: {
+            //     delay: 2000,
+            // },
+            navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+            },
+        });
+        const swiper5 = new Swiper('.best-offer-slider', {
+            loop: true,
+            slidesPerView: 1,
+            // autoplay: {
+            //     delay: 2000,
+            // },
+            navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+            },
+        });
+        const swiper6 = new Swiper('.new-product-slider', {
+            loop: true,
+            slidesPerView: 1,
+            // autoplay: {
+            //     delay: 2000,
+            // },
+            navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+            },
+        });
+        const swiper7 = new Swiper('.best-seller-slider', {
+            loop: true,
+            slidesPerView: 1,
+            // autoplay: {
+            //     delay: 2000,
+            // },
+            navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+            },
+        });
+        const swiper8 = new Swiper('.product-tabs-slider', {
+            loop: true,
+            slidesPerView: 4,
+            // autoplay: {
+            //     delay: 2000,
+            // },
+            navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+            },
+        });
+        const swiper9 = new Swiper('.single-product-slider', {
+            loop: true,
+            slidesPerView: 4,
+            // autoplay: {
+            //     delay: 2000,
+            // },
+            navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+            },
+        });
+        const swiper10 = new Swiper('.product-img-slider', {
+            loop: true,
+            slidesPerView: 1,
+             effect: "fade",
+            // autoplay: {
+            //     delay: 2000,
+            // },
+            navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+            },
+        });
+        AOS.init({
+            delay: 50,
+            duration: 1000,
+            offset: 120,
+            disable: 'mobile',
+        });
         window.addEventListener('scroll', ()=>{
             if(window.pageYOffset > 145){
                 document.querySelector('.header-bottom').classList.add('fixed');

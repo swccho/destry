@@ -21,7 +21,7 @@
             <div class="container">
                 <div class="row">
                     <div class="col-5">
-                        <div class="left">
+                        <div class="left" data-aos="fade-right">
                             <div class="row">
                                 <div class="col-6">
                                     <div class="img">
@@ -47,7 +47,7 @@
                         </div>
                     </div>
                     <div class="col-7">
-                        <div class="right">
+                        <div class="right" data-aos="fade-left">
                             <div class="title">Sample product</div>
                             <div class="price"><span class="new">$38.50 </span><span class="old">$42.85</span></div>
                             <div class="rating">
@@ -139,44 +139,71 @@
                     </div>
                 </div>
                 <div class="product-tab">
-                    <div class="header">
-                        <a href="javascript:void(0)" class="active" onclick="showTabProducts(event, 'description')">Description</a>
-                        <a href="javascript:void(0)" onclick="showTabProducts(event, 'reviews')">Reviews</a>
-                        <a href="javascript:void(0)" onclick="showTabProducts(event, 'shipping-policy')">Shipping policy</a>
-                        <a href="javascript:void(0)" onclick="showTabProducts(event, 'size-chart')">Size chart</a>
+                    <div class="header" data-aos="fade-up">
+                        <ul class="nav nav-pills" id="pills-tab" role="tablist">
+                            <li class="nav-item" role="presentation">
+                                <button class="nav-link active" id="pills-description-tab" data-bs-toggle="pill"
+                                        data-bs-target="#pills-description" type="button" role="tab"
+                                        aria-controls="pills-description" aria-selected="true">Description
+                                </button>
+                            </li>
+                            <li class="nav-item" role="presentation">
+                                <button class="nav-link" id="pills-reviews-tab" data-bs-toggle="pill"
+                                        data-bs-target="#pills-reviews" type="button" role="tab"
+                                        aria-controls="pills-reviews" aria-selected="false">Reviews
+                                </button>
+                            </li>
+                            <li class="nav-item" role="presentation">
+                                <button class="nav-link" id="pills-shipping-tab" data-bs-toggle="pill"
+                                        data-bs-target="#pills-shipping" type="button" role="tab"
+                                        aria-controls="pills-shipping" aria-selected="false">Shipping Policy
+                                </button>
+                            </li>
+                            <li class="nav-item" role="presentation">
+                                <button class="nav-link" id="pills-size-tab" data-bs-toggle="pill"
+                                        data-bs-target="#pills-size" type="button" role="tab"
+                                        aria-controls="pills-size" aria-selected="false">Size Chart
+                                </button>
+                            </li>
+                        </ul>
                     </div>
-                    <div class="content">
-                        <div class="each description active">
-                            On the other hand, we denounce with righteous indignation and dislike men who
-                            are so beguiled and demoralized by the charms of pleasure of the moment, so
-                            blinded by desire, that they cannot foresee the pain and trouble that are bound
-                            to ensue; and equal blame belongs to those who fail in their duty through
-                            weakness of will, which is the same as saying through shrinking from toil and
-                            pain. These cases are perfectly simple and easy to distinguish. In a free hour,
-                            when our power of choice is untrammelled and when nothing prevents our being
-                            able to do what we like best, every pleasure is to be welcomed and every pain
-                            avoided. But in certain circumstances and owing to the claims of duty or the
-                            obligations of business it will frequently occur that pleasures have to be
-                            repudiated and annoyances accepted. The wise man therefore always holds in these
-                            matters to this principle of selection: he rejects pleasures to secure other
-                            greater pleasures, or else he endures pains to avoid worse pains.
-                            <br> <br>
-                            Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore,
-                            cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod
-                            maxime placeat facere possimus, omnis voluptas assumenda est, omnis dolor
-                            repellendus. Temporibus autem quibusdam et aut officiis debitis aut rerum
-                            necessitatibus saepe eveniet ut et voluptates repudiandae sint et molestiae non
-                            recusandae. Itaque earum rerum hic tenetur a sapiente delectus, ut aut
-                            reiciendis voluptatibus maiores alias consequatur aut perferendis doloribus
-                            asperiores repellat.
+                    <div class="tab-content" data-aos="fade-up">
+                        <div class="tab-pane fade show active" id="pills-description" role="tabpanel"
+                             aria-labelledby="pills-description-tab" tabindex="0">
+                            <div class="each description">
+                                On the other hand, we denounce with righteous indignation and dislike men who
+                                are so beguiled and demoralized by the charms of pleasure of the moment, so
+                                blinded by desire, that they cannot foresee the pain and trouble that are bound
+                                to ensue; and equal blame belongs to those who fail in their duty through
+                                weakness of will, which is the same as saying through shrinking from toil and
+                                pain. These cases are perfectly simple and easy to distinguish. In a free hour,
+                                when our power of choice is untrammelled and when nothing prevents our being
+                                able to do what we like best, every pleasure is to be welcomed and every pain
+                                avoided. But in certain circumstances and owing to the claims of duty or the
+                                obligations of business it will frequently occur that pleasures have to be
+                                repudiated and annoyances accepted. The wise man therefore always holds in these
+                                matters to this principle of selection: he rejects pleasures to secure other
+                                greater pleasures, or else he endures pains to avoid worse pains.
+                                <br> <br>
+                                Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore,
+                                cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod
+                                maxime placeat facere possimus, omnis voluptas assumenda est, omnis dolor
+                                repellendus. Temporibus autem quibusdam et aut officiis debitis aut rerum
+                                necessitatibus saepe eveniet ut et voluptates repudiandae sint et molestiae non
+                                recusandae. Itaque earum rerum hic tenetur a sapiente delectus, ut aut
+                                reiciendis voluptatibus maiores alias consequatur aut perferendis doloribus
+                                asperiores repellat.
+                            </div>
                         </div>
-                        <div class="each reviews">
-                            <div class="user">
-                                <div class="avatar">
-                                    <img src="{{asset('images/blog-person-1.webp')}}" alt="">
-                                </div>
-                                <div class="info">
-                                    <div class="rating">
+                        <div class="tab-pane fade" id="pills-reviews" role="tabpanel"
+                             aria-labelledby="pills-reviews-tab" tabindex="0">
+                            <div class="each reviews">
+                                <div class="user">
+                                    <div class="avatar">
+                                        <img src="{{asset('images/blog-person-1.webp')}}" alt="">
+                                    </div>
+                                    <div class="info">
+                                        <div class="rating">
                                         <span>
                                             <i class="fa-solid fa-star"></i>
                                             <i class="fa-solid fa-star"></i>
@@ -184,29 +211,29 @@
                                             <i class="fa-solid fa-star"></i>
                                             <i class="fa-solid fa-star"></i>
                                         </span>
-                                        <span class="star">(4)</span>
-                                    </div>
-                                    <div class="date">
-                                        <span>Admin -</span>January 19, 2023
-                                    </div>
-                                    <div class="text">
-                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin in
-                                        viverra ex, vitae vestibulum arcu. Duis sollicitudin metus sed lorem
-                                        commodo, eu dapibus libero interdum. Morbi convallis viverra erat,
-                                        et aliquet orci congue vel. Integer in odio enim. Pellentesque in
-                                        dignissim leo. Vivamus varius ex sit amet quam tincidunt iaculis.
+                                            <span class="star">(4)</span>
+                                        </div>
+                                        <div class="date">
+                                            <span>Admin -</span>January 19, 2023
+                                        </div>
+                                        <div class="text">
+                                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin in
+                                            viverra ex, vitae vestibulum arcu. Duis sollicitudin metus sed lorem
+                                            commodo, eu dapibus libero interdum. Morbi convallis viverra erat,
+                                            et aliquet orci congue vel. Integer in odio enim. Pellentesque in
+                                            dignissim leo. Vivamus varius ex sit amet quam tincidunt iaculis.
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
-                            <div class="review-text">
-                                <div class="title">Add a review</div>
-                                <div class="text">Your email address will not be published. Required fields are marked
-                                    *
+                                <div class="review-text">
+                                    <div class="title">Add a review</div>
+                                    <div class="text">Your email address will not be published. Required fields are marked
+                                        *
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="rating-text">
-                                <div class="title">Your Rating</div>
-                                <div class="rating-star">
+                                <div class="rating-text">
+                                    <div class="title">Your Rating</div>
+                                    <div class="rating-star">
                                                     <span>
                                                         <i class="fa-solid fa-star"></i>
                                                         <i class="fa-solid fa-star"></i>
@@ -214,117 +241,124 @@
                                                         <i class="fa-solid fa-star"></i>
                                                         <i class="fa-solid fa-star"></i>
                                                     </span>
-                                    <span class="star">(2)</span>
+                                        <span class="star">(2)</span>
+                                    </div>
+                                </div>
+                                <div class="contact-form">
+                                    <form>
+                                        <div class="row">
+                                            <div class="col-6">
+                                                <div class="form-group">
+                                                    <label for="name">Name*</label>
+                                                    <input type="text" name="name" id="name" class="form-control">
+                                                </div>
+                                            </div>
+                                            <div class="col-6">
+                                                <div class="form-group">
+                                                    <label for="email">Email*</label>
+                                                    <input type="email" name="email" id="email" class="form-control">
+                                                </div>
+                                            </div>
+                                            <div class="col-12">
+                                                <div class="form-group">
+                                                    <label for="comment">Comment</label>
+                                                    <textarea name="comment" id="comment" class="form-control"></textarea>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <button class="btn btn-theme">Submit</button>
+                                    </form>
                                 </div>
                             </div>
-                            <div class="contact-form">
-                                <form>
-                                    <div class="row">
-                                        <div class="col-6">
-                                            <div class="form-group">
-                                                <label for="name">Name*</label>
-                                                <input type="text" name="name" id="name" class="form-control">
-                                            </div>
-                                        </div>
-                                        <div class="col-6">
-                                            <div class="form-group">
-                                                <label for="email">Email*</label>
-                                                <input type="email" name="email" id="email" class="form-control">
-                                            </div>
-                                        </div>
-                                        <div class="col-12">
-                                            <div class="form-group">
-                                                <label for="comment">Comment</label>
-                                                <textarea name="comment" id="comment" class="form-control"></textarea>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <button class="btn btn-theme">Submit</button>
-                                </form>
+                        </div>
+                        <div class="tab-pane fade" id="pills-shipping" role="tabpanel"
+                             aria-labelledby="pills-shipping-tab" tabindex="0">
+                            <div class="each shipping-policy">
+                                <div class="title">Shipping policy for our store</div>
+                                <div class="text">Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy
+                                    nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad
+                                    minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip
+                                    ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate
+                                </div>
+                                <ul class="list">
+                                    <li>1-2 business days (Typically by end of day)</li>
+                                    <li>30 days money back guaranty</li>
+                                    <li>24/7 live support</li>
+                                    <li>odio dignissim qui blandit praesent</li>
+                                    <li>luptatum zzril delenit augue duis dolore</li>
+                                    <li>te feugait nulla facilisi.</li>
+                                </ul>
+                                <div class="text mb-2">
+                                    Nam liber tempor cum soluta nobis eleifend option congue nihil imperdiet doming id quod
+                                    mazim placerat facer possim assum. Typi non habent claritatem insitam; est usus legentis
+                                    in iis qui facit eorum
+                                </div>
+                                <div class="text mb-2">
+                                    claritatem. Investigationes demonstraverunt lectores legere me lius quod ii legunt
+                                    saepius. Claritas est etiam processus dynamicus, qui sequitur mutationem consuetudium
+                                    lectorum. Mirum est notare quam littera gothica, quam nunc putamus parum claram,
+                                    anteposuerit litterarum formas humanitatis per
+                                </div>
+                                <div class="text">
+                                    seacula quarta decima et quinta decima. Eodem modo typi, qui nunc nobis videntur parum clari, fiant sollemnes in futurum.
+                                </div>
                             </div>
                         </div>
-                        <div class="each shipping-policy">
-                            <div class="title">Shipping policy for our store</div>
-                            <div class="text">Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy
-                                nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad
-                                minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip
-                                ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate
+                        <div class="tab-pane fade" id="pills-size" role="tabpanel"
+                             aria-labelledby="pills-size-tab" tabindex="0">
+                            <div class="each size-chart">
+                                <div class="title">Size Chart</div>
+                                <table class="table border mb-0">
+                                    <tbody>
+                                    <tr>
+                                        <td class="cun-name"><span>UK</span></td>
+                                        <td>18</td>
+                                        <td>20</td>
+                                        <td>22</td>
+                                        <td>24</td>
+                                        <td>26</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="cun-name"><span>European</span></td>
+                                        <td>46</td>
+                                        <td>48</td>
+                                        <td>50</td>
+                                        <td>52</td>
+                                        <td>54</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="cun-name"><span>usa</span></td>
+                                        <td>14</td>
+                                        <td>16</td>
+                                        <td>18</td>
+                                        <td>20</td>
+                                        <td>22</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="cun-name"><span>Australia</span></td>
+                                        <td>28</td>
+                                        <td>10</td>
+                                        <td>12</td>
+                                        <td>14</td>
+                                        <td>16</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="cun-name"><span>Canada</span></td>
+                                        <td>24</td>
+                                        <td>18</td>
+                                        <td>14</td>
+                                        <td>42</td>
+                                        <td>36</td>
+                                    </tr>
+                                    </tbody>
+                                </table>
                             </div>
-                            <ul class="list">
-                                <li>1-2 business days (Typically by end of day)</li>
-                                <li>30 days money back guaranty</li>
-                                <li>24/7 live support</li>
-                                <li>odio dignissim qui blandit praesent</li>
-                                <li>luptatum zzril delenit augue duis dolore</li>
-                                <li>te feugait nulla facilisi.</li>
-                            </ul>
-                            <div class="text mb-2">
-                                Nam liber tempor cum soluta nobis eleifend option congue nihil imperdiet doming id quod
-                                mazim placerat facer possim assum. Typi non habent claritatem insitam; est usus legentis
-                                in iis qui facit eorum
-                            </div>
-                            <div class="text mb-2">
-                                claritatem. Investigationes demonstraverunt lectores legere me lius quod ii legunt
-                                saepius. Claritas est etiam processus dynamicus, qui sequitur mutationem consuetudium
-                                lectorum. Mirum est notare quam littera gothica, quam nunc putamus parum claram,
-                                anteposuerit litterarum formas humanitatis per
-                            </div>
-                            <div class="text">
-                                seacula quarta decima et quinta decima. Eodem modo typi, qui nunc nobis videntur parum clari, fiant sollemnes in futurum.
-                            </div>
-                        </div>
-                        <div class="each size-chart">
-                            <div class="title">Size Chart</div>
-                            <table class="table border mb-0">
-                                <tbody>
-                                <tr>
-                                    <td class="cun-name"><span>UK</span></td>
-                                    <td>18</td>
-                                    <td>20</td>
-                                    <td>22</td>
-                                    <td>24</td>
-                                    <td>26</td>
-                                </tr>
-                                <tr>
-                                    <td class="cun-name"><span>European</span></td>
-                                    <td>46</td>
-                                    <td>48</td>
-                                    <td>50</td>
-                                    <td>52</td>
-                                    <td>54</td>
-                                </tr>
-                                <tr>
-                                    <td class="cun-name"><span>usa</span></td>
-                                    <td>14</td>
-                                    <td>16</td>
-                                    <td>18</td>
-                                    <td>20</td>
-                                    <td>22</td>
-                                </tr>
-                                <tr>
-                                    <td class="cun-name"><span>Australia</span></td>
-                                    <td>28</td>
-                                    <td>10</td>
-                                    <td>12</td>
-                                    <td>14</td>
-                                    <td>16</td>
-                                </tr>
-                                <tr>
-                                    <td class="cun-name"><span>Canada</span></td>
-                                    <td>24</td>
-                                    <td>18</td>
-                                    <td>14</td>
-                                    <td>42</td>
-                                    <td>36</td>
-                                </tr>
-                                </tbody>
-                            </table>
                         </div>
                     </div>
                 </div>
                 <div class="products">
-                    <div class="heading-title">You Might Also Like</div>
-                    <div class="product-items">
+                    <div class="heading-title" data-aos="fade-up">You Might Also Like</div>
+                    <div class="product-items" data-aos="fade-up">
                         <div class="swiper single-product-slider">
                             <div class="swiper-wrapper">
                                 <div class="swiper-slide">
@@ -335,13 +369,13 @@
                                                 <img class="second-img" src="{{asset('images/product-tab-img-2.webp')}}" alt="">
                                             </a>
                                             <div class="actions">
-                                                <a href="" class="action">
+                                                <a href="{{route('front.wishlist')}}" class="action">
                                                     <i class="pe-7s-like"></i>
                                                 </a>
-                                                <a href="" class="action">
+                                                <a href="{{route('front.wishlist')}}" class="action">
                                                     <i class="pe-7s-search"></i>
                                                 </a>
-                                                <a href="" class="action">
+                                                <a href="{{route('front.compare')}}" class="action">
                                                     <i class="pe-7s-shuffle"></i>
                                                 </a>
                                             </div>
@@ -652,25 +686,4 @@
             </div>
         </section>
     </div>
-    <script>
-        const showTabProducts = (e, type) =>{
-            const tabButtons = document.querySelectorAll('.product-tab .header a');
-            tabButtons.forEach((elem) =>{
-                if(elem.classList.contains('active')){
-                    elem.classList.remove('active');
-                }
-            })
-            e.target.classList.add('active');
-            const tabContent = document.querySelectorAll('.product-tab .content .each');
-            tabContent.forEach((elem) => {
-                if(elem.classList.contains('active') && !elem.classList.contains(type)){
-                    elem.classList.remove('active');
-                }else if(!elem.classList.contains('active') && elem.classList.contains(type)){
-                    setTimeout(()=>{
-                        elem.classList.add('active')
-                    }, 200)
-                }
-            })
-        }
-    </script>
 @endsection
